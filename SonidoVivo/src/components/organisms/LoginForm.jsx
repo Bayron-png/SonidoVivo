@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Row, Col, Form, Button } from 'react-bootstrap';
+import { Container, Row, Col, Form } from 'react-bootstrap';
 import CamposLogin from '../molecules/CamposLogin';
 
 const LoginForm = () => {
@@ -15,14 +15,13 @@ const LoginForm = () => {
     <div style={{ backgroundColor: '#f8f9fa', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
       {/* Botón flotante superior */}
       <div className="p-3">
-        <Button 
-          variant="primary" 
-          size="sm" 
-          className="rounded-pill px-3"
+        <button 
+          type="button"
+          className="btn btn-primary btn-sm rounded-pill px-3"
           style={{ backgroundColor: '#1340a1', borderColor: '#1340a1' }}
         >
           &larr; Volver al menú
-        </Button>
+        </button>
       </div>
 
       {/* Contenido principal del login */}
