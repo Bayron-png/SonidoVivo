@@ -39,7 +39,7 @@ const LoginForm = () => {
         <Row className="w-100 justify-content-center">
           <Col xs={12} sm={10} md={6} lg={4}>
             <Form onSubmit={handleSubmit}>
-              <LoginFormFields 
+              <CamposLogin 
                 email={email}
                 password={password}
                 onEmailChange={(e) => setEmail(e.target.value)}
