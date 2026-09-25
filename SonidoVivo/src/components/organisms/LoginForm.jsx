@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
-import LoginForm from '../molecules/LoginForm';
+import CamposLogin from '../molecules/CamposLogin';
 
 const LoginForm = () => {
   const [email, setEmail] = useState('');
