@@ -1,14 +1,13 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
 
 const SubmitButton = ({ label = "Iniciar sesion" }) => (
-  <Button 
-    variant="primary" 
+  <button 
     type="submit" 
+    className="btn btn-primary" 
     style={{ backgroundColor: '#3b62cc', borderColor: '#3b62cc' }}
   >
     {label}
-  </Button>
+  </button>
 );
 
 export default SubmitButton;
