@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 
-const submitButton = ({ label = "Iniciar sesion" }) => (
+const SubmitButton = ({ label = "Iniciar sesion" }) => (
   <Button 
     variant="primary" 
     type="submit" 
@@ -11,4 +11,4 @@ const submitButton = ({ label = "Iniciar sesion" }) => (
   </Button>
 );
 
-export default submitButton;
+export default SubmitButton;

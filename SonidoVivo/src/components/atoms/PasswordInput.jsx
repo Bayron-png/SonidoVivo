@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form } from 'react-bootstrap';
 
-const passwordInput = ({ value, onChange }) => (
+const PasswordInput = ({ value, onChange }) => (
   <Form.Group className="mb-3" controlId="formBasicPassword">
     <Form.Label className="fw-bold">Contraseña</Form.Label>
     <Form.Control 
@@ -14,4 +14,4 @@ const passwordInput = ({ value, onChange }) => (
   </Form.Group>
 );
 
-export default passwordInput;
+export default PasswordInput;
