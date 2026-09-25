@@ -37,11 +37,13 @@ y a su vez pudiendo recibir pedidos de forma online con flujo de pagos, seguimie
                 ├── vite.svg
             └── 📁components
                 └── 📁atoms
-                    ├── .gitkeep
+                    ├── EmailInput.jsx
+                    ├── PasswordInput.jsx
+                    ├── SubmitButton.jsx
                 └── 📁molecules
-                    ├── .gitkeep
+                    ├── CamposLogin.jsx
                 └── 📁organisms
-                    ├── .gitkeep
+                    ├── LoginForm.jsx
                 └── 📁templates
                     ├── .gitkeep
             ├── App.css
@@ -58,7 +60,6 @@ y a su vez pudiendo recibir pedidos de forma online con flujo de pagos, seguimie
     ├── package.json
     └── README.md
 ```
-
 ## Como ejecutar el Proyecto
 ### Prerequisitos
 
