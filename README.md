@@ -24,35 +24,39 @@ y a su vez pudiendo recibir pedidos de forma online con flujo de pagos, seguimie
 
 
 ## Estructura del Proyecto
-
-```text
-Sonido-Vivo/
-├── public/
-│   └── vite.svg
-├── src/
-│   ├── assets/
-│   │   └── react.svg
-│   ├── components/
-│   │   ├── atoms/
-│   │   |   └──
-│   │   ├── molecules/
-│   │   │   └── 
-│   │   ├── organisms/
-│   │   │   └── 
-│   │   ├── templates/
-│   │   │   └── 
-│   │   └── pages/
-│   │   │   └── 
-│   ├── App.css
-│   ├── App.jsx
-│   ├── index.css
-│   └── main.jsx
-├── .gitignore
-├── index.html
-├── package.json
-├── package-lock.json
-├── README.md
-└── vite.config.js
+```
+└── 📁SonidoVivo
+    └── 📁SonidoVivo
+        └── 📁public
+            ├── favicon.svg
+            ├── icons.svg
+        └── 📁src
+            └── 📁assets
+                ├── hero.png
+                ├── react.svg
+                ├── vite.svg
+            └── 📁components
+                └── 📁atoms
+                    ├── .gitkeep
+                └── 📁molecules
+                    ├── .gitkeep
+                └── 📁organisms
+                    ├── .gitkeep
+                └── 📁templates
+                    ├── .gitkeep
+            ├── App.css
+            ├── App.jsx
+            ├── index.css
+            ├── main.jsx
+        ├── .gitignore
+        ├── .oxlintrc.json
+        ├── index.html
+        ├── package-lock.json
+        ├── package.json
+        ├── vite.config.js
+    ├── package-lock.json
+    ├── package.json
+    └── README.md
 ```
 
 ## Como ejecutar el Proyecto
