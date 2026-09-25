@@ -14,4 +14,4 @@ const emailInput = ({ value, onChange }) => (
   </Form.Group>
 );
 
-export default EmailInput;
+export default emailInput;

@@ -14,4 +14,4 @@ const passwordInput = ({ value, onChange }) => (
   </Form.Group>
 );
 
-export default PasswordInput;
+export default passwordInput;
