@@ -1,23 +1,57 @@
-/* Contenedor general que abarca toda la pantalla */
-.login-template {
-  background-color: #f8f9fa;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+/* Header */
+.template-header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 1rem 2rem;
+    min-height: 80px; /* Asegura una altura estable para el header */
 }
 
-/* Header arriba */
-.template-header {
-  width: 100%;
+.textos-header {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); /* Centra horizontal y verticalmente */
+    text-align: center;
+    width: max-content;
+}
+
+/* Quitar márgenes por defecto de los encabezados */
+.textos-header h1,
+.textos-header p {
+    margin: 0;
+    line-height: 1.2;
+}
+
+.ico-logo img {
+    width: 60px;
+    height: auto;
+    display: block;
+}
+
+.header-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+}
+
+/* Contenedor general que abarca toda la pantalla */
+.login-template {
+    background-color: #f8f9fa;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Área central para el formulario de login */
 .template-content {
-  flex: 1; /* Ocupa todo el espacio vertical sobrante */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
+    flex: 1; /* Ocupa todo el espacio vertical sobrante */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
 }
 
 .template-registrar {

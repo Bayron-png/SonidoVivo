@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Container, Row, Col, Form } from "react-bootstrap";
 import CamposLogin from "../molecules/CamposLogin";
-import './LoginForm.css';
+import '../../pages/Login/Login.css';
 import '../templates/LoginTemplate.css';
 
 const LoginForm = () => {
