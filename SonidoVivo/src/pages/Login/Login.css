@@ -1,0 +1,26 @@
+.label-registrar {
+  text-decoration: none;
+  color: #212529;
+  font-weight: 400;
+}
+
+.label-crear-cuenta {
+  margin-top: 0.5rem;
+  color: #212529;
+  font-size: 1rem;
+}
+
+/* src/components/organisms/LoginForm.css */
+.titulo-login {
+  color: #ffffff;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.75rem; 
+  margin-bottom: 3rem;
+  padding: 0.5rem 3rem;
+  border-radius: 50rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  background-color: #1340a1;
+  min-width: 220px;
+  display: inline-block;
+}

@@ -1,11 +1,5 @@
-import React from 'react';
-
-const SubmitButton = ({ label = "Iniciar sesion" }) => (
-  <button 
-    type="submit" 
-    className="btn btn-primary" 
-    style={{ backgroundColor: '#3b62cc', borderColor: '#3b62cc' }}
-  >
+const SubmitButton = ({ label = "Enviar" }) => (
+  <button type="submit" className="btn btn-primary">
     {label}
   </button>
 );

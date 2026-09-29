@@ -1,0 +1,38 @@
+/* Contenedor general que abarca toda la pantalla */
+.login-template {
+  background-color: #f8f9fa;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header arriba */
+.template-header {
+  width: 100%;
+}
+
+/* Área central para el formulario de login */
+.template-content {
+  flex: 1; /* Ocupa todo el espacio vertical sobrante */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.template-registrar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 1rem;
+}
+
+.tarjeta-login {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
