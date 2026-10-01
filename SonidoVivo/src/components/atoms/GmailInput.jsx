@@ -1,6 +1,6 @@
 import { Form } from 'react-bootstrap';
 
-const EmailInput = ({ value, onChange }) => (
+const GmailInput = ({ value, onChange }) => (
   <Form.Group className="mb-3" controlId="formBasicEmail">
     <Form.Label className="fw-bold">Correo</Form.Label>
     <Form.Control 
@@ -13,4 +13,4 @@ const EmailInput = ({ value, onChange }) => (
   </Form.Group>
 );
 
-export default EmailInput;
+export default GmailInput;
