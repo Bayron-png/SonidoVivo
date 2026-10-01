@@ -38,16 +38,31 @@ y a su vez pudiendo recibir pedidos de forma online con flujo de pagos, seguimie
             └── 📁components
                 └── 📁atoms
                     ├── EmailInput.jsx
+                    ├── LogoHeader.jsx
                     ├── PasswordInput.jsx
                     ├── SubmitButton.jsx
+                    ├── TextoFooter.jsx
+                    ├── TextoHeader.jsx
                 └── 📁molecules
                     ├── CamposLogin.jsx
                 └── 📁organisms
+                    ├── Footer.jsx
+                    ├── Header.jsx
                     ├── LoginForm.jsx
                 └── 📁templates
-                    ├── .gitkeep
-            ├── App.css
-            ├── App.jsx
+                    ├── LoginTemplate.css
+            └── 📁context
+                ├── .gitkeep
+            └── 📁data
+                ├── .gitkeep
+            └── 📁pages
+                └── 📁Login
+                    ├── Login.css
+                    ├── Login.jsx
+            └── 📁services
+                ├── .gitkeep
+            └── 📁utils
+                ├── .gitkeep
             ├── index.css
             ├── main.jsx
         ├── .gitignore
