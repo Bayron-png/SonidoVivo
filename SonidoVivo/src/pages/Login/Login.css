@@ -3,7 +3,7 @@
   color: #ffffff;
   text-align: center;
   font-weight: bold;
-  font-size: 1.75rem; 
+  font-size: 1.75rem;
   margin-bottom: 3rem;
   padding: 0.5rem 3rem;
   border-radius: 50rem;
@@ -25,16 +25,30 @@
   font-weight: 400;
 }
 
-.texto-header{
-    font-size: 2rem;
-    color: rgb(253, 253, 253);
+.texto-header {
+  font-size: 2rem;
+  color: rgb(253, 253, 253);
 }
 
-.subtitulo-header{
-    font-size: 1rem;
-    color: rgb(253, 253, 253);
+.contenedor-footer {
+  display:  flex;
+  justify-content: center;
 }
 
-.template-header{
-    background:#1340a1;
+.texto-footer {
+  font-size: 1.4rem;
+  color: rgb(253, 253, 253);
+}
+
+.subtitulo-header {
+  font-size: 1rem;
+  color: rgb(253, 253, 253);
+}
+
+.template-header {
+  background: #1340a1;
+}
+
+.template-footer {
+  background: #1340a1;
 }
