@@ -1,15 +1,11 @@
-import "../../pages/Login/Login.css";
-import "../templates/LoginTemplate.css";
-import TextoFooter from "../atoms/TextoFooter.jsx";
+import TextoFooter from "../atoms/footer/TextoFooter";
 
 const Footer = () => {
   return (
     <div className="contenedor-footer">
-      <footer className="template-footer">
-        <div className="footer-title">
-          <TextoFooter />
+        <div className="texto-footer">
+          <TextoFooter/>
         </div>
-      </footer>
     </div>
   );
 };

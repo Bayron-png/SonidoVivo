@@ -1,16 +1,14 @@
 import { useState } from "react";
 import { Container, Row, Col, Form } from "react-bootstrap";
 import CamposLogin from "../molecules/CamposLogin";
-import '../../pages/Login/Login.css';
-import '../templates/LoginTemplate.css';
 
-const LoginForm = () => {
-  const [email, setEmail] = useState("");
+const LoginForm = ({onSubmit}) => {
+  const [gmail, setGmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = (e) => {
+  const formularioEnviado = (e) => {
     e.preventDefault();
-    console.log("Login enviado:", { email, password });
+    onSubmit({gmail, password});
   };
 
   return (
@@ -25,11 +23,11 @@ const LoginForm = () => {
         {/* Formulario adaptativo con Bootstrap Grid */}
         <Row className="w-100 justify-content-center">
           <Col xs={12} sm={10} md={6} lg={4}>
-            <Form onSubmit={handleSubmit}>
+            <Form onSubmit={formularioEnviado}>
               <CamposLogin
-                email={email}
+                gmail={gmail}
                 password={password}
-                onEmailChange={(e) => setEmail(e.target.value)}
+                onGmailChange={(e) => setGmail(e.target.value)}
                 onPasswordChange={(e) => setPassword(e.target.value)}
               />
             </Form>

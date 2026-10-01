@@ -1,15 +1,13 @@
-import LoginForm from "../../components/organisms/LoginForm";
-import Header from "../../components/organisms/Header";
-import Footer from "../../components/organisms/Footer";
+import LoginTemplate from "../../components/templates/LoginTemplate";
+
+const handLogin = (credenciales) => {
+    console.log("Datos del login:", credenciales);
+  };
 
 function Login() {
   return (
-    <div className="contenedor-general">
-      <main className="contenedor-contenido">
-        <Header/>
-        <LoginForm />
-        <Footer/>
-      </main>
+    <div className="contenedor-login">
+      <LoginTemplate onLoginSubmit={handLogin} />
     </div>
   );
 }

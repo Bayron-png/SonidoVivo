@@ -2,11 +2,14 @@ import { Form } from 'react-bootstrap';
 
 const GmailInput = ({ value, onChange }) => (
   <Form.Group className="mb-3" controlId="formBasicEmail">
-    <Form.Label className="fw-bold">Correo</Form.Label>
+    <Form.Label className="fw-bold">
+      Correo
+    </Form.Label>
+    
     <Form.Control 
       type="email" 
       placeholder="Ingrese su correo" 
-      value={value} 
+      value={value}
       onChange={onChange}
       required 
     />

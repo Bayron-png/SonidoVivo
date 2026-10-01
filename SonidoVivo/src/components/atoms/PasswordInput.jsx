@@ -2,11 +2,14 @@ import { Form } from 'react-bootstrap';
 
 const PasswordInput = ({ value, onChange }) => (
   <Form.Group className="mb-3" controlId="formBasicPassword">
-    <Form.Label className="fw-bold">Contraseña</Form.Label>
+    <Form.Label className="fw-bold">
+      Contraseña
+    </Form.Label>
+    
     <Form.Control 
       type="password" 
       placeholder="Ingrese su contraseña" 
-      value={value} 
+      value={value}
       onChange={onChange}
       required 
     />

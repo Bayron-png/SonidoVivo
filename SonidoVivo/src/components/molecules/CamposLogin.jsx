@@ -1,15 +1,15 @@
-import EmailInput from "../atoms/EmailInput";
+import GmailInput from "../atoms/GmailInput";
 import PasswordInput from "../atoms/PasswordInput";
-import SubmitButton from "../atoms/SubmitButton";
-import "../../pages/Login/Login.css";
+import BotonEnviar from "../atoms/botones/BotonEnviar";
 
-const CamposLogin = ({ email, password, onEmailChange, onPasswordChange }) => (
+const CamposLogin = ({ gmail, contrasena, onGmailChange, onPasswordChange }) => (
   <>
-    <EmailInput value={email} onChange={onEmailChange} />
-    <PasswordInput value={password} onChange={onPasswordChange} />
+    <GmailInput value={gmail} onChange={onGmailChange} />
+    <PasswordInput value={contrasena} onChange={onPasswordChange} />
 
     <div className="template-registrar">
-      <SubmitButton label="Enviar" />
+      <BotonEnviar label="Enviar"/>
+      
       <span className="label-crear-cuenta">
         ¿No tienes una cuenta?{" "}
         <a href="#" className="label-registrar">
