@@ -1,11 +1,13 @@
-const LogoHeader = () => {
-  return (
-    <div className = "contenedor-logo-header">
-      <a className="logo" href="#">
-        <img src="../../../assets/logo.png" alt="logo"/>
-      </a>
-    </div>
-  );
-};
+const LogoHeader = () => (
+  <a href="#">
+    <img
+      src="/logo.png"
+      alt="Logo SonidoVivo"
+      height="50"
+      className="flex-shrink-0"
+      style={{ width: "auto", objectFit: "contain" }}
+    />
+  </a>
+);
 
 export default LogoHeader;
