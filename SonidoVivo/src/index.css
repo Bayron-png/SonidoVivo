@@ -7,22 +7,33 @@
 }
 
 .contenedor-header {
-  background-color: var(--color-principal);
-  height: 85px;
-  color: #ffffff;
+  background: var(--color-principal);
+  color: var(--color-titulo);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .contenedor-header h1 {
-  font-size: 2rem;
+  font-size: 1.6rem;
 }
 
 .contenedor-header p {
-  font-size: 1rem;
+  font-size: 0.9rem;
+}
+
+.contenedor-footer{
+  background: var(--color-principal)
 }
 
 .titulo-login h2{
-color: var(--color-titulo);
-  background: #272ab3;
+  color: var(--color-titulo);
+  background: var(--color-principal);
   width: fit-content;
   margin: 0 auto;
   margin-bottom: 2.2rem;
@@ -41,6 +52,7 @@ color: var(--color-titulo);
 .label-registrar{
   text-decoration: none;
 }
+
 body {
   margin: 0;
   background-color: var(--color-fondo);

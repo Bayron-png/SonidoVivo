@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Container, Row, Col, Form } from "react-bootstrap";
 import CamposLogin from "../molecules/CamposLogin";
-import TituloRedondeado from "../atoms/login/TituloRedondeado";
+import TituloRedondeado from "../atoms/TituloRedondeado";
 
 const LoginForm = ({onSubmit}) => {
   const [gmail, setGmail] = useState("");
