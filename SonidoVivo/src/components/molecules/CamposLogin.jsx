@@ -7,7 +7,7 @@ const CamposLogin = ({ gmail, contrasena, onGmailChange, onPasswordChange }) => 
     <GmailInput value={gmail} onChange={onGmailChange} />
     <PasswordInput value={contrasena} onChange={onPasswordChange} />
 
-    <div className="template-registrar">
+    <div className="contenedor-registrar">
       <BotonEnviar label="Enviar"/>
       
       <span className="label-crear-cuenta">

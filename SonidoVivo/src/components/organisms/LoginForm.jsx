@@ -13,7 +13,7 @@ const LoginForm = ({onSubmit}) => {
   };
 
   return (
-    <div className = "login-template">
+    <div className = "contenedor-loginform">
       {/* Contenido principal del login */}
       <Container className="tarjeta-login">
         {/* Título azul redondeado */}
