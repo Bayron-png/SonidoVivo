@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Container, Row, Col, Form } from "react-bootstrap";
 import CamposLogin from "../molecules/CamposLogin";
+import TituloRedondeado from "../atoms/login/TituloRedondeado";
 
 const LoginForm = ({onSubmit}) => {
   const [gmail, setGmail] = useState("");
@@ -17,7 +18,7 @@ const LoginForm = ({onSubmit}) => {
       <Container className="tarjeta-login">
         {/* Título azul redondeado */}
         <div className="titulo-login">
-          Iniciar sesión
+          <TituloRedondeado texto= "Iniciar Sesión"/>
         </div>
 
         {/* Formulario adaptativo con Bootstrap Grid */}

@@ -1,5 +1,5 @@
-import GmailInput from "../atoms/GmailInput";
-import PasswordInput from "../atoms/PasswordInput";
+import GmailInput from "../atoms/login/GmailInput";
+import PasswordInput from "../atoms/login/PasswordInput";
 import BotonEnviar from "../atoms/botones/BotonEnviar";
 
 const CamposLogin = ({ gmail, contrasena, onGmailChange, onPasswordChange }) => (

@@ -3,6 +3,7 @@
   --color-acento: #aa3bff;
   --color-fondo: #ffffff;
   --color-texto: #08060d;
+  --color-titulo: #ffffff;
 }
 
 .contenedor-header {
@@ -17,6 +18,16 @@
 
 .contenedor-header p {
   font-size: 1rem;
+}
+
+.titulo-login h2{
+color: var(--color-titulo);
+  background: #272ab3;
+  width: fit-content;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0.5rem;
+  border-radius: 1.3rem;
 }
 
 body {
