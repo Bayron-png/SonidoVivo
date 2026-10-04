@@ -1,6 +1,8 @@
-import GmailInput from "../atoms/login/GmailInput";
-import PasswordInput from "../atoms/login/PasswordInput";
+import GmailInput from "../atoms/form/GmailInput";
+import PasswordInput from "../atoms/form/PasswordInput";
 import BotonEnviar from "../atoms/botones/BotonEnviar";
+
+import { Link } from 'react-router-dom';
 
 const CamposLogin = ({ gmail, contrasena, onGmailChange, onPasswordChange }) => (
   <>
@@ -12,9 +14,9 @@ const CamposLogin = ({ gmail, contrasena, onGmailChange, onPasswordChange }) => 
       
       <span className="label-crear-cuenta">
         ¿No tienes una cuenta?{" "}
-        <a href="#" className="label-registrar">
+        <Link to ="/register" className="label-registrar">
           Regístrate
-        </a>
+        </Link>
       </span>
     </div>
   </>
