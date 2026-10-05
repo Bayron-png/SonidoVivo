@@ -8,7 +8,7 @@ const RegisterTemplate = ({ onRegisterSubmit }) => {
             <Header />
 
             {/* Contenido dinámico que cambia según la pantalla */}
-            <main className="flex-grow-1 container my-4">
+            <main className="flex-grow-1 container pt-5 mb-4">
                 <RegisterForm onSubmit={onRegisterSubmit} />
             </main>
 

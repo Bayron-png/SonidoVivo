@@ -1,5 +1,7 @@
+import { Link } from "react-router-dom";
+
 const LogoHeader = () => (
-  <a href="#">
+  <Link to="/login" className="label-registrar">
     <img
       src="/logo.png"
       alt="Logo SonidoVivo"
@@ -7,7 +9,7 @@ const LogoHeader = () => (
       className="flex-shrink-0"
       style={{ width: "auto", objectFit: "contain" }}
     />
-  </a>
+  </Link>
 );
 
 export default LogoHeader;
