@@ -10,10 +10,11 @@
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat&logo=nodedotjs&logoColor=white)
 
 ## Integrantes
-| Nombres          | Apellidos             | Correo                 |
-| ---------------- | --------------------- | ---------------------- |
-| Luis Antonio     | Álvarez Requejo       | luis.alvarez@duocuc.cl |
-| Bayron Alexander | Urrutia Flores        | bay.urrutia@duocuc.cl  |
+| Nombres          | Apellidos         | Correo                 |
+| ---------------- | ----------------- | ---------------------- |
+| Luis Antonio     | Álvarez Requejo   | luis.alvarez@duocuc.cl |
+| José Miguel      | Ibarra Vyhmeister | jo.ibarrav@duocuc.cl   |
+| Bayron Alexander | Urrutia Flores    | bay.urrutia@duocuc.cl  |
 
 ## Contexto del Caso
 Sonido Vivo es una tienda de instrumentos musicales que actualmente es atendida solo por su dueño y dos vendedores.
