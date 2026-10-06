@@ -1,51 +1,61 @@
 const ProductCard = ({ producto }) => {
+  const disponible = producto.stock > 0;
+
   return (
-    <div className="card h-100 shadow-sm">
-      <div className="card-body d-flex flex-column">
-        <span className="text-muted small mb-2">
-          {producto.categoria}
-        </span>
+    <article className="card h-100 shadow-sm">
+      <section className="card-body d-flex flex-column">
+        
+        <header className="mb-3">
+          <p className="text-muted small mb-1">
+            {producto.categoria}
+          </p>
 
-        <h5 className="card-title">{producto.nombre}</h5>
+          <h2 className="card-title h5">
+            {producto.nombre}
+          </h2>
+        </header>
 
-        <p className="card-text mb-1">
-          <strong>Marca:</strong> {producto.marca}
-        </p>
+        <section aria-label="Información del producto">
+          <p className="card-text mb-1">
+            <strong>Marca:</strong> {producto.marca}
+          </p>
 
-        <p className="card-text mb-1">
-          <strong>Modelo:</strong> {producto.modelo}
-        </p>
+          <p className="card-text mb-1">
+            <strong>Modelo:</strong> {producto.modelo}
+          </p>
 
-        <p className="card-text text-muted">
-          {producto.descripcion}
-        </p>
+          <p className="card-text text-muted">
+            {producto.descripcion}
+          </p>
+        </section>
 
-        <div className="mt-auto">
-          <h5 className="fw-bold">
+        <footer className="mt-auto">
+          <p className="h5 fw-bold mb-2">
             ${producto.precio.toLocaleString("es-CL")}
-          </h5>
+          </p>
 
           <p
-            className={
-              producto.stock > 0
-                ? "text-success mb-3"
-                : "text-danger mb-3"
-            }
+            className={disponible ? "text-success" : "text-danger"}
+            aria-label={`Disponibilidad: ${
+              disponible ? `${producto.stock} unidades` : "sin stock"
+            }`}
           >
-            {producto.stock > 0
+            {disponible
               ? `Stock: ${producto.stock}`
               : "Sin stock"}
           </p>
 
           <button
+            type="button"
             className="btn btn-primary w-100"
-            disabled={producto.stock === 0}
+            disabled={!disponible}
           >
             Agregar al carrito
           </button>
-        </div>
-      </div>
-    </div>
+        </footer>
+
+      </section>
+    </article>
   );
 };
 
