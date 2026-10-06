@@ -4,17 +4,17 @@ import RutInput from "../atoms/form/RutInput";
 import GmailInput from "../atoms/form/GmailInput";
 import TelefonoInput from "../atoms/form/TelefonoInput";
 import PasswordInput from "../atoms/form/PasswordInput";
-import PasswordConfirmInput from "../atoms/form/PasswordConfirmInput"
+import ConfirmPasswordInput from "../atoms/form/ConfirmPasswordInput"
 import BotonEnviar from "../atoms/botones/BotonEnviar";
 
 import { Link } from "react-router-dom";
 
 const CamposRegister = ({
   nombre, apellido, rut, gmail, telefono,
-  contrasena, contrasena_confirm,
+  password, confirmPassword,
   onNombreChange, onApellidoChange, onRutChange,
   onGmailChange, onTelefonoChange,
-  onPasswordChange, onPasswordConfirmChange }) => (
+  onPasswordChange, onConfirmPasswordChange }) => (
 
   <>
     <NombreInput value={nombre} onChange={onNombreChange} />
@@ -22,8 +22,8 @@ const CamposRegister = ({
     <RutInput value={rut} onChange={onRutChange} />
     <GmailInput value={gmail} onChange={onGmailChange} />
     <TelefonoInput value={telefono} onChange={onTelefonoChange} />
-    <PasswordInput value={contrasena} onChange={onPasswordChange} />
-    <PasswordConfirmInput value={contrasena_confirm} onChange={onPasswordConfirmChange} />
+    <PasswordInput value={password} onChange={onPasswordChange} />
+    <ConfirmPasswordInput value={confirmPassword} onChange={onConfirmPasswordChange} passwordToMatch={password}/>
 
     <div className="contenedor-login">
       <BotonEnviar label="Registrarse" />

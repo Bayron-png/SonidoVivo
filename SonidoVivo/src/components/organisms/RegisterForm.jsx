@@ -10,14 +10,14 @@ const RegisterForm = ({ onSubmit }) => {
     const [gmail, setGmail] = useState("");
     const [telefono, setTelefono] = useState("");
     const [password, setPassword] = useState("");
-    const [password_confirm, setPasswordConfirm] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
 
     const formularioEnviado = (e) => {
         e.preventDefault();
         onSubmit({
             nombre, apellido, rut,
             gmail, telefono,
-            password, password_confirm
+            password, confirmPassword
         });
     };
 
@@ -41,14 +41,14 @@ const RegisterForm = ({ onSubmit }) => {
                                 gmail={gmail}
                                 telefono={telefono}
                                 password={password}
-                                password_confirm={password_confirm}
+                                confirmPassword={confirmPassword}
                                 onNombreChange={(e) => setNombre(e.target.value)}
                                 onApellidoChange={(e) => setApellido(e.target.value)}
                                 onRutChange={(e) => setRut(e.target.value)}
                                 onGmailChange={(e) => setGmail(e.target.value)}
                                 onTelefonoChange={(e) => setTelefono(e.target.value)}
                                 onPasswordChange={(e) => setPassword(e.target.value)}
-                                onPasswordConfirmChange={(e) => setPasswordConfirm(e.target.value)}
+                                onConfirmPasswordChange={(e) => setConfirmPassword(e.target.value)}
                             />
                         </Form>
                     </Col>
