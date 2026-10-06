@@ -1,53 +1,64 @@
+import GuitarraAcustica from '../assets/categorias-catalogo/guitarra-acustica.png'
+import GuitarraElectrica from '../assets/categorias-catalogo/guitarra-electrica.png'
+import BajoElectrico from '../assets/categorias-catalogo/bajo-electrico.png'
+import Bateria from '../assets/categorias-catalogo/bateria.png'
+import TecladoPiano from '../assets/categorias-catalogo/teclado-piano.png'
+import Amplificador from '../assets/categorias-catalogo/amplificador.png'
+import Microfono from '../assets/categorias-catalogo/microfono.png'
+import PedalEfectos from '../assets/categorias-catalogo/pedal-efectos.png'
+import Accesorios from '../assets/categorias-catalogo/accesorios.png'
+import EstudioGrabacion from '../assets/categorias-catalogo/estudio-grabacion.png'
+
 const categoriasData = [
   {
     id: 1,
-    titulo: "Guitarra Acústica",
-    src: "/../assets/categorias-catalogo/guitarra-acustica.png"
+    titulo: "Guitarras Acústicas",
+    src: GuitarraAcustica
   },
   {
     id: 2,
-    titulo: "Guitarra Eléctrica",
-    src: "/../assets/categorias-catalogo/guitarra-electrica.png"
+    titulo: "Guitarras Eléctricas",
+    src: GuitarraElectrica
   },
   {
     id: 3,
-    titulo: "Bajo Eléctrico",
-    src: "/../assets/categorias-catalogo/bajo-electrico.png"
+    titulo: "Bajos Eléctricos",
+    src: BajoElectrico
   },
   {
     id: 4,
-    titulo: "Batería",
-    src: "/../assets/categorias-catalogo/bateria.png"
+    titulo: "Baterías",
+    src: Bateria
   },
   {
     id: 5,
-    titulo: "Teclado/Piano",
-    src: "/../assets/categorias-catalogo/teclado-piano.png"
+    titulo: "Teclados/Pianos",
+    src: TecladoPiano
   },
   {
     id: 6,
-    titulo: "Amplificador",
-    src: "/../assets/categorias-catalogo/amplificador.png"
+    titulo: "Amplificadores",
+    src: Amplificador
   },
   {
     id: 7,
-    titulo: "Micrófono",
-    src: "/../assets/categorias-catalogo/microfono.png"
+    titulo: "Micrófonos",
+    src: Microfono
   },
   {
     id: 8,
-    titulo: "Pedal de Efectos",
-    src: "/../assets/categorias-catalogo/pedal-efectos.png"
+    titulo: "Pedales de Efectos",
+    src: PedalEfectos
   },
   {
     id: 9,
     titulo: "Accesorios",
-    src: "/../assets/categorias-catalogo/accesorios.png"
+    src: Accesorios
   },
   {
     id: 10,
     titulo: "Estudio y Grabación",
-    src: "/../assets/categorias-catalogo/estudio-grabacion.png"
+    src: EstudioGrabacion
   }
 ];
 
