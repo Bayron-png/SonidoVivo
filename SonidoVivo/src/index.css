@@ -4,6 +4,7 @@
   --color-fondo: #ffffff;
   --color-texto: #08060d;
   --color-titulo: #ffffff;
+  --color-fondo-categoria: #232527;
 }
 
 .contenedor-header {
@@ -31,7 +32,7 @@
   background: var(--color-principal)
 }
 
-.titulo-login h2{
+.titulo h2{
   color: var(--color-titulo);
   background: var(--color-principal);
   width: fit-content;
@@ -51,6 +52,23 @@
 
 .label-registrar{
   text-decoration: none;
+}
+
+.nombre-categoria-catalogo{
+  color: var(--color-titulo);
+  background: var(--color-fondo-categoria);
+  width: fit-content;
+  text-align: center;
+  border-radius: 1.3rem;
+}
+
+.nombre-categoria-catalogo h2{
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+
+.boton-volver{
+  border-radius: 16px;
 }
 
 body {

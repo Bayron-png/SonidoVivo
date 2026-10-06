@@ -1,8 +1,6 @@
-import React from 'react';
-
 const TituloRedondeado = ({texto}) => {
     return (
-        <div>
+        <div className = "titulo">
             <h2>{texto}</h2>
         </div>
     );
