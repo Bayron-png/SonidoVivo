@@ -76,3 +76,25 @@ body {
   background-color: var(--color-fondo);
   color: var(--color-texto);
 }
+
+/* Navegación principal */
+.menu-navegacion {
+  background-color: var(--color-principal);
+}
+
+.menu-navegacion .navbar-brand {
+  color: var(--color-titulo);
+  font-weight: bold;
+}
+
+.menu-navegacion .nav-link {
+  color: var(--color-titulo);
+}
+
+.menu-navegacion .nav-link:hover,
+.menu-navegacion .nav-link.active {
+  color: #ffffff;
+  text-decoration: underline;
+  text-decoration-color: var(--color-acento);
+  text-underline-offset: 6px;
+}
