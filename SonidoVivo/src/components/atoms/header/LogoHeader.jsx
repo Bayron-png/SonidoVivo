@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const LogoHeader = () => (
-  <Link to="/login" className="label-registrar">
+  <Link to="/" className="label-registrar">
     <img
       src="/logo.png"
       alt="Logo SonidoVivo"
