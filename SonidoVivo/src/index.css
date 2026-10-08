@@ -1,5 +1,6 @@
 :root {
   --color-principal: #272ab3;
+  --color-principal-degradado: #2206f6;
   --color-acento: #aa3bff;
   --color-fondo: #ffffff;
   --color-texto: #08060d;
@@ -8,7 +9,7 @@
 }
 
 .contenedor-header {
-  background: var(--color-principal);
+  background: linear-gradient(90deg, var(--color-principal), var(--color-principal-degradado)) !important;
   color: var(--color-titulo);
   display: flex;
   flex-direction: column;
@@ -29,7 +30,7 @@
 }
 
 .contenedor-footer{
-  background: var(--color-principal)
+  background: linear-gradient(90deg, var(--color-principal), var(--color-principal-degradado)) !important;
 }
 
 .titulo h2{

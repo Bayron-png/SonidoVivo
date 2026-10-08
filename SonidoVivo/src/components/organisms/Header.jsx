@@ -4,7 +4,7 @@ import { Navbar, Container, Row, Col } from "react-bootstrap";
 
 const Header = () => {
   return (
-    <Navbar variant="dark" sticky="top" className="contenedor-header">
+    <Navbar sticky="top" className="contenedor-header">
       <Container>
         <Row className="w-100 align-items-center">
           <Col xs={3} className="d-flex justify-content-start">
