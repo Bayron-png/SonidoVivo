@@ -51,7 +51,18 @@
   gap: 1rem;
 }
 
+.contenedor-redireccion-login{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
 .label-registrar{
+  text-decoration: none;
+}
+
+.label-login{
   text-decoration: none;
 }
 

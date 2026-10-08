@@ -25,7 +25,7 @@ const CamposRegister = ({
     <PasswordInput value={password} onChange={onPasswordChange} />
     <ConfirmPasswordInput value={confirmPassword} onChange={onConfirmPasswordChange} passwordToMatch={password}/>
 
-    <div className="contenedor-login">
+    <div className="contenedor-redireccion-login">
       <BotonEnviar label="Registrarse" />
 
       <span className="label-iniciarsesion">
