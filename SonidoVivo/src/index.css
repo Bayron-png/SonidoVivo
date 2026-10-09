@@ -1,5 +1,6 @@
 :root {
   --color-principal: #272ab3;
+  --color-principal-degradado: #2206f6;
   --color-acento: #aa3bff;
   --color-fondo: #ffffff;
   --color-texto: #08060d;
@@ -7,8 +8,12 @@
   --color-fondo-categoria: #232527;
 }
 
+.boton-volver{
+  margin-bottom: 1.5rem;
+}
+
 .contenedor-header {
-  background: var(--color-principal);
+  background: linear-gradient(90deg, var(--color-principal), var(--color-principal-degradado)) !important;
   color: var(--color-titulo);
   display: flex;
   flex-direction: column;
@@ -29,7 +34,7 @@
 }
 
 .contenedor-footer{
-  background: var(--color-principal)
+  background: linear-gradient(90deg, var(--color-principal), var(--color-principal-degradado)) !important;
 }
 
 .titulo h2{
@@ -50,7 +55,18 @@
   gap: 1rem;
 }
 
+.contenedor-redireccion-login{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
 .label-registrar{
+  text-decoration: none;
+}
+
+.label-login{
   text-decoration: none;
 }
 
@@ -97,4 +113,15 @@ body {
   text-decoration: underline;
   text-decoration-color: var(--color-acento);
   text-underline-offset: 6px;
+}
+
+/* Tarjetas de categorías del catálogo */
+.tarjeta-categoria {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tarjeta-categoria:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2) !important;
+  border-color: var(--color-principal) !important;
 }

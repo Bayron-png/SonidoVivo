@@ -105,3 +105,55 @@ Asegúrate de tener instalado **Node.js** (versión 18 o superior recomendada):
 
 ## Material Complementario
 [Drive-SonidoVivo](https://drive.google.com/drive/folders/12_GrU2BjxDYlcv_tYToIAlKlEODdBjeE?usp=drive_link)
+[Tablero-Trello](https://trello.com/b/huyWCOKN)
+## Bitácora (Registro)
+|Fecha     |Nombre | Acción|
+|----------|-------|-------|
+|08-10-2026|José   |       |
+|08-10-2026|Luis   |       |
+|08-10-2026|Bayron | Añadido de secciones dinámicas al header, creación de catálogo con links dinámicos y añadido de menú de navegación desplegable para móviles (menú de hamburguesa)|
+|09-10-2026|José   |       |
+|09-10-2026|Luis   |       |
+|09-10-2026|Bayron |       |
+|10-10-2026|José   |       |
+|10-10-2026|Luis   |       |
+|10-10-2026|Bayron |       |
+|11-10-2026|José   |       |
+|11-10-2026|Luis   |       |
+|11-10-2026|Bayron |       |
+|12-10-2026|José   |       |
+|12-10-2026|Luis   |       |
+|12-10-2026|Bayron |       |
+|13-10-2026|José   |       |
+|13-10-2026|Luis   |       |
+|13-10-2026|Bayron |       |
+|14-10-2026|José   |       |
+|14-10-2026|Luis   |       |
+|14-10-2026|Bayron |       |
+|15-10-2026|José   |       |
+|15-10-2026|Luis   |       |
+|15-10-2026|Bayron |       |
+|16-10-2026|José   |       |
+|16-10-2026|Luis   |       |
+|16-10-2026|Bayron |       |
+|17-10-2026|José   |       |
+|17-10-2026|Luis   |       |
+|17-10-2026|Bayron |       |
+|18-10-2026|José   |       |
+|18-10-2026|Luis   |       |
+|18-10-2026|Bayron |       |
+|19-10-2026|José   |       |
+|19-10-2026|Luis   |       |
+|19-10-2026|Bayron |       |
+|20-10-2026|José   |       |
+|20-10-2026|Luis   |       |
+|20-10-2026|Bayron |       |
+|21-10-2026|José   |       |
+|21-10-2026|Luis   |       |
+|21-10-2026|Bayron |       |
+|22-10-2026|José   |       |
+|22-10-2026|Luis   |       |
+|22-10-2026|Bayron |       |
+|23-10-2026|José   |       |
+|23-10-2026|Luis   |       |
+|23-10-2026|Bayron |       |

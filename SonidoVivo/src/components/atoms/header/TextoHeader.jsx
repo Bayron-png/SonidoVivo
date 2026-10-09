@@ -1,7 +1,7 @@
 const TextoHeader = () => (
   <div>
-    <h1>SonidoVivo</h1>
-    <p>Música para todos</p>
+    <h1 className = "mb-0">SonidoVivo</h1>
+    <p className = "mb-0">Música para todos</p>
   </div>
 );
 
