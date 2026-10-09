@@ -26,55 +26,86 @@ y a su vez pudiendo recibir pedidos de forma online con flujo de pagos, seguimie
 
 ## Estructura del Proyecto
 ```
-└── 📁SonidoVivo
-    └── 📁SonidoVivo
-        └── 📁public
-            ├── favicon.svg
-            ├── icons.svg
-        └── 📁src
-            └── 📁assets
-                ├── hero.png
-                ├── react.svg
-                ├── vite.svg
-            └── 📁components
-                └── 📁atoms
-                    ├── EmailInput.jsx
-                    ├── LogoHeader.jsx
-                    ├── PasswordInput.jsx
-                    ├── SubmitButton.jsx
-                    ├── TextoFooter.jsx
-                    ├── TextoHeader.jsx
-                └── 📁molecules
-                    ├── CamposLogin.jsx
-                └── 📁organisms
-                    ├── Footer.jsx
-                    ├── Header.jsx
-                    ├── LoginForm.jsx
-                └── 📁templates
-                    ├── LoginTemplate.css
-            └── 📁context
-                ├── .gitkeep
-            └── 📁data
-                ├── .gitkeep
-            └── 📁pages
-                └── 📁Login
-                    ├── Login.css
-                    ├── Login.jsx
-            └── 📁services
-                ├── .gitkeep
-            └── 📁utils
-                ├── .gitkeep
-            ├── index.css
-            ├── main.jsx
-        ├── .gitignore
-        ├── .oxlintrc.json
-        ├── index.html
-        ├── package-lock.json
-        ├── package.json
-        ├── vite.config.js
+Directory structure:
+└── 📁SonidoVivo/
+    ├── README.md
+    ├── 📁SonidoVivo/
+    │   ├── index.html
+    │   ├── package-lock.json
+    │   ├── package.json
+    │   ├── 📁public/
+    │   │   ├── favicon.svg
+    │   │   ├── icons.svg
+    │   │   └── logo.png
+    │   ├── 📁src/
+    │   │   ├── App.jsx
+    │   │   ├── 📁assets/
+    │   │   │   ├── 📁categorias-catalogo/
+    │   │   │   │   ├── accesorios.png
+    │   │   │   │   ├── amplificador.png
+    │   │   │   │   ├── bajo-electrico.png
+    │   │   │   │   ├── bateria.png
+    │   │   │   │   ├── estudio-grabacion.png
+    │   │   │   │   ├── guitarra-acustica.png
+    │   │   │   │   ├── guitarra-electrica.png
+    │   │   │   │   ├── microfono.png
+    │   │   │   │   ├── pedal-efectos.png
+    │   │   │   │   └── teclado-piano.png
+    │   │   │   ├── react.svg
+    │   │   │   └── vite.svg
+    │   │   ├── 📁components/
+    │   │   │   ├── 📁atoms/
+    │   │   │   │   ├── TituloRedondeado.jsx
+    │   │   │   │   ├── 📁botones/
+    │   │   │   │   │   ├── BotonEnviar.jsx
+    │   │   │   │   │   └── BotonVolver.jsx
+    │   │   │   │   ├── 📁catalogo/
+    │   │   │   │   │   ├── ImagenCategoria.jsx
+    │   │   │   │   │   └── TituloCategoria.jsx
+    │   │   │   │   ├── 📁footer/
+    │   │   │   │   │   └── TextoFooter.jsx
+    │   │   │   │   ├── 📁form/
+    │   │   │   │   │   ├── ApellidoInput.jsx
+    │   │   │   │   │   ├── ConfirmPasswordInput.jsx
+    │   │   │   │   │   ├── GmailInput.jsx
+    │   │   │   │   │   ├── NombreInput.jsx
+    │   │   │   │   │   ├── PasswordInput.jsx
+    │   │   │   │   │   ├── RutInput.jsx
+    │   │   │   │   │   └── TelefonoInput.jsx
+    │   │   │   │   └── 📁header/
+    │   │   │   │       ├── LogoHeader.jsx
+    │   │   │   │       └── TextoHeader.jsx
+    │   │   │   ├── 📁molecules/
+    │   │   │   │   ├── CamposLogin.jsx
+    │   │   │   │   ├── CamposRegister.jsx
+    │   │   │   │   ├── CategoriaProducto.jsx
+    │   │   │   │   └── ProductCard.jsx
+    │   │   │   ├── 📁organisms/
+    │   │   │   │   ├── CategoriasCatalogo.jsx
+    │   │   │   │   ├── Footer.jsx
+    │   │   │   │   ├── Header.jsx
+    │   │   │   │   ├── LoginForm.jsx
+    │   │   │   │   └── RegisterForm.jsx
+    │   │   │   └── 📁templates/
+    │   │   │       ├── CatalogoTemplate.jsx
+    │   │   │       ├── LoginTemplate.jsx
+    │   │   │       └── RegisterTemplate.jsx
+    │   │   ├── 📁data/
+    │   │   │   └── categoriasData.js
+    │   │   ├── index.css
+    │   │   ├── main.jsx
+    │   │   ├── 📁pages/
+    │   │   │   ├── 📁Catalogo/
+    │   │   │   │   └── Catalogo.jsx
+    │   │   │   ├── 📁Login/
+    │   │   │   │   └── Login.jsx
+    │   │   │   └── 📁Register/
+    │   │   │       └── Register.jsx
+    │   │   └── 📁utils/
+    │   │       └── 📁validaciones/
+    │   └── vite.config.js
     ├── package-lock.json
-    ├── package.json
-    └── README.md
+    └── package.json
 ```
 ## Como ejecutar el Proyecto
 ### Prerequisitos
