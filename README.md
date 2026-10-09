@@ -105,7 +105,7 @@ Asegúrate de tener instalado **Node.js** (versión 18 o superior recomendada):
 
 ## Material Complementario
 [Drive-SonidoVivo](https://drive.google.com/drive/folders/12_GrU2BjxDYlcv_tYToIAlKlEODdBjeE?usp=drive_link)
-
+[Tablero-Trello](https://trello.com/b/huyWCOKN)
 ## Bitácora (Registro)
 |Fecha     |Nombre | Acción|
 |----------|-------|-------|
