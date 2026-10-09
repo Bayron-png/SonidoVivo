@@ -8,6 +8,10 @@
   --color-fondo-categoria: #232527;
 }
 
+.boton-volver{
+  margin-bottom: 1.5rem;
+}
+
 .contenedor-header {
   background: linear-gradient(90deg, var(--color-principal), var(--color-principal-degradado)) !important;
   color: var(--color-titulo);

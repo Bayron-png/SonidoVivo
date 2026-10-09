@@ -43,7 +43,10 @@ const Header = () => {
               Nosotros
             </Nav.Link>
             <Nav.Link as={NavLink} to="/contacto" className="text-white p-0">
-              Contacto
+              Contacto 
+            </Nav.Link>
+            <Nav.Link as={NavLink} to="/login" className="text-white p-0">
+              Iniciar Sesión
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
