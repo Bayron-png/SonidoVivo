@@ -1,13 +1,10 @@
 import Header from "../../components/organisms/Header";
 import Footer from "../../components/organisms/Footer";
-import MenuNavegacion from "../../components/organisms/MenuNavegacion";
 
 function Home() {
   return (
     <div className="d-flex flex-column min-vh-100">
       <Header />
-
-      <MenuNavegacion />
 
       <main className="container flex-grow-1 py-5">
         <section aria-labelledby="titulo-home">
