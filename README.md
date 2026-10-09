@@ -111,7 +111,7 @@ Asegúrate de tener instalado **Node.js** (versión 18 o superior recomendada):
 |----------|-------|-------|
 |08-10-2026|José   |       |
 |08-10-2026|Luis   |       |
-|08-10-2026|Bayron |       |
+|08-10-2026|Bayron | Añadido de secciones dinámicas al header, creación de catálogo con links dinámicos y añadido de menú de navegación desplegable para móviles (menú de hamburguesa)|
 |09-10-2026|José   |       |
 |09-10-2026|Luis   |       |
 |09-10-2026|Bayron |       |
