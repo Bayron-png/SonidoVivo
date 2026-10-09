@@ -140,7 +140,7 @@ Asegúrate de tener instalado **Node.js** (versión 18 o superior recomendada):
 ## Bitácora (Registro)
 |Fecha     |Nombre | Acción|
 |----------|-------|-------|
-|08-10-2026|José   |       |
+|08-10-2026|José   | Se crea página para pantalla principal Home.|
 |08-10-2026|Luis   |       |
 |08-10-2026|Bayron | Añadido de secciones dinámicas al header, creación de catálogo con links dinámicos y añadido de menú de navegación desplegable para móviles (menú de hamburguesa)|
 |09-10-2026|José   |       |
