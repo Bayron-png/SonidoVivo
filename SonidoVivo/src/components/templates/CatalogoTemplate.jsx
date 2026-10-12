@@ -11,8 +11,8 @@ const CatalogoTemplate = () => {
 
       {/* Contenido dinámico que cambia según la pantalla */}
       <main className="flex-grow-1 container pt-5 mb-4">
-        <BotonVolver className = "boton-volver"label = "← Volver al menú"/>
-        <TituloRedondeado texto = "Nuestros Productos"/>
+        <BotonVolver label = "← Volver al menú principal" ruta = "/" />
+        <TituloRedondeado texto = "Categorías"/>
         <CategoriasCatalogo/>
       </main>
 
