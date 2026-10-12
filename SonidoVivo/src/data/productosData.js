@@ -11,7 +11,7 @@ const productosData = [
     "stock": 8,
     "precio": 129990,
     "descripcion": "Tapa de abeto, aros y fondo de meranti. Ideal para iniciantes.",
-    "imagen": "/assets/productos/ga001.jpg"
+    "imagen": "/productos/guitarras-acusticas/ga001.png"
   },
   {
     "id": "GA002",
@@ -23,7 +23,7 @@ const productosData = [
     "stock": 5,
     "precio": 189990,
     "descripcion": "Tapa de abeto macizo, brazo de caoba. Sonido cálido y proyectado.",
-    "imagen": "/assets/productos/ga002.jpg"
+    "imagen": "/productos/guitarras-acusticas/ga002.png"
   },
   {
     "id": "GA003",
@@ -35,7 +35,7 @@ const productosData = [
     "stock": 10,
     "precio": 89990,
     "descripcion": "Nailon, tapa de abeto. Ideal para estudio y flamenco.",
-    "imagen": "/assets/productos/ga003.jpg"
+    "imagen": "/productos/guitarras-acusticas/ga003.png"
   },
   {
     "id": "GA004",
@@ -47,7 +47,7 @@ const productosData = [
     "stock": 3,
     "precio": 349990,
     "descripcion": "Pickup integrado, afinador incorporado.",
-    "imagen": "/assets/productos/ga004.jpg"
+    "imagen": "/productos/guitarras-acusticas/ga004.png"
   },
   {
     "id": "GA005",
@@ -59,7 +59,7 @@ const productosData = [
     "stock": 6,
     "precio": 79990,
     "descripcion": "Tamaño reducido para niños de 6 a 10 años.",
-    "imagen": "/assets/productos/ga005.jpg"
+    "imagen": "/productos/guitarras-acusticas/ga005.png"
   },
   // ------ Guitarras Eléctricas ------
   {
@@ -72,7 +72,7 @@ const productosData = [
     "stock": 5,
     "precio": 249990,
     "descripcion": "Cuerpo de álamo, mástil de arce, pastillas SSS.",
-    "imagen": "/assets/productos/ge001.jpg"
+    "imagen": "/productos/guitarras-electricas/ge001.png"
   },
   {
     "id": "GE002",
@@ -84,7 +84,7 @@ const productosData = [
     "stock": 4,
     "precio": 329990,
     "descripcion": "Cuerpo caoba, tapa arce, pastillas humbucker.",
-    "imagen": "/assets/productos/ge002.jpg"
+    "imagen": "/productos/guitarras-electricas/ge002.png"
   },
   {
     "id": "GE003",
@@ -96,7 +96,7 @@ const productosData = [
     "stock": 3,
     "precio": 319990,
     "descripcion": "Cuerpo caoba, mástil caoba, 2 humbuckers.",
-    "imagen": "/assets/productos/ge003.jpg"
+    "imagen": "/productos/guitarras-electricas/ge003.png"
   },
   {
     "id": "GE004",
@@ -108,7 +108,7 @@ const productosData = [
     "stock": 4,
     "precio": 239990,
     "descripcion": "Cuerpo álamo, clavijero vintage, 2 pastillas single.",
-    "imagen": "/assets/productos/ge004.jpg"
+    "imagen": "/productos/guitarras-electricas/ge004.png"
   },
   {
     "id": "GE005",
@@ -120,7 +120,7 @@ const productosData = [
     "stock": 2,
     "precio": 549990,
     "descripcion": "Semi-hueca, 2 humbuckers, ideal para jazz y blues.",
-    "imagen": "/assets/productos/ge005.jpg"
+    "imagen": "/productos/guitarras-electricas/ge005.png"
   },
   {
     // ------ Bajos Eléctricos ------
@@ -133,7 +133,7 @@ const productosData = [
     "stock": 5,
     "precio": 299990,
     "descripcion": "Pickup PJ, cuerpo álamo, mástil arce.",
-    "imagen": "/assets/productos/ba001.jpg"
+    "imagen": "/productos/bajos-electricos/ba001.png"
   },
   {
     "id": "BA002",
@@ -145,7 +145,7 @@ const productosData = [
     "stock": 2,
     "precio": 699990,
     "descripcion": "Alder body, 2 Alnico V Jazz single-coil.",
-    "imagen": "/assets/productos/ba002.jpg"
+    "imagen": "/productos/bajos-electricos/ba002.png"
   },
   {
     "id": "BA003",
@@ -157,7 +157,7 @@ const productosData = [
     "stock": 2,
     "precio": 429990,
     "descripcion": "Electroacústico, afinador incorporado.",
-    "imagen": "/assets/productos/ba003.jpg"
+    "imagen": "/productos/bajos-electricos/ba003.png"
   },
   {
     // ------ Baterías ------
@@ -170,7 +170,7 @@ const productosData = [
     "stock": 2,
     "precio": 599990,
     "descripcion": "Incluye stands, platillos y pedal de bombo.",
-    "imagen": "/assets/productos/bt001.jpg"
+    "imagen": "/productos/baterias/bt001.png"
   },
   {
     "id": "BT002",
@@ -182,7 +182,7 @@ const productosData = [
     "stock": 2,
     "precio": 799990,
     "descripcion": "Módulo TD-02, 8 pads de goma, pedal hi-hat.",
-    "imagen": "/assets/productos/bt002.jpg"
+    "imagen": "/productos/baterias/bt002.png"
   },
   {
     "id": "BT003",
@@ -194,7 +194,7 @@ const productosData = [
     "stock": 4,
     "precio": 89990,
     "descripcion": "Acero, 14x5\", 10 tensores.",
-    "imagen": "/assets/productos/bt003.jpg"
+    "imagen": "/productos/baterias/bt003.png"
   },
   {
     "id": "BT004",
@@ -206,7 +206,7 @@ const productosData = [
     "stock": 3,
     "precio": 149990,
     "descripcion": "Latón B20, sonido brillante y claro.",
-    "imagen": "/assets/productos/bt004.jpg"
+    "imagen": "/productos/baterias/bt004.png"
   },
   {
     "id": "BT005",
@@ -218,7 +218,7 @@ const productosData = [
     "stock": 3,
     "precio": 129990,
     "descripcion": "Latón B20, ataque rápido.",
-    "imagen": "/assets/productos/bt005.jpg"
+    "imagen": "/productos/baterias/bt005.png"
   },
   {
     // ------ Teclados y Pianos ------
@@ -231,7 +231,7 @@ const productosData = [
     "stock": 4,
     "precio": 249990,
     "descripcion": "61 teclas sensibles al tacto, 622 voces.",
-    "imagen": "/assets/productos/tc001.jpg"
+    "imagen": "/productos/teclados-pianos/tc001.png"
   },
   {
     "id": "TC002",
@@ -243,7 +243,7 @@ const productosData = [
     "stock": 2,
     "precio": 499990,
     "descripcion": "88 teclas pesadas, 10 voces, pedal sustain incluido.",
-    "imagen": "/assets/productos/tc002.jpg"
+    "imagen": "/productos/teclados-pianos/tc002.png"
   },
   {
     "id": "TC003",
@@ -255,7 +255,7 @@ const productosData = [
     "stock": 5,
     "precio": 129990,
     "descripcion": "MIDI controller, 49 mini teclas.",
-    "imagen": "/assets/productos/tc003.jpg"
+    "imagen": "/productos/teclados-pianos/tc003.png"
   },
   {
     "id": "TC004",
@@ -267,7 +267,7 @@ const productosData = [
     "stock": 2,
     "precio": 399990,
     "descripcion": "88 teclas martillo, sin sonidos propios.",
-    "imagen": "/assets/productos/tc004.jpg"
+    "imagen": "/productos/teclados-pianos/tc004.png"
   },
   {
     // ------ Amplificadores ------
@@ -280,7 +280,7 @@ const productosData = [
     "stock": 5,
     "precio": 99990,
     "descripcion": "15W, distorsión incorporada, entrada auxiliar.",
-    "imagen": "/assets/productos/am001.jpg"
+    "imagen": "/productos/amplificadores/am001.png"
   },
   {
     "id": "AM002",
@@ -292,7 +292,7 @@ const productosData = [
     "stock": 3,
     "precio": 299990,
     "descripcion": "40W, 4 canales, efectos digitales integrados.",
-    "imagen": "/assets/productos/am002.jpg"
+    "imagen": "/productos/amplificadores/am002.png"
   },
   {
     "id": "AM003",
@@ -304,7 +304,7 @@ const productosData = [
     "stock": 2,
     "precio": 449990,
     "descripcion": "100W, tweeter integrado, ecualizador de 4 bandas.",
-    "imagen": "/assets/productos/am003.jpg"
+    "imagen": "/productos/amplificadores/am003.png"
   },
   {
     "id": "AM004",
@@ -316,7 +316,7 @@ const productosData = [
     "stock": 2,
     "precio": 499990,
     "descripcion": "60W, 2 canales, reverb y chorus incorporados.",
-    "imagen": "/assets/productos/am004.jpg"
+    "imagen": "/productos/amplificadores/am004.png"
   },
   {
     // ------ Micrófonos ------
@@ -329,7 +329,7 @@ const productosData = [
     "stock": 8,
     "precio": 149990,
     "descripcion": "Estándar industria para voz en vivo.",
-    "imagen": "/assets/productos/mi001.jpg"
+    "imagen": "/productos/microfonos/mi001.png"
   },
   {
     "id": "MI002",
@@ -341,7 +341,7 @@ const productosData = [
     "stock": 6,
     "precio": 139990,
     "descripcion": "Ideal para captura de instrumentos y amplificadores.",
-    "imagen": "/assets/productos/mi002.jpg"
+    "imagen": "/productos/microfonos/mi002.png"
   },
   {
     "id": "MI003",
@@ -353,7 +353,7 @@ const productosData = [
     "stock": 4,
     "precio": 199990,
     "descripcion": "Cardioide, XLR, ideal para grabación en estudio.",
-    "imagen": "/assets/productos/mi003.jpg"
+    "imagen": "/productos/microfonos/mi003.png"
   },
   {
     "id": "MI004",
@@ -365,7 +365,7 @@ const productosData = [
     "stock": 5,
     "precio": 299990,
     "descripcion": "USB, 4 patrones polares, ideal para streaming y podcast.",
-    "imagen": "/assets/productos/mi004.jpg"
+    "imagen": "/productos/microfonos/mi004.png"
   },
   {
     // ------ Pedales ------
@@ -378,7 +378,7 @@ const productosData = [
     "stock": 7,
     "precio": 79990,
     "descripcion": "Clásico pedal de distorsión, 3 controles.",
-    "imagen": "/assets/productos/pe001.jpg"
+    "imagen": "/productos/pedales/pe001.png"
   },
   {
     "id": "PE002",
@@ -390,7 +390,7 @@ const productosData = [
     "stock": 4,
     "precio": 179990,
     "descripcion": "8 modos de reverb, control de shimmer.",
-    "imagen": "/assets/productos/pe002.jpg"
+    "imagen": "/productos/pedales/pe002.png"
   },
   {
     "id": "PE003",
@@ -402,7 +402,7 @@ const productosData = [
     "stock": 2,
     "precio": 349990,
     "descripcion": "Diseño tipo pedalboard, 8 efectos simultáneos.",
-    "imagen": "/assets/productos/pe003.jpg"
+    "imagen": "/productos/pedales/pe003.png"
   },
   {
     "id": "PE004",
@@ -414,7 +414,7 @@ const productosData = [
     "stock": 8,
     "precio": 89990,
     "descripcion": "Afinador cromático, indicador de tono.",
-    "imagen": "/assets/productos/pe004.jpg"
+    "imagen": "/productos/pedales/pe004.png"
   },
   {
     "id": "PE005",
@@ -426,7 +426,7 @@ const productosData = [
     "stock": 4,
     "precio": 179990,
     "descripcion": "Delay analógico cálido, tiempo 600ms.",
-    "imagen": "/assets/productos/pe005.jpg"
+    "imagen": "/productos/pedales/pe005.png"
   },
   {
     "id": "PE006",
@@ -438,7 +438,7 @@ const productosData = [
     "stock": 6,
     "precio": 99990,
     "descripcion": "Tube Screamer clásico, sonido suave y orgánico.",
-    "imagen": "/assets/productos/pe006.jpg"
+    "imagen": "/productos/pedales/pe006.png"
   },
   {
     // ------ Accesorios ------
@@ -451,7 +451,7 @@ const productosData = [
     "stock": 25,
     "precio": 8990,
     "descripcion": "Juego 6 cuerdas, calibre ligero.",
-    "imagen": "/assets/productos/ac001.jpg"
+    "imagen": "/productos/accesorios/ac001.png"
   },
   {
     "id": "AC002",
@@ -463,7 +463,7 @@ const productosData = [
     "stock": 20,
     "precio": 10990,
     "descripcion": "Bronce fósforo, sonido cálido.",
-    "imagen": "/assets/productos/ac002.jpg"
+    "imagen": "/productos/accesorios/ac002.png"
   },
   {
     "id": "AC003",
@@ -475,7 +475,7 @@ const productosData = [
     "stock": 12,
     "precio": 14990,
     "descripcion": "Cuerdas de níquel enrollado, set 4 cuerdas.",
-    "imagen": "/assets/productos/ac003.jpg"
+    "imagen": "/productos/accesorios/ac003.png"
   },
   {
     "id": "AC004",
@@ -487,7 +487,7 @@ const productosData = [
     "stock": 50,
     "precio": 3990,
     "descripcion": "Celulosa, grosor medio.",
-    "imagen": "/assets/productos/ac004.jpg"
+    "imagen": "/productos/accesorios/ac004.png"
   },
   {
     "id": "AC005",
@@ -499,7 +499,7 @@ const productosData = [
     "stock": 15,
     "precio": 12990,
     "descripcion": "Capotraste de resorte, compatible 6 cuerdas.",
-    "imagen": "/assets/productos/ac005.jpg"
+    "imagen": "/productos/accesorios/ac005.png"
   },
   {
     "id": "AC006",
@@ -511,7 +511,7 @@ const productosData = [
     "stock": 20,
     "precio": 8990,
     "descripcion": "Afinador cromático de clip, pantalla giratoria.",
-    "imagen": "/assets/productos/ac006.jpg"
+    "imagen": "/productos/accesorios/ac006.png"
   },
   {
     "id": "AC007",
@@ -523,7 +523,7 @@ const productosData = [
     "stock": 15,
     "precio": 12990,
     "descripcion": "Cable trenzado, conectores dorados, 3 metros.",
-    "imagen": "/assets/productos/ac007.jpg"
+    "imagen": "/productos/accesorios/ac007.png"
   },
   {
     "id": "AC008",
@@ -535,7 +535,7 @@ const productosData = [
     "stock": 10,
     "precio": 17990,
     "descripcion": "Cable trenzado, conectores dorados, 6 metros.",
-    "imagen": "/assets/productos/ac008.jpg"
+    "imagen": "/productos/accesorios/ac008.png"
   },
   {
     "id": "AC009",
@@ -547,7 +547,7 @@ const productosData = [
     "stock": 12,
     "precio": 22990,
     "descripcion": "Soporte plegable con enganche automático.",
-    "imagen": "/assets/productos/ac009.jpg"
+    "imagen": "/productos/accesorios/ac009.png"
   },
   {
     "id": "AC010",
@@ -559,7 +559,7 @@ const productosData = [
     "stock": 10,
     "precio": 18990,
     "descripcion": "Montaje a pared, enganche automático.",
-    "imagen": "/assets/productos/ac010.jpg"
+    "imagen": "/productos/accesorios/ac010.png"
   },
   {
     // ------ Estudio y Grabación ------
@@ -572,7 +572,7 @@ const productosData = [
     "stock": 4,
     "precio": 149990,
     "descripcion": "1 entrada XLR+instrumento, 2 salidas, 24bit/192kHz.",
-    "imagen": "/assets/productos/es001.jpg"
+    "imagen": "/productos/estudio-grabacion/es001.png"
   },
   {
     "id": "ES002",
@@ -584,7 +584,7 @@ const productosData = [
     "stock": 6,
     "precio": 79990,
     "descripcion": "Circumaurales, respuesta 15Hz-20kHz.",
-    "imagen": "/assets/productos/es002.jpg"
+    "imagen": "/productos/estudio-grabacion/es002.png"
   },
   {
     "id": "ES003",
@@ -596,7 +596,7 @@ const productosData = [
     "stock": 4,
     "precio": 219990,
     "descripcion": "Referencia de industria, sonido neutro y detallado.",
-    "imagen": "/assets/productos/es003.jpg"
+    "imagen": "/productos/estudio-grabacion/es003.png"
   },
   {
     "id": "ES004",
@@ -608,7 +608,7 @@ const productosData = [
     "stock": 2,
     "precio": 349990,
     "descripcion": "Altavoz activo, respuesta plana, ideal mezcla.",
-    "imagen": "/assets/productos/es004.jpg"
+    "imagen": "/productos/estudio-grabacion/es004.png"
   },
   {
     "id": "ES005",
@@ -620,7 +620,7 @@ const productosData = [
     "stock": 8,
     "precio": 14990,
     "descripcion": "Doble malla, brazo flexible con clip.",
-    "imagen": "/assets/productos/es005.jpg"
+    "imagen": "/productos/estudio-grabacion/es005.png"
   }
 ];
 

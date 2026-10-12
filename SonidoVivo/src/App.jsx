@@ -3,8 +3,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
-import Catalogo from './pages/Catalogo/Catalogo';
-import PaginaProductos from './pages/PaginaProductos/PaginaProductos';
+import Catalogo from "./pages/Catalogo/Catalogo";
+import PaginaProductos from "./pages/PaginaProductos/PaginaProductos";
 
 function App() {
   return (
@@ -17,7 +17,8 @@ function App() {
         <Route path="/catalogo" element={<Catalogo />} />
 
         {/* :categoriaSlug captura dinámicamente cualquier texto en la URL */}
-        <Route path="/catalogo/:categoriaSlug" element={<PaginaProductos />} />
+
+        <Route path="/catalogo/:slug" element={<PaginaProductos />} />
       </Routes>
     </BrowserRouter>
   );

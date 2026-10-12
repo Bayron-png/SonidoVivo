@@ -1,34 +1,20 @@
-import { useParams } from "react-router-dom";
 import Header from "../organisms/Header";
 import Footer from "../organisms/Footer";
 import ProductosLista from "../organisms/ProductosLista";
 import TituloRedondeado from "../atoms/TituloRedondeado";
 import BotonVolver from "../atoms/botones/BotonVolver";
 
-import productosData from "../../data/productosData";
-import categoriasData from "../../data/categoriasData";
-
-const ProductosTemplate = () => {
-  const { slug } = useParams();
-
-  const categoriaActual = categoriasData.find((cat) => cat.slug === slug);
-
-  const productosFiltrados = productosData.filter(
-    (prod) => prod.categoriaSlug === slug
-  );
-
+const ProductosTemplate = ({ titulo = "Productos", productos = [] }) => {
   return (
     <div className="d-flex flex-column min-vh-100">
       <Header />
 
       <main className="flex-grow-1 container pt-5 mb-4">
-        <BotonVolver label="← Volver a Categorías" ruta ="/catalogo" />
+        <BotonVolver label="← Volver a categorías" ruta="/catalogo" />
 
-        <TituloRedondeado
-          texto={categoriaActual ? categoriaActual.titulo : "Productos"}
-        />
+        <TituloRedondeado texto={titulo} />
 
-        <ProductosLista productos={productosFiltrados} />
+        <ProductosLista productos={productos} />
       </main>
 
       <Footer />
