@@ -5,10 +5,14 @@ import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import Catalogo from "./pages/Catalogo/Catalogo";
 import PaginaProductos from "./pages/PaginaProductos/PaginaProductos";
+import ScrollToTop from "./hooks/ScrollToTop";
 
 function App() {
   return (
     <BrowserRouter>
+      {/* Scrollea hacia arriba cada vez que se cambia de ruta */}
+      <ScrollToTop />
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/catalogo" element={<Catalogo />} />
