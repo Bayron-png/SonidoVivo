@@ -1,3 +1,5 @@
+import BotonAgregarAlCarrito from "../atoms/botones/BotonAgregarAlCarrito";
+
 const ProductCard = ({ producto }) => {
   const disponible = producto.stock > 0;
 
@@ -40,13 +42,8 @@ const ProductCard = ({ producto }) => {
             {disponible ? `Stock: ${producto.stock}` : "Sin stock"}
           </p>
 
-          <button
-            type="button"
-            className="btn btn-primary btn-sm w-100"
-            disabled={!disponible}
-          >
-            Agregar al carrito
-          </button>
+          <BotonAgregarAlCarrito disponible={disponible}/>
+
         </footer>
       </section>
     </article>
