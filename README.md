@@ -20,93 +20,171 @@
 Sonido Vivo es una tienda de instrumentos musicales que actualmente es atendida solo por su dueño y dos vendedores.
 Ofrecen un amplio catálogo de instrumentos y accesorios, pero últimamente reciben muchos pedidos por Whatsapp e Instagram.
 
-El sistema creado brinda al usuario la posibilidad de ver el catálogo con precios y disponibilidad sin tener que consultar al Whatsapp o Instagram,
-y a su vez pudiendo recibir pedidos de forma online con flujo de pagos, seguimiento y actualización de stock.
-
+El sistema creado brinda al usuario la posibilidad de ver el catálogo con precios y disponibilidad sin tener que consultar al Whatsapp o Instagram, y a su vez pudiendo recibir pedidos de forma online con seguimiento y actualización de stock.
 
 ## Estructura del Proyecto
 ```
-Directory structure:
-└── 📁SonidoVivo/
-    ├── README.md
-    ├── 📁SonidoVivo/
-    │   ├── index.html
-    │   ├── package-lock.json
-    │   ├── package.json
-    │   ├── 📁public/
-    │   │   ├── favicon.svg
-    │   │   ├── icons.svg
-    │   │   └── logo.png
-    │   ├── 📁src/
-    │   │   ├── App.jsx
-    │   │   ├── 📁assets/
-    │   │   │   ├── 📁categorias-catalogo/
-    │   │   │   │   ├── accesorios.png
-    │   │   │   │   ├── amplificador.png
-    │   │   │   │   ├── bajo-electrico.png
-    │   │   │   │   ├── bateria.png
-    │   │   │   │   ├── estudio-grabacion.png
-    │   │   │   │   ├── guitarra-acustica.png
-    │   │   │   │   ├── guitarra-electrica.png
-    │   │   │   │   ├── microfono.png
-    │   │   │   │   ├── pedal-efectos.png
-    │   │   │   │   └── teclado-piano.png
-    │   │   │   ├── react.svg
-    │   │   │   └── vite.svg
-    │   │   ├── 📁components/
-    │   │   │   ├── 📁atoms/
-    │   │   │   │   ├── TituloRedondeado.jsx
-    │   │   │   │   ├── 📁botones/
-    │   │   │   │   │   ├── BotonEnviar.jsx
-    │   │   │   │   │   └── BotonVolver.jsx
-    │   │   │   │   ├── 📁catalogo/
-    │   │   │   │   │   ├── ImagenCategoria.jsx
-    │   │   │   │   │   └── TituloCategoria.jsx
-    │   │   │   │   ├── 📁footer/
-    │   │   │   │   │   └── TextoFooter.jsx
-    │   │   │   │   ├── 📁form/
-    │   │   │   │   │   ├── ApellidoInput.jsx
-    │   │   │   │   │   ├── ConfirmPasswordInput.jsx
-    │   │   │   │   │   ├── GmailInput.jsx
-    │   │   │   │   │   ├── NombreInput.jsx
-    │   │   │   │   │   ├── PasswordInput.jsx
-    │   │   │   │   │   ├── RutInput.jsx
-    │   │   │   │   │   └── TelefonoInput.jsx
-    │   │   │   │   └── 📁header/
-    │   │   │   │       ├── LogoHeader.jsx
-    │   │   │   │       └── TextoHeader.jsx
-    │   │   │   ├── 📁molecules/
-    │   │   │   │   ├── CamposLogin.jsx
-    │   │   │   │   ├── CamposRegister.jsx
-    │   │   │   │   ├── CategoriaProducto.jsx
-    │   │   │   │   └── ProductCard.jsx
-    │   │   │   ├── 📁organisms/
-    │   │   │   │   ├── CategoriasCatalogo.jsx
-    │   │   │   │   ├── Footer.jsx
-    │   │   │   │   ├── Header.jsx
-    │   │   │   │   ├── LoginForm.jsx
-    │   │   │   │   └── RegisterForm.jsx
-    │   │   │   └── 📁templates/
-    │   │   │       ├── CatalogoTemplate.jsx
-    │   │   │       ├── LoginTemplate.jsx
-    │   │   │       └── RegisterTemplate.jsx
-    │   │   ├── 📁data/
-    │   │   │   └── categoriasData.js
-    │   │   ├── index.css
-    │   │   ├── main.jsx
-    │   │   ├── 📁pages/
-    │   │   │   ├── 📁Catalogo/
-    │   │   │   │   └── Catalogo.jsx
-    │   │   │   ├── 📁Login/
-    │   │   │   │   └── Login.jsx
-    │   │   │   └── 📁Register/
-    │   │   │       └── Register.jsx
-    │   │   └── 📁utils/
-    │   │       └── 📁validaciones/
-    │   └── vite.config.js
+└── 📁SonidoVivo
+    └── 📁SonidoVivo
+        └── 📁public
+            └── 📁categorias-catalogo
+                ├── accesorios.png
+                ├── amplificador.png
+                ├── bajo-electrico.png
+                ├── bateria.png
+                ├── estudio-grabacion.png
+                ├── guitarra-acustica.png
+                ├── guitarra-electrica.png
+                ├── microfono.png
+                ├── pedal-efectos.png
+                ├── teclado-piano.png
+            └── 📁productos
+                └── 📁accesorios
+                    ├── ac001.png
+                    ├── ac002.png
+                    ├── ac003.png
+                    ├── ac004.png
+                    ├── ac005.png
+                    ├── ac006.png
+                    ├── ac007.png
+                    ├── ac008.png
+                    ├── ac009.png
+                    ├── ac010.png
+                └── 📁amplificadores
+                    ├── am001.png
+                    ├── am002.png
+                    ├── am003.png
+                    ├── am004.png
+                └── 📁bajos-electricos
+                    ├── ba001.png
+                    ├── ba002.png
+                    ├── ba003.png
+                └── 📁baterias
+                    ├── bt001.png
+                    ├── bt002.png
+                    ├── bt003.png
+                    ├── bt004.png
+                    ├── bt005.png
+                └── 📁estudio-grabacion
+                    ├── es001.png
+                    ├── es002.png
+                    ├── es003.png
+                    ├── es004.png
+                    ├── es005.png
+                └── 📁guitarras-acusticas
+                    ├── ga001.png
+                    ├── ga002.png
+                    ├── ga003.png
+                    ├── ga004.png
+                    ├── ga005.png
+                └── 📁guitarras-electricas
+                    ├── ge001.png
+                    ├── ge002.png
+                    ├── ge003.png
+                    ├── ge004.png
+                    ├── ge005.png
+                └── 📁microfonos
+                    ├── mi001.png
+                    ├── mi002.png
+                    ├── mi003.png
+                    ├── mi004.png
+                └── 📁pedales
+                    ├── pe001.png
+                    ├── pe002.png
+                    ├── pe003.png
+                    ├── pe004.png
+                    ├── pe005.png
+                    ├── pe006.png
+                └── 📁teclados-pianos
+                    ├── tc001.png
+                    ├── tc002.png
+                    ├── tc003.png
+                    ├── tc004.png
+            ├── favicon.svg
+            ├── icons.svg
+            ├── logo.png
+        └── 📁src
+            └── 📁assets
+                ├── react.svg
+                ├── vite.svg
+            └── 📁components
+                └── 📁atoms
+                    └── 📁botones
+                        ├── BotonAgregarAlCarrito.jsx
+                        ├── BotonEnviar.jsx
+                        ├── BotonVolver.jsx
+                    └── 📁catalogo
+                        ├── ImagenCategoria.jsx
+                        ├── TituloCategoria.jsx
+                    └── 📁footer
+                        ├── CampoFormulario.jsx
+                        ├── TextoFooter.jsx
+                    └── 📁form
+                        ├── ApellidoInput.jsx
+                        ├── ConfirmPasswordInput.jsx
+                        ├── GmailInput.jsx
+                        ├── NombreInput.jsx
+                        ├── PasswordInput.jsx
+                        ├── RutInput.jsx
+                        ├── TelefonoInput.jsx
+                    └── 📁header
+                        ├── LogoHeader.jsx
+                        ├── TextoHeader.jsx
+                    └── 📁productos
+                        ├── MensajeSinProductos.jsx
+                    ├── TituloRedondeado.jsx
+                └── 📁molecules
+                    └── 📁footer
+                        ├── EnlacesFooter.jsx
+                        ├── IdentidadFooter.jsx
+                        ├── InformacionContacto.jsx
+                    ├── CamposLogin.jsx
+                    ├── CamposRegister.jsx
+                    ├── CategoriaProducto.jsx
+                    ├── ProductCard.jsx
+                └── 📁organisms
+                    ├── CategoriasCatalogo.jsx
+                    ├── Footer.jsx
+                    ├── FormularioContacto.jsx
+                    ├── Header.jsx
+                    ├── LoginForm.jsx
+                    ├── ProductosLista.jsx
+                    ├── RegisterForm.jsx
+                └── 📁templates
+                    ├── CatalogoTemplate.jsx
+                    ├── LoginTemplate.jsx
+                    ├── ProductosTemplate.jsx
+                    ├── RegisterTemplate.jsx
+            └── 📁data
+                ├── categoriasData.js
+                ├── productosData.js
+            └── 📁hooks
+                ├── useProductosPorCategoria.jsx
+            └── 📁pages
+                └── 📁Catalogo
+                    ├── Catalogo.jsx
+                └── 📁Home
+                    ├── Home.jsx
+                └── 📁Login
+                    ├── Login.jsx
+                └── 📁PaginaProductos
+                    ├── PaginaProductos.jsx
+                └── 📁Register
+                    ├── Register.jsx
+            ├── App.jsx
+            ├── index.css
+            ├── main.jsx
+        ├── .gitignore
+        ├── .oxlintrc.json
+        ├── index.html
+        ├── package-lock.json
+        ├── package.json
+        ├── vite.config.js
     ├── package-lock.json
-    └── package.json
+    ├── package.json
+    └── README.md
 ```
+
 ## Como ejecutar el Proyecto
 ### Prerequisitos
 
@@ -135,8 +213,8 @@ Asegúrate de tener instalado **Node.js** (versión 18 o superior recomendada):
 - Haz click en la URL que aparece en el terminal (por defecto generalmente es http://localhost:5173)
 
 ## Material Complementario
-[Drive-SonidoVivo](https://drive.google.com/drive/folders/12_GrU2BjxDYlcv_tYToIAlKlEODdBjeE?usp=drive_link)
-[Tablero-Trello](https://trello.com/b/huyWCOKN)
+- [Drive SonidoVivo](https://drive.google.com/drive/folders/12_GrU2BjxDYlcv_tYToIAlKlEODdBjeE?usp=drive_link)
+- [Tablero de Trello](https://trello.com/b/huyWCOKN)
 ## Bitácora (Registro)
 |Fecha     |Nombre | Acción|
 |----------|-------|-------|
@@ -154,7 +232,7 @@ Asegúrate de tener instalado **Node.js** (versión 18 o superior recomendada):
 |11-10-2026|Bayron |       |
 |12-10-2026|José   |       |
 |12-10-2026|Luis   |       |
-|12-10-2026|Bayron |       |
+|12-10-2026|Bayron | Se completó el apartado de productos del catálogo, se añadieron todos los productos de la base de datos separando la lógica. Se creó el hook que detecta la categoría actual y filtra los productos de dicha categoría. |
 |13-10-2026|José   |       |
 |13-10-2026|Luis   |       |
 |13-10-2026|Bayron |       |
