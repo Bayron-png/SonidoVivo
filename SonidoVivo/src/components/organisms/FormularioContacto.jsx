@@ -50,7 +50,7 @@ const FormularioContacto = () => {
 
   return (
     <>
-      <h2 className="h5 fw-bold mb-3">
+      <h2 id ="contacto" className="h5 fw-bold mb-3">
         Envíanos un mensaje
       </h2>
 
