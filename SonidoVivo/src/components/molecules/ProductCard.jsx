@@ -3,57 +3,51 @@ const ProductCard = ({ producto }) => {
 
   return (
     <article className="card h-100 shadow-sm">
-      <section className="card-body d-flex flex-column">
-        
-        <header className="mb-3">
-          <p className="text-muted small mb-1">
-            {producto.categoria}
-          </p>
+      {/* Imagen del producto */}
+      {producto.imagen && (
+        <div className="text-center p-3 bg-light border-bottom">
+          <img
+            src={producto.imagen}
+            alt={producto.nombre}
+            className="card-img-top"
+            style={{ maxHeight: "160px", objectFit: "contain" }}
+          />
+        </div>
+      )}
 
-          <h2 className="card-title h5">
-            {producto.nombre}
-          </h2>
+      {/* Contenido de la tarjeta */}
+      <section className="card-body d-flex flex-column">
+        <header className="mb-2">
+          <p className="text-muted small mb-1">{producto.categoria}</p>
+          <h3 className="card-title h6 fw-bold text-dark">{producto.nombre}</h3>
         </header>
 
-        <section aria-label="Información del producto">
-          <p className="card-text mb-1">
-            <strong>Marca:</strong> {producto.marca}
+        <div className="mb-3">
+          <p className="card-text small mb-1">
+            <strong>Marca:</strong> {producto.marca} | <strong>Modelo:</strong> {producto.modelo}
           </p>
-
-          <p className="card-text mb-1">
-            <strong>Modelo:</strong> {producto.modelo}
-          </p>
-
-          <p className="card-text text-muted">
+          <p className="card-text small text-muted">
             {producto.descripcion}
           </p>
-        </section>
+        </div>
 
-        <footer className="mt-auto">
-          <p className="h5 fw-bold mb-2">
+        <footer className="mt-auto pt-2">
+          <p className="h5 fw-bold mb-1">
             ${producto.precio.toLocaleString("es-CL")}
           </p>
 
-          <p
-            className={disponible ? "text-success" : "text-danger"}
-            aria-label={`Disponibilidad: ${
-              disponible ? `${producto.stock} unidades` : "sin stock"
-            }`}
-          >
-            {disponible
-              ? `Stock: ${producto.stock}`
-              : "Sin stock"}
+          <p className={`small mb-2 ${disponible ? "text-success" : "text-danger"}`}>
+            {disponible ? `Stock: ${producto.stock}` : "Sin stock"}
           </p>
 
           <button
             type="button"
-            className="btn btn-primary w-100"
+            className="btn btn-primary btn-sm w-100"
             disabled={!disponible}
           >
             Agregar al carrito
           </button>
         </footer>
-
       </section>
     </article>
   );

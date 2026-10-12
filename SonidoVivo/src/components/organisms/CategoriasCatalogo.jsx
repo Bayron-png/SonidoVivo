@@ -9,6 +9,7 @@ const CategoriasCatalogo = ({ categorias = categoriasData }) => {
           <CategoriaProducto 
             src={cat.src} 
             titulo={cat.titulo} 
+            slug={cat.slug}
           />
         </div>
       ))}
