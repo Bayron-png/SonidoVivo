@@ -232,7 +232,7 @@ Asegúrate de tener instalado **Node.js** (versión 18 o superior recomendada):
 |11-10-2026|Bayron |       |
 |12-10-2026|José   |       |
 |12-10-2026|Luis   |       |
-|12-10-2026|Bayron | Se completó el apartado de productos del catálogo, se añadieron todos los productos de la base de datos separando la lógica. Se creó el hook que detecta la categoría actual y filtra los productos de dicha categoría. |
+|12-10-2026|Bayron | Se completó el apartado de productos del catálogo, se añadieron todos los productos de la base de datos separando la lógica. Se creó el hook que detecta la categoría actual y filtra los productos de dicha categoría. Se creó el apartado y la ventana de carrito además de vincularlo dentro del header.|
 |13-10-2026|José   |       |
 |13-10-2026|Luis   |       |
 |13-10-2026|Bayron |       |
