@@ -105,6 +105,10 @@ body {
   border-color: var(--color-principal) !important;
 }
 
+.contenedor-loginform{
+  margin-top: 3rem;
+  margin-bottom: 4rem;
+}
 
 /* ===================================
    FOOTER SONIDOVIVO
