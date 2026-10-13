@@ -11,7 +11,7 @@ const CarritoTemplate = () => {
 
       {/* Contenido dinámico que cambia según la pantalla */}
       <main className="flex-grow-1 container pt-5 mb-4">
-        <BotonVolver label = "← Ir al catálogo" ruta = "/" />
+        <BotonVolver label = "← Ir al catálogo" ruta = "/catalogo" />
         <TituloRedondeado texto = "Carrito"/>
         <ListaCarrito />
       </main>
