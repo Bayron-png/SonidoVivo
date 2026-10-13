@@ -3,10 +3,11 @@ import PasswordInput from "../atoms/form/PasswordInput";
 import BotonEnviar from "../atoms/botones/BotonEnviar";
 
 import { Link } from 'react-router-dom';
+import { validarCorreo } from "../../utils/validaciones/validacionCorreo";
 
 const CamposLogin = ({ gmail, contrasena, onGmailChange, onPasswordChange }) => (
   <>
-    <GmailInput value={gmail} onChange={onGmailChange} />
+    <GmailInput value={gmail} onChange={onGmailChange} validar={validarCorreo}/>
     <PasswordInput value={contrasena} onChange={onPasswordChange} />
 
     <div className="contenedor-registrar">

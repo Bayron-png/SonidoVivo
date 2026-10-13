@@ -1,30 +1,17 @@
 import React, { useState } from 'react';
 import { Form } from 'react-bootstrap';
 
-const dominiosProhibidos = [
-  'gmail.com',
-  'hotmail.com',
-  'outlook.com',
-  'yahoo.com',
-  'icloud.com'
-];
+const GmailInput = ({ value, onChange, validar}) => {
 
-const GmailInput = ({ value, onChange }) => {
-  const [error, setError] = useState('');
+  const [click, setClick] = useState(false);
+  const error = validar(value);
 
+    console.log("validar:", validar, typeof validar);
+  
   const handleEmailChange = (e) => {
-    const val = e.target.value;
+    setClick(true)
     onChange(e);
-
-    const dominio = val.split('@')[1]?.toLowerCase();
-
-    // 3. Validar dominio
-    if (val && dominiosProhibidos.includes(dominio)) {
-      setError('No se permiten correos personales (Gmail, Hotmail, etc.). Usa un correo corporativo.');
-    } else {
-      setError('');
-    }
-  };
+  }
 
   return (
     <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -34,16 +21,18 @@ const GmailInput = ({ value, onChange }) => {
       
       <Form.Control 
         type="email" 
-        placeholder="Ingrese su correo corporativo" 
+        placeholder="Ingrese su correo" 
         value={value}
         onChange={handleEmailChange}
-        isInvalid={error} /* Activa los bordes rojos de Bootstrap si hay error */
-        required 
+        isInvalid={click && !!error} /* Activa los bordes rojos de Bootstrap si hay error */
+        isValid={click && !error && !!value.trim()}
+        required
       />
-
-      <Form.Control.Feedback type="invalid">
-        {error}
-      </Form.Control.Feedback>
+      {click && error && (
+        <Form.Control.Feedback type="invalid">
+          {error}
+        </Form.Control.Feedback>
+      )}
     </Form.Group>
   );
 };

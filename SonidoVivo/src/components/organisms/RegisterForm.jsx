@@ -4,6 +4,7 @@ import CamposRegister from "../molecules/CamposRegister";
 import TituloRedondeado from "../atoms/TituloRedondeado";
 import { validarNombre } from "../../utils/validaciones/validacionNombre";
 import { validarApellido } from "../../utils/validaciones/validacionApellido";
+import { validarCorreo } from "../../utils/validaciones/validacionCorreo";
 
 const RegisterForm = ({ onSubmit }) => {
     const [nombre, setNombre] = useState("");
@@ -51,8 +52,6 @@ const RegisterForm = ({ onSubmit }) => {
                                 onTelefonoChange={(e) => setTelefono(e.target.value)}
                                 onPasswordChange={(e) => setPassword(e.target.value)}
                                 onConfirmPasswordChange={(e) => setConfirmPassword(e.target.value)}
-                                validarNombre={validarNombre}
-                                validarApellido={validarApellido} 
                             />
                         </Form>
                     </Col>

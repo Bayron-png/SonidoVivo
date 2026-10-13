@@ -10,6 +10,7 @@ import BotonEnviar from "../atoms/botones/BotonEnviar";
 import { Link } from "react-router-dom";
 import { validarNombre } from "../../utils/validaciones/validacionNombre";
 import { validarApellido } from "../../utils/validaciones/validacionApellido";
+import { validarCorreo } from "../../utils/validaciones/validacionCorreo";
 
 const CamposRegister = ({
   nombre, apellido, rut, gmail, telefono,
@@ -22,7 +23,7 @@ const CamposRegister = ({
     <NombreInput value={nombre} onChange={onNombreChange} validar={validarNombre}/>
     <ApellidoInput value={apellido} onChange={onApellidoChange} validar={validarApellido}/>
     <RutInput value={rut} onChange={onRutChange} />
-    <GmailInput value={gmail} onChange={onGmailChange} />
+    <GmailInput value={gmail} onChange={onGmailChange} validar={validarCorreo}/>
     <TelefonoInput value={telefono} onChange={onTelefonoChange} />
     <PasswordInput value={password} onChange={onPasswordChange} />
     <ConfirmPasswordInput value={confirmPassword} onChange={onConfirmPasswordChange} passwordToMatch={password}/>
