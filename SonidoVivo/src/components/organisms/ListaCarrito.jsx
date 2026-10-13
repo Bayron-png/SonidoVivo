@@ -1,13 +1,22 @@
+import { useState } from "react";
 import { useCart } from "../../context/CarritoContext";
 import CartItem from "../molecules/CartItem";
 import TotalCarrito from "../atoms/carrito/TotalCarrito";
 import OpcionesEnvio from "../atoms/carrito/OpcionesEnvio";
-import MensajeSinProductos from "../atoms/productos/MensajeSinProductos";
 import BotonProcederPago from "../atoms/carrito/BotonProcederPago";
+import MensajeSinProductos from "../atoms/productos/MensajeSinProductos";
+import MensajePedidoExitoso from "../atoms/carrito/MensajePedidoExitoso";
 
 const ListaCarrito = () => {
   const { carrito } = useCart();
+  const [comprado, setComprado] = useState(false);
 
+  // Si se completó el pago
+  if (comprado) {
+    return <MensajePedidoExitoso onVolver={() => setComprado(false)} />;
+  }
+
+  // Si el carrito está vacío
   if (carrito.length === 0) {
     return <MensajeSinProductos mensaje="Tu carrito está vacío." />;
   }
@@ -18,13 +27,10 @@ const ListaCarrito = () => {
         <CartItem key={item.id} item={item} />
       ))}
       
-      {/* Selector de tipo de envío */}
       <OpcionesEnvio />
-
-      {/* Desglose de totales */}
       <TotalCarrito />
 
-      <BotonProcederPago/>
+      <BotonProcederPago onPagoCompletado={() => setComprado(true)} />
     </div>
   );
 };
