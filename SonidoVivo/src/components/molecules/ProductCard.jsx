@@ -42,7 +42,7 @@ const ProductCard = ({ producto }) => {
             {disponible ? `Stock: ${producto.stock}` : "Sin stock"}
           </p>
 
-          <BotonAgregarAlCarrito disponible={disponible}/>
+          <BotonAgregarAlCarrito productoId={producto.id} disponible={disponible} />
 
         </footer>
       </section>

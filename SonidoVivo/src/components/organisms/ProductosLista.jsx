@@ -1,16 +1,27 @@
 import ProductCard from "../molecules/ProductCard";
 import MensajeSinProductos from "../atoms/productos/MensajeSinProductos";
+import { useCart } from "../../context/CarritoContext";
 
-const ProductosLista = ({ productos }) => {
-  // Si no hay productos
-  if (!productos || productos.length === 0) {
+const ProductosLista = ({ productos: productosFiltrados }) => {
+  // 1. Obtenemos los productos con stock actualizado desde el Context
+  const { productos: productosContext } = useCart();
+
+  // 2. Si nos pasan productos filtrados (ej. por categoría), buscamos su versión actualizada del Context.
+  //    Si no nos pasan nada, usamos la lista completa del Context.
+  const productosAMostrar = productosFiltrados
+    ? productosFiltrados.map(
+        (p) => productosContext.find((item) => item.id === p.id) || p
+      )
+    : productosContext;
+
+  // 3. Validación de lista vacía
+  if (!productosAMostrar || productosAMostrar.length === 0) {
     return <MensajeSinProductos mensaje="No hay productos registrados en esta categoría." />;
   }
 
-  // Si hay productos
   return (
     <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
-      {productos.map((producto) => (
+      {productosAMostrar.map((producto) => (
         <div className="col" key={producto.id}>
           <ProductCard producto={producto} />
         </div>
