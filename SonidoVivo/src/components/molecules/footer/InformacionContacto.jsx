@@ -33,8 +33,7 @@ const InformacionContacto = () => {
           <li>
             <strong>Horario de atención:</strong>
             <p className="mb-0">
-              De Lunes a Sábado 
-              10:00 a 20:00 horas
+              De Lunes a Sábado - 10:00 a 20:00 horas
             </p>
           </li>
 
