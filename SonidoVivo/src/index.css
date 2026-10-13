@@ -119,9 +119,7 @@ body {
   margin-bottom: 4rem;
 }
 
-/* ===================================
-   FOOTER SONIDOVIVO
-=================================== */
+/* Footer SonidoVivo */
 
 .footer-sonidovivo {
   background: linear-gradient(
@@ -242,4 +240,151 @@ body {
   width: 60px;
   height: 60px;
   object-fit: cover;
+}
+
+
+/* Home - Banner Nosotros */
+
+.home-banner {
+  position: relative;
+  min-height: 360px;
+  color: var(--color-titulo);
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(8, 6, 13, 0.95),
+      rgba(39, 42, 179, 0.5)
+    ),
+    url("/home/concierto-home.jpg");
+
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.home-banner-contenido {
+  max-width: 600px;
+}
+
+.home-banner h1 {
+  font-size: clamp(2.2rem, 4vw, 3.8rem);
+}
+
+.home-banner-destacado {
+  color: #70d4ff;
+}
+
+/* Botón Conócenos del banner */
+
+.home-banner .home-banner-boton {
+  background: #70d4ff;
+  color: #08060d;
+  border: 1px solid #70d4ff;
+  border-radius: 30px;
+  padding: 0.8rem 2rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.home-banner .home-banner-boton:hover,
+.home-banner .home-banner-boton:focus-visible {
+  background: #ffffff;
+  color: var(--color-principal);
+  border-color: #ffffff;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 767px) {
+  .home-banner {
+    min-height: 420px;
+    text-align: center;
+  }
+
+  .home-banner-contenido {
+    margin-inline: auto;
+  }
+}
+
+
+/* Home - Eventos Musicales */
+
+.home-evento-card {
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+.home-evento-card:hover {
+  transform: translateY(-4px);
+}
+
+.home-evento-imagen {
+  width: 100%;
+  height: 100%;
+  min-height: 210px;
+  object-fit: cover;
+}
+
+.home-evento-boton {
+  color: var(--color-principal);
+  background-color: #ffffff;
+  border: 1px solid var(--color-principal);
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.home-evento-boton:hover {
+  background-color: var(--color-principal);
+  color: #ffffff;
+}
+
+@media (max-width: 575px) {
+  .home-evento-imagen {
+    height: 190px;
+    min-height: 0;
+  }
+}
+
+
+
+/* Home - Productos Destacados */
+
+.home-producto-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.home-producto-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.home-producto-card .card-img-top {
+  width: 100%;
+}
+
+.home-producto-card .card-body {
+  padding: 1.25rem;
+}
+
+.home-ver-catalogo {
+  background-color: var(--color-principal);
+  color: #ffffff;
+  border-radius: 8px;
+  padding: 0.75rem 1.25rem;
+  font-weight: 600;
+}
+
+.home-ver-catalogo:hover,
+.home-ver-catalogo:focus-visible {
+  background-color: var(--color-principal-degradado);
+  color: #ffffff;
 }
