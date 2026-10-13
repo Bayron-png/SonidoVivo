@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { Form } from 'react-bootstrap';
 
-const ApellidoInput = ({ value, onChange }) => {
+const ApellidoInput = ({ value, onChange, validar }) => {
+
+    const [click, setClick] = useState(false);
+    const error = validar(value);
 
     const handleApellidoChange = (e) => {
-        const val = e.target.value;
+        setClick(true)
         onChange(e);
     };
 
@@ -19,8 +22,14 @@ const ApellidoInput = ({ value, onChange }) => {
                 placeholder="Tu apellido"
                 value={value}
                 onChange={handleApellidoChange}
-                required
+                isInvalid={click && !!error}
+                isValid={click && !error && !!value.trim()}
             />
+            {click && error && (
+                <Form.Control.Feedback type="invalid">
+                    {error}
+                </Form.Control.Feedback>
+            )}
         </Form.Group>
     );
 };

@@ -8,6 +8,8 @@ import ConfirmPasswordInput from "../atoms/form/ConfirmPasswordInput"
 import BotonEnviar from "../atoms/botones/BotonEnviar";
 
 import { Link } from "react-router-dom";
+import { validarNombre } from "../../utils/validaciones/validacionNombre";
+import { validarApellido } from "../../utils/validaciones/validacionApellido";
 
 const CamposRegister = ({
   nombre, apellido, rut, gmail, telefono,
@@ -17,8 +19,8 @@ const CamposRegister = ({
   onPasswordChange, onConfirmPasswordChange }) => (
 
   <>
-    <NombreInput value={nombre} onChange={onNombreChange} />
-    <ApellidoInput value={apellido} onChange={onApellidoChange} />
+    <NombreInput value={nombre} onChange={onNombreChange} validar={validarNombre}/>
+    <ApellidoInput value={apellido} onChange={onApellidoChange} validar={validarApellido}/>
     <RutInput value={rut} onChange={onRutChange} />
     <GmailInput value={gmail} onChange={onGmailChange} />
     <TelefonoInput value={telefono} onChange={onTelefonoChange} />
