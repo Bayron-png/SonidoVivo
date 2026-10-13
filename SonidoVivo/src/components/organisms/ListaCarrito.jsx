@@ -1,10 +1,11 @@
 import { useCart } from "../../context/CarritoContext";
 import CartItem from "../molecules/CartItem";
 import TotalCarrito from "../atoms/carrito/TotalCarrito";
+import OpcionesEnvio from "../atoms/carrito/OpcionesEnvio";
 import MensajeSinProductos from "../atoms/productos/MensajeSinProductos";
 
 const ListaCarrito = () => {
-  const { carrito, total } = useCart();
+  const { carrito } = useCart();
 
   if (carrito.length === 0) {
     return <MensajeSinProductos mensaje="Tu carrito está vacío." />;
@@ -15,8 +16,16 @@ const ListaCarrito = () => {
       {carrito.map((item) => (
         <CartItem key={item.id} item={item} />
       ))}
-      <TotalCarrito total={total} />
-      <button className="btn btn-success w-100 mt-2">Proceder al pago</button>
+      
+      {/* Selector de tipo de envío */}
+      <OpcionesEnvio />
+
+      {/* Desglose de totales */}
+      <TotalCarrito />
+
+      <button className="btn btn-success w-100 mt-3 fw-bold py-2">
+        Proceder al pago
+      </button>
     </div>
   );
 };
