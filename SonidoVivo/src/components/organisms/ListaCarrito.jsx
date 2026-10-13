@@ -3,6 +3,7 @@ import CartItem from "../molecules/CartItem";
 import TotalCarrito from "../atoms/carrito/TotalCarrito";
 import OpcionesEnvio from "../atoms/carrito/OpcionesEnvio";
 import MensajeSinProductos from "../atoms/productos/MensajeSinProductos";
+import BotonProcederPago from "../atoms/carrito/BotonProcederPago";
 
 const ListaCarrito = () => {
   const { carrito } = useCart();
@@ -23,9 +24,7 @@ const ListaCarrito = () => {
       {/* Desglose de totales */}
       <TotalCarrito />
 
-      <button className="btn btn-success w-100 mt-3 fw-bold py-2">
-        Proceder al pago
-      </button>
+      <BotonProcederPago/>
     </div>
   );
 };
