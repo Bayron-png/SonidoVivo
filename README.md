@@ -247,9 +247,7 @@ Asegúrate de tener instalado **Node.js** (versión 18 o superior recomendada):
 |12-10-2026|Luis   |       |
 |12-10-2026|Bayron | Se completó el apartado de productos del catálogo, se añadieron todos los productos de la base de datos separando la lógica. Se creó el hook que detecta la categoría actual y filtra los productos de dicha categoría. Se creó y finalizó el apartado y la ventana de carrito además de vincularlo dentro del header.|
 |13-10-2026|José   |       |
-|13-10-2026|Luis   |Se agregaron validaciones para campos input "nombre" y "apellido" del formulario de registro, separacion de responsabilidades, las validaciones ahora se encuentran en sus respectivos archivos js en la carpeta utils/validaciones.
-Los campos obligatorios tienen un mensaje de error personalizado y este cambia segun la validacion que no esten cumpliendo (minimo de longitud y ingresar numeros o simbolos).
-Tambien se cambio la validacion del correo durante la separacion de responsabilidades para que acepte cualquier dominio de correo y no solo uno corporativo como tenia en un principio. Esto en la rama "feature/validations-inputs", no se hizo pull request al main.
+|13-10-2026|Luis   |Se agregaron validaciones para campos input "nombre" y "apellido" del formulario de registro, separacion de responsabilidades, las validaciones ahora se encuentran en sus respectivos archivos js en la carpeta utils/validaciones. Los campos obligatorios tienen un mensaje de error personalizado y este cambia segun la validacion que no esten cumpliendo (minimo de longitud y ingresar numeros o simbolos). Tambien se cambio la validacion del correo durante la separacion de responsabilidades para que acepte cualquier dominio de correo y no solo uno corporativo como tenia en un principio. Esto en la rama "feature/validations-inputs", no se hizo pull request al main.
 |13-10-2026|Bayron |       |
 |14-10-2026|José   |       |
 |14-10-2026|Luis   |       |
