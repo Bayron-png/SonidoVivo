@@ -250,7 +250,7 @@ Asegúrate de tener instalado **Node.js** (versión 18 o superior recomendada):
 |13-10-2026|Luis   |Se agregaron validaciones para campos input "nombre" y "apellido" del formulario de registro, separacion de responsabilidades, las validaciones ahora se encuentran en sus respectivos archivos js en la carpeta utils/validaciones. Los campos obligatorios tienen un mensaje de error personalizado y este cambia segun la validacion que no esten cumpliendo (minimo de longitud y ingresar numeros o simbolos). Tambien se cambio la validacion del correo durante la separacion de responsabilidades para que acepte cualquier dominio de correo y no solo uno corporativo como tenia en un principio. Esto en la rama "feature/validations-inputs", no se hizo pull request al main.
 |13-10-2026|Bayron |       |
 |14-10-2026|José   |       |
-|14-10-2026|Luis   |       |
+|14-10-2026|Luis   |Se finalizo la creacion de las validaciones de campos de los formularios login y register, ambos teniendo validadores en el formulario como archivos js individuales por cada campo que tuviera que cumplir con algun criterio. Cuando pasan las validaciones redireccionan a la pagina de inicio. Se corrigieron errores en el proceso. Se realizo merge pull request de la rama feature/validations-inputs con el main|
 |14-10-2026|Bayron |       |
 |15-10-2026|José   |       |
 |15-10-2026|Luis   |       |
