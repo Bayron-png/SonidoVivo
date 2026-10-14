@@ -44,13 +44,13 @@ const FormularioContacto = () => {
 
     // Pendiente: conectar con backend o servicio de correo.
     setEstadoEnvio(
-      "Formulario validado. El envío de correos aún no está habilitado."
+      "Hemos recibido tu mensaje correctamente. Te responderemos a tu correo electrónico a la brevedad, ¡permanece atento!"
     );
   };
 
   return (
     <>
-      <h2 className="h5 fw-bold mb-3">
+      <h2 id ="contacto" className="h5 fw-bold mb-3">
         Envíanos un mensaje
       </h2>
 

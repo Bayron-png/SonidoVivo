@@ -1,21 +1,20 @@
 import Header from "../organisms/Header";
 import Footer from "../organisms/Footer";
+import BannerNosotros from "../organisms/home/BannerNosotros";
+import EventosDestacados from "../organisms/home/EventosDestacados";
+import ProductosDestacados from "../organisms/home/ProductosDestacados";
 
 const HomeTemplate = () => {
   return (
     <div className="d-flex flex-column min-vh-100">
       <Header />
 
-      <main className="container flex-grow-1 py-5">
-        <section aria-labelledby="titulo-home">
-          <h2 id="titulo-home" className="text-center">
-            Bienvenido a Sonido Vivo
-          </h2>
+      <main className="container flex-grow-1 py-4">
+        <BannerNosotros />
 
-          <p className="text-center">
-            Tu tienda de instrumentos musicales y equipos de sonido.
-          </p>
-        </section>
+       <EventosDestacados />
+
+        <ProductosDestacados />
       </main>
 
       <Footer />
