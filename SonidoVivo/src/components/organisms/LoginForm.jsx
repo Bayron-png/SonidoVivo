@@ -2,14 +2,56 @@ import { useState } from "react";
 import { Container, Row, Col, Form } from "react-bootstrap";
 import CamposLogin from "../molecules/CamposLogin";
 import TituloRedondeado from "../atoms/TituloRedondeado";
+import { validarCorreoLogin } from "../../utils/validaciones/validacionCorreoLogin";
+import { useNavigate } from "react-router-dom";
+
+// usuarios ficticios para la simulacion de login
+const usuariosDemo = [
+  {
+    correo: "sonidovivo@gmail.com",
+    password: "1234567A"
+  }
+];
 
 const LoginForm = ({onSubmit}) => {
   const [gmail, setGmail] = useState("");
   const [password, setPassword] = useState("");
+  const [errorCredenciales, setErrorCredenciales] = useState(false);
+
+  const navigate = useNavigate();
 
   const formularioEnviado = (e) => {
     e.preventDefault();
-    onSubmit({gmail, password});
+
+    // Comprueba que el correo cumpla el formato
+    const errorCorreo = validarCorreoLogin(gmail);
+
+    if (errorCorreo) {
+      return;
+    }
+
+    //comprueba que correo y contraseña coincidan con los datos de prueba
+    const usuarioEncontrado = usuariosDemo.find(
+      (usuario) =>
+        usuario.correo === gmail.trim() &&
+        usuario.password === password
+    );
+
+    // Si no existe coincidencia, marca error
+    if (!usuarioEncontrado) {
+      setErrorCredenciales(true);
+      return;
+    }
+
+    // Si las credenciales son correctas, limpia el error
+    setErrorCredenciales(false);
+
+    // Envía los datos al componente padre
+    if (onSubmit){  
+      onSubmit({gmail: gmail.trim(), password});
+    }
+
+    navigate("/")
   };
 
   return (
@@ -28,8 +70,10 @@ const LoginForm = ({onSubmit}) => {
               <CamposLogin
                 gmail={gmail}
                 password={password}
-                onGmailChange={(e) => setGmail(e.target.value)}
-                onPasswordChange={(e) => setPassword(e.target.value)}
+                onGmailLoginChange={(e) => {setGmail(e.target.value); setErrorCredenciales(false);}}
+                onPasswordLoginChange={(e) => {setPassword(e.target.value); setErrorCredenciales(false);}}
+                validarCorreoLogin={validarCorreoLogin}
+                errorCredenciales={errorCredenciales}
               />
             </Form>
           </Col>
