@@ -21,5 +21,11 @@ export const validarLongitudMinima = (valor, minimo) => {
     return "";
 };
 
-
+// Cuenta los caracteres incluyendo espacios
+export const validarLongitudMinimaConEspacios = (valor, minimo) => {
+    if (valor.length < minimo) {
+        return `Debe tener al menos ${minimo} caracteres`;
+    }
+    return "";
+};
 

@@ -1,45 +1,36 @@
 import React, { useState } from 'react';
 import { Form } from 'react-bootstrap';
 
-const PasswordInput = ({ value, onChange }) => {
-  const [error, setError] = useState('');
+const PasswordInput = ({ value, onChange, validar }) => {
+
+  const [click, setClick] = useState(false);
+  const error = validar(value);
 
   const handlePasswordChange = (e) => {
-    const val = e.target.value;
-
-    // 1. Ejecutar el onChange que viene del padre
+    setClick(true)
     onChange(e);
-
-    // 2. Validaciones
-    if (!val) {
-      setError('');
-    } else if (val.length < 8) {
-      setError('La contraseña debe tener al menos 8 caracteres.');
-    } else if (!/[A-Z]/.test(val)) {
-      setError('La contraseña debe contener al menos una letra mayúscula.');
-    } else {
-      setError(''); // Todo correcto
-    }
   };
 
   return (
     <Form.Group className="mb-3" controlId="formBasicPassword">
       <Form.Label className="fw-bold">
-        Contraseña
+        Contraseña (*)
       </Form.Label>
-      
-      <Form.Control 
-        type="password" 
-        placeholder="Ingrese su contraseña" 
+
+      <Form.Control
+        type="password"
+        placeholder="Ingrese su contraseña"
         value={value}
         onChange={handlePasswordChange}
-        isInvalid={!!error}
-        required 
+        isInvalid={click && !!error}
+        isValid={click && !error && !!value.trim()}
+        required
       />
-
+    {click && error && (
       <Form.Control.Feedback type="invalid">
         {error}
       </Form.Control.Feedback>
+    )}
     </Form.Group>
   );
 };

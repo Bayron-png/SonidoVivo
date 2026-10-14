@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 import { validarNombre } from "../../utils/validaciones/validacionNombre";
 import { validarApellido } from "../../utils/validaciones/validacionApellido";
 import { validarCorreo } from "../../utils/validaciones/validacionCorreo";
+import { validarPassword } from "../../utils/validaciones/validacionPassword";
 
 const CamposRegister = ({
   nombre, apellido, rut, gmail, telefono,
@@ -25,7 +26,7 @@ const CamposRegister = ({
     <RutInput value={rut} onChange={onRutChange} />
     <GmailInput value={gmail} onChange={onGmailChange} validar={validarCorreo}/>
     <TelefonoInput value={telefono} onChange={onTelefonoChange} />
-    <PasswordInput value={password} onChange={onPasswordChange} />
+    <PasswordInput value={password} onChange={onPasswordChange} validar={validarPassword}/>
     <ConfirmPasswordInput value={confirmPassword} onChange={onConfirmPasswordChange} passwordToMatch={password}/>
 
     <div className="contenedor-redireccion-login">
