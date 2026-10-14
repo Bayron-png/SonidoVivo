@@ -12,6 +12,8 @@ import { validarNombre } from "../../utils/validaciones/validacionNombre";
 import { validarApellido } from "../../utils/validaciones/validacionApellido";
 import { validarCorreo } from "../../utils/validaciones/validacionCorreo";
 import { validarPassword } from "../../utils/validaciones/validacionPassword";
+import { validarRut } from "../../utils/validaciones/validacionRut";
+import { validarTelefono } from "../../utils/validaciones/validacionTelefono";
 
 const CamposRegister = ({
   nombre, apellido, rut, gmail, telefono,
@@ -23,9 +25,9 @@ const CamposRegister = ({
   <>
     <NombreInput value={nombre} onChange={onNombreChange} validar={validarNombre}/>
     <ApellidoInput value={apellido} onChange={onApellidoChange} validar={validarApellido}/>
-    <RutInput value={rut} onChange={onRutChange} />
+    <RutInput value={rut} onChange={onRutChange} validar={validarRut}/>
     <GmailInput value={gmail} onChange={onGmailChange} validar={validarCorreo}/>
-    <TelefonoInput value={telefono} onChange={onTelefonoChange} />
+    <TelefonoInput value={telefono} onChange={onTelefonoChange} validar={validarTelefono}/>
     <PasswordInput value={password} onChange={onPasswordChange} validar={validarPassword}/>
     <ConfirmPasswordInput value={confirmPassword} onChange={onConfirmPasswordChange} passwordToMatch={password}/>
 
