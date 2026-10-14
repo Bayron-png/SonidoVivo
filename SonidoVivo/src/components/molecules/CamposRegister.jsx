@@ -8,6 +8,12 @@ import ConfirmPasswordInput from "../atoms/form/ConfirmPasswordInput"
 import BotonEnviar from "../atoms/botones/BotonEnviar";
 
 import { Link } from "react-router-dom";
+import { validarNombre } from "../../utils/validaciones/validacionNombre";
+import { validarApellido } from "../../utils/validaciones/validacionApellido";
+import { validarCorreo } from "../../utils/validaciones/validacionCorreo";
+import { validarPassword } from "../../utils/validaciones/validacionPassword";
+import { validarRut } from "../../utils/validaciones/validacionRut";
+import { validarTelefono } from "../../utils/validaciones/validacionTelefono";
 
 const CamposRegister = ({
   nombre, apellido, rut, gmail, telefono,
@@ -17,12 +23,12 @@ const CamposRegister = ({
   onPasswordChange, onConfirmPasswordChange }) => (
 
   <>
-    <NombreInput value={nombre} onChange={onNombreChange} />
-    <ApellidoInput value={apellido} onChange={onApellidoChange} />
-    <RutInput value={rut} onChange={onRutChange} />
-    <GmailInput value={gmail} onChange={onGmailChange} />
-    <TelefonoInput value={telefono} onChange={onTelefonoChange} />
-    <PasswordInput value={password} onChange={onPasswordChange} />
+    <NombreInput value={nombre} onChange={onNombreChange} validar={validarNombre}/>
+    <ApellidoInput value={apellido} onChange={onApellidoChange} validar={validarApellido}/>
+    <RutInput value={rut} onChange={onRutChange} validar={validarRut}/>
+    <GmailInput value={gmail} onChange={onGmailChange} validar={validarCorreo}/>
+    <TelefonoInput value={telefono} onChange={onTelefonoChange} validar={validarTelefono}/>
+    <PasswordInput value={password} onChange={onPasswordChange} validar={validarPassword}/>
     <ConfirmPasswordInput value={confirmPassword} onChange={onConfirmPasswordChange} passwordToMatch={password}/>
 
     <div className="contenedor-redireccion-login">

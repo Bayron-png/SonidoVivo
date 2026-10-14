@@ -2,6 +2,14 @@ import { useState } from "react";
 import { Container, Row, Col, Form } from "react-bootstrap";
 import CamposRegister from "../molecules/CamposRegister";
 import TituloRedondeado from "../atoms/TituloRedondeado";
+import { useNavigate } from "react-router-dom";
+import { validarNombre } from "../../utils/validaciones/validacionNombre";
+import { validarApellido } from "../../utils/validaciones/validacionApellido";
+import { validarRut } from "../../utils/validaciones/validacionRut";
+import { validarCorreo } from "../../utils/validaciones/validacionCorreo";
+import { validarTelefono } from "../../utils/validaciones/validacionTelefono";
+import { validarPassword } from "../../utils/validaciones/validacionPassword";
+import { validarConfirmPassword } from "../../utils/validaciones/validacionConfirmPassword";
 
 const RegisterForm = ({ onSubmit }) => {
     const [nombre, setNombre] = useState("");
@@ -12,14 +20,37 @@ const RegisterForm = ({ onSubmit }) => {
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
 
+    const navigate = useNavigate();
+
     const formularioEnviado = (e) => {
         e.preventDefault();
+
+        console.log("1. Se envió el formulario");
+        const errores = [
+            validarNombre(nombre),
+            validarApellido(apellido),
+            validarRut(rut),
+            validarCorreo(gmail),
+            validarTelefono(telefono),
+            validarPassword(password),
+            validarConfirmPassword(confirmPassword, password)
+        ]; 
+        console.log("2. Errores encontrados:", errores);
+        if (errores.some((error) => error !== "")) {
+            console.log("3. Hay errores. No se redirige.");
+            return;
+        }
+            console.log("3. Todos los campos son válidos");
         onSubmit({
             nombre, apellido, rut,
             gmail, telefono,
             password, confirmPassword
         });
+        console.log("4. Ejecutando redirección");
+        navigate("/");
     };
+
+    
 
     return (
         <div className="contenedor-loginform">
