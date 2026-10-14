@@ -14,7 +14,7 @@ const ApellidoInput = ({ value, onChange, validar }) => {
     return (
         <Form.Group className="mb-3" controlId="formBasicApellido">
             <Form.Label className="fw-bold">
-                Apellido
+                Apellido (*)
             </Form.Label>
 
             <Form.Control

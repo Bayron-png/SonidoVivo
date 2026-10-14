@@ -5,8 +5,6 @@ const GmailInput = ({ value, onChange, validar}) => {
 
   const [click, setClick] = useState(false);
   const error = validar(value);
-
-    console.log("validar:", validar, typeof validar);
   
   const handleEmailChange = (e) => {
     setClick(true)
@@ -16,7 +14,7 @@ const GmailInput = ({ value, onChange, validar}) => {
   return (
     <Form.Group className="mb-3" controlId="formBasicEmail">
       <Form.Label className="fw-bold">
-        Correo
+        Correo (*)
       </Form.Label>
       
       <Form.Control 
