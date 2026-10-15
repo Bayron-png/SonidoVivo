@@ -50,19 +50,19 @@ const VentanaConfirmacion = ({
 
             {/* Botones */}
             <div className="modal-footer justify-content-center bg-light">
-              <BotonAccion
+              <ButtonAction
                 variant="secondary"
                 onClick={onCancelar}
               >
                 Cancelar
-              </BotonAccion>
+              </ButtonAction>
 
-              <BotonAccion
+              <ButtonAction
                 variant={varianteConfirmar}
                 onClick={onConfirmar}
               >
                 {textoConfirmar}
-              </BotonAccion>
+              </ButtonAction>
             </div>
           </div>
         </div>

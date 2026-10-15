@@ -1,4 +1,3 @@
-// src/components/organisms/TablaProductos.jsx
 import React, { useState } from "react";
 import Buscador from "../molecules/Buscador";
 import FilaProducto from "../molecules/FilaProducto";
