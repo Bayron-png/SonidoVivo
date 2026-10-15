@@ -29,14 +29,28 @@ export const ProductProvider = ({ children }) => {
               precio: Number(productoActualizado.precio),
               stock: Number(productoActualizado.stock),
             }
-          : p
-      )
+          : p,
+      ),
     );
   };
 
   // Eliminar un producto del catálogo
   const eliminarProducto = (id) => {
     setProductos((prev) => prev.filter((p) => p.id !== id));
+  };
+
+  // Eliminar un producto del catálogo
+  const ajustarStock = (id, cambio) => {
+    setProductos((prev) =>
+      prev.map((p) =>
+        p.id === id
+          ? {
+              ...p,
+              stock: Math.max(0, Number(p.stock) + cambio),
+            }
+          : p,
+      ),
+    );
   };
 
   // Filtrado de productos por nombre o categoría
@@ -54,9 +68,7 @@ export const ProductProvider = ({ children }) => {
   return (
     <ProductContext.Provider
       value={{
-        // productos respeta la búsqueda actual para el catálogo
         productos: productosFiltrados,
-        // productosTodos permite buscar un producto directamente por ID
         productosTodos: productos,
         totalProductos: productos.length,
         busqueda,
@@ -64,6 +76,7 @@ export const ProductProvider = ({ children }) => {
         agregarProducto,
         editarProducto,
         eliminarProducto,
+        ajustarStock,
       }}
     >
       {children}

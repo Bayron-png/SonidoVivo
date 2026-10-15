@@ -10,10 +10,12 @@ import DetalleProducto from "./pages/DetalleProducto/DetalleProducto";
 import ScrollToTop from "./hooks/ScrollToTop";
 import Carrito from "./pages/Carrito/Carrito";
 import AdminCatalogo from "./pages/AdminCatalogo/AdminCatalogo";
+import { CarritoProvider } from "./context/CarritoContext";
 
 function App() {
   return (
     <ProductProvider>
+      <CarritoProvider>
       <BrowserRouter>
         <ScrollToTop />
 
@@ -32,6 +34,7 @@ function App() {
           />
         </Routes>
       </BrowserRouter>
+    </CarritoProvider>
     </ProductProvider>
   );
 }
