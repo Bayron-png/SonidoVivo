@@ -22,6 +22,12 @@ const EnlacesFooter = () => {
         </li>
 
         <li>
+          <Link to="/nosotros" className="footer-enlace">
+            Nosotros
+          </Link>
+        </li>
+
+        <li>
           <Link to="/login" className="footer-enlace">
             Iniciar sesión
           </Link>

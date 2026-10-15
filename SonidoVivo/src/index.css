@@ -393,3 +393,82 @@ body {
 #formulario-producto {
   scroll-margin-top: 100px;
 }
+
+/* Página Nosotros */
+
+.nosotros-contenido {
+  max-width: 960px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+.nosotros-introduccion {
+  padding: 1.5rem 0;
+}
+
+.nosotros-introduccion h2,
+.nosotros-seccion h3 {
+  color: var(--color-principal);
+}
+
+.nosotros-destacado {
+  color: var(--color-principal);
+}
+
+.nosotros-seccion {
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.nosotros-seccion h3 {
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.nosotros-seccion ul {
+  padding-left: 1.5rem;
+}
+
+.nosotros-seccion li {
+  margin-bottom: 0.5rem;
+}
+
+.nosotros-boton {
+  background-color: #272ab3;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.nosotros-boton:hover,
+.nosotros-boton:focus-visible {
+  background-color: #171980;
+  color: white;
+}
+
+.nosotros-cierre {
+  background: linear-gradient(
+    90deg,
+    var(--color-principal),
+    var(--color-principal-degradado)
+  );
+  color: #ffffff;
+  border-radius: 12px;
+}
+
+@media (max-width: 767px) {
+  .nosotros-contenido {
+    line-height: 1.6;
+  }
+
+  .nosotros-introduccion {
+    padding: 1rem 0;
+  }
+
+  .nosotros-seccion {
+    padding-bottom: 1rem;
+  }
+}

@@ -9,6 +9,7 @@ import PaginaProductos from "./pages/PaginaProductos/PaginaProductos";
 import ScrollToTop from "./hooks/ScrollToTop";
 import Carrito from "./pages/Carrito/Carrito";
 import AdminCatalogo from "./pages/AdminCatalogo/AdminCatalogo";
+import Nosotros from "./pages/Nosotros/Nosotros";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/carrito" element={<Carrito />} />
           <Route path="/admin" element={<AdminCatalogo />} />
+          <Route path="/nosotros" element={<Nosotros />} />
           
           {/* :categoriaSlug captura dinámicamente cualquier texto en la URL */}
           <Route path="/catalogo" element={<Catalogo />} />
