@@ -5,10 +5,12 @@ import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import Catalogo from "./pages/Catalogo/Catalogo";
-import PaginaProductos from "./pages/PaginaProductos/PaginaProductos";
 import ScrollToTop from "./hooks/ScrollToTop";
 import Carrito from "./pages/Carrito/Carrito";
 import AdminCatalogo from "./pages/AdminCatalogo/AdminCatalogo";
+import DetalleProducto from "./pages/DetalleProducto/DetalleProducto";
+import PaginaProductos from "./pages/PaginaProductos/PaginaProductos";
+
 
 function App() {
   return (
@@ -27,6 +29,7 @@ function App() {
           {/* :categoriaSlug captura dinámicamente cualquier texto en la URL */}
           <Route path="/catalogo" element={<Catalogo />} />
           <Route path="/catalogo/:slug" element={<PaginaProductos />} />
+          <Route path="/catalogo/:categoriaSlug/:productoId" element={<DetalleProducto />}/>
         </Routes>
       </BrowserRouter>
     </ProductProvider>
