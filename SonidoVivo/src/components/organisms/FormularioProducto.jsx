@@ -2,16 +2,17 @@ import React from "react";
 import InputGroup from "../atoms/producto-form/InputGroup";
 import TextAreaGroup from "../atoms/producto-form/TextAreaGroup";
 import ButtonAction from "../atoms/botones/ButtonAction";
+import categoriasData from "../../data/categoriasData";
 
 const FormularioProducto = ({
   formData,
   onChange,
   onSubmit,
   onCancel,
-  esEdicion = false,
+  esEdicion = false
 }) => {
   return (
-    <form onSubmit={onSubmit}>
+    <form id="formulario-producto" onSubmit={onSubmit}>
       {/* Nombre */}
       <InputGroup
         label="Nombre del Producto"
@@ -19,7 +20,7 @@ const FormularioProducto = ({
         name="nombre"
         value={formData.nombre}
         onChange={onChange}
-        placeholder="Ej: Teclado Mecánico RGB"
+        placeholder="Ej: Guitarra Fender Stratocaster"
         required
       />
 
@@ -30,22 +31,35 @@ const FormularioProducto = ({
         name="modelo"
         value={formData.modelo}
         onChange={onChange}
-        placeholder="Ej: Stratocaster Player"
+        placeholder="Ej: Player Stratocaster"
         required
       />
 
       {/* Categoría y Precio */}
       <div className="row">
         <div className="col-md-6">
-          <InputGroup
-            label="Categoría"
-            id="categoria"
-            name="categoria"
-            value={formData.categoria}
-            onChange={onChange}
-            placeholder="Ej: Periféricos"
-            required
-          />
+          <div className="mb-3">
+            <label htmlFor="categoriaSlug" className="form-label">
+              Categoría
+            </label>
+
+            <select
+              id="categoriaSlug"
+              name="categoriaSlug"
+              className="form-select"
+              value={formData.categoriaSlug}
+              onChange={onChange}
+              required
+            >
+              <option value="">Selecciona una categoría</option>
+
+              {categoriasData.map((categoria) => (
+                <option key={categoria.id} value={categoria.slug}>
+                  {categoria.titulo}
+                </option>
+              ))}
+            </select>
+          </div>
         </div>
 
         <div className="col-md-6">
@@ -108,6 +122,7 @@ const FormularioProducto = ({
             Cancelar
           </ButtonAction>
         )}
+
         <ButtonAction type="submit" variant="primary">
           {esEdicion ? "Guardar Cambios" : "Crear Producto"}
         </ButtonAction>

@@ -388,3 +388,8 @@ body {
   background-color: var(--color-principal-degradado);
   color: #ffffff;
 }
+
+/* Sección de administración de productos*/
+#formulario-producto {
+  scroll-margin-top: 100px;
+}

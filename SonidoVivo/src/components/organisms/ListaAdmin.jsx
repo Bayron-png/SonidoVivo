@@ -2,15 +2,28 @@ import React, { useState } from "react";
 import { useProductos } from "../../context/ProductoContext";
 import TablaProductos from "./TablaProductos";
 import FormularioProducto from "../organisms/FormularioProducto";
+import categoriasData from "../../data/categoriasData";
 
 const estadoInicialFormulario = {
   nombre: "",
   modelo: "",
   categoria: "",
+  categoriaSlug: "",
   precio: "",
   stock: "",
   imagen: "",
   descripcion: "",
+};
+
+const irAlFormulario = () => {
+  const formulario = document.getElementById("formulario-producto");
+
+  if (formulario) {
+    formulario.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }
 };
 
 const ListaAdmin = () => {
@@ -28,35 +41,56 @@ const ListaAdmin = () => {
 
   const handleChangeForm = (e) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   };
 
   const handleNuevoProducto = () => {
     setEsEdicion(false);
     setIdProductoEdicion(null);
     setFormData(estadoInicialFormulario);
-    setModalFormulario(true);
+
+    setTimeout(() => {
+      irAlFormulario();
+    }, 0);
   };
 
   const handleEditar = (producto) => {
     setEsEdicion(true);
     setIdProductoEdicion(producto.id);
+
     setFormData({
       nombre: producto.nombre || producto.name || "",
       modelo: producto.modelo || "",
       categoria: producto.categoria || producto.category || "",
+      categoriaSlug: producto.categoriaSlug || "",
       precio: producto.precio || producto.price || 0,
       stock: producto.stock || 0,
       imagen: producto.imagen || "",
       descripcion: producto.descripcion || "",
     });
-    setModalFormulario(true);
+
+    setTimeout(() => {
+      irAlFormulario();
+    }, 0);
   };
 
   const handleSubmitForm = (e) => {
     e.preventDefault();
+
+    const categoriaSeleccionada = categoriasData.find(
+      (categoria) => categoria.slug === formData.categoriaSlug,
+    );
+
     const productoData = {
       ...formData,
+
+      categoria: categoriaSeleccionada?.titulo || "",
+      categoriaSlug: formData.categoriaSlug,
+
       precio: Number(formData.precio),
       stock: Number(formData.stock),
     };

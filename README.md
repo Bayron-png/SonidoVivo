@@ -298,10 +298,10 @@ Asegúrate de tener instalado **Node.js** (versión 18 o superior recomendada):
 |13-10-2026|Bayron |       |
 |14-10-2026|José   |       |
 |14-10-2026|Luis   |Se finalizo la creacion de las validaciones de campos de los formularios login y register, ambos teniendo validadores en el formulario como archivos js individuales por cada campo que tuviera que cumplir con algun criterio. Cuando pasan las validaciones redireccionan a la pagina de inicio. Se corrigieron errores en el proceso. Se realizo merge pull request de la rama feature/validations-inputs con el main|
-|14-10-2026|Bayron |       |
+|14-10-2026|Bayron | Creación del apartado de administración, en donde se modifican, eliminan o agregan productos con parámetros dinámicos. |
 |15-10-2026|José   |       |
 |15-10-2026|Luis   |       |
-|15-10-2026|Bayron |       |
+|15-10-2026|Bayron | Correcciones de errores en el apartado de administración, corrección de lógica y errores menores. |
 |16-10-2026|José   |       |
 |16-10-2026|Luis   |       |
 |16-10-2026|Bayron |       |
