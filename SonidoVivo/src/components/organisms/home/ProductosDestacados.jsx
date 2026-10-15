@@ -1,10 +1,9 @@
-
 import { Link } from "react-router-dom";
-import { useCart } from "../../../context/CarritoContext";
-import ProductCard from "../../molecules/ProductCard";
+import { useProductos } from "../../../context/ProductoContext";
+import ProductCard from "../../molecules/catalogo/ProductCard";
 
 const ProductosDestacados = () => {
-  const { productos } = useCart();
+  const { productosTodos } = useProductos();
 
   const productosDestacadosIds = [
     "GE001",
@@ -14,7 +13,9 @@ const ProductosDestacados = () => {
   ];
 
   const destacados = productosDestacadosIds
-    .map((id) => productos.find((producto) => producto.id === id))
+    .map((id) =>
+      productosTodos.find((producto) => producto.id === id)
+    )
     .filter(Boolean);
 
   return (

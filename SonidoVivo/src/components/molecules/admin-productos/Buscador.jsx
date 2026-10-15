@@ -1,7 +1,7 @@
 import React from "react";
-import IconoInput from "../atoms/buscador/IconoInput";
-import CampoInput from "../atoms/buscador/CampoInput";
-import ButtonAction from "../atoms/botones/ButtonAction";
+import IconoInput from "../../atoms/buscador/IconoInput";
+import CampoInput from "../../atoms/buscador/CampoInput";
+import ButtonAction from "../../atoms/botones/ButtonAction";
 
 const Buscador = ({ busqueda, setBusqueda }) => {
   return (

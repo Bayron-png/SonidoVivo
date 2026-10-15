@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import ImagenCategoria from "../atoms/catalogo/ImagenCategoria";
-import TituloCategoria from "../atoms/catalogo/TituloCategoria";
+import ImagenCategoria from "../../atoms/catalogo/ImagenCategoria";
+import TituloCategoria from "../../atoms/catalogo/TituloCategoria";
 
 const CategoriaProducto = ({ src, titulo, slug }) => {
   return (

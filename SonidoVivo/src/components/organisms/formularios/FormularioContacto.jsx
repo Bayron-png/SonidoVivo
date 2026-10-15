@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import CampoFormulario from "../atoms/footer/CampoFormulario";
+import CampoFormulario from "../../atoms/footer/CampoFormulario";
 
 const FormularioContacto = () => {
   const [formulario, setFormulario] = useState({

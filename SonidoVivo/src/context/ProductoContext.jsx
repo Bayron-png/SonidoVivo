@@ -29,8 +29,8 @@ export const ProductProvider = ({ children }) => {
               precio: Number(productoActualizado.precio),
               stock: Number(productoActualizado.stock),
             }
-          : p
-      )
+          : p,
+      ),
     );
   };
 
@@ -39,11 +39,29 @@ export const ProductProvider = ({ children }) => {
     setProductos((prev) => prev.filter((p) => p.id !== id));
   };
 
+  // Eliminar un producto del catálogo
+  const ajustarStock = (id, cambio) => {
+    setProductos((prev) =>
+      prev.map((p) =>
+        p.id === id
+          ? {
+              ...p,
+              stock: Math.max(0, Number(p.stock) + cambio),
+            }
+          : p,
+      ),
+    );
+  };
+
   // Filtrado de productos por nombre o categoría
   const productosFiltrados = productos.filter((p) => {
     const termino = busqueda.toLowerCase();
-    const nombreMatches = p.nombre?.toLowerCase().includes(termino) || p.name?.toLowerCase().includes(termino);
-    const categoriaMatches = p.categoria?.toLowerCase().includes(termino) || p.category?.toLowerCase().includes(termino);
+    const nombreMatches =
+      p.nombre?.toLowerCase().includes(termino) ||
+      p.name?.toLowerCase().includes(termino);
+    const categoriaMatches =
+      p.categoria?.toLowerCase().includes(termino) ||
+      p.category?.toLowerCase().includes(termino);
     return nombreMatches || categoriaMatches;
   });
 
@@ -51,12 +69,14 @@ export const ProductProvider = ({ children }) => {
     <ProductContext.Provider
       value={{
         productos: productosFiltrados,
+        productosTodos: productos,
         totalProductos: productos.length,
         busqueda,
         setBusqueda,
         agregarProducto,
         editarProducto,
         eliminarProducto,
+        ajustarStock,
       }}
     >
       {children}

@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { useCart } from "../../context/CarritoContext";
-import CartItem from "../molecules/CartItem";
-import TotalCarrito from "../atoms/carrito/TotalCarrito";
-import OpcionesEnvio from "../atoms/carrito/OpcionesEnvio";
-import BotonProcederPago from "../atoms/carrito/BotonProcederPago";
-import MensajeSinProductos from "../atoms/productos/MensajeSinProductos";
-import MensajePedidoExitoso from "../atoms/carrito/MensajePedidoExitoso";
+import { useCart } from "../../../context/CarritoContext";
+import CartItem from "../../molecules/carrito/CartItem";
+import TotalCarrito from "../../atoms/carrito/TotalCarrito";
+import OpcionesEnvio from "../../atoms/carrito/OpcionesEnvio";
+import BotonProcederPago from "../../atoms/carrito/BotonProcederPago";
+import MensajeSinProductos from "../../atoms/productos/MensajeSinProductos";
+import MensajePedidoExitoso from "../../atoms/carrito/MensajePedidoExitoso";
 
 const ListaCarrito = () => {
   const { carrito } = useCart();

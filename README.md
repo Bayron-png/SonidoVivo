@@ -158,36 +158,44 @@ El sistema creado brinda al usuario la posibilidad de ver el catálogo con preci
                     ├── MensajeSinProductos.jsx
                 ├── TituloRedondeado.jsx
             └── 📁molecules
+                └── 📁admin-productos
+                    ├── Buscador.jsx
+                    ├── FilaProducto.jsx
+                └── 📁carrito
+                    ├── CartItem.jsx
+                └── 📁catalogo
+                    ├── CategoriaProducto.jsx
+                    ├── ProductCard.jsx
                 └── 📁footer
                     ├── EnlacesFooter.jsx
                     ├── IdentidadFooter.jsx
                     ├── InformacionContacto.jsx
+                └── 📁formularios
+                    ├── CamposLogin.jsx
+                    ├── CamposRegister.jsx
                 └── 📁home
                     ├── TarjetaEvento.jsx
-                ├── Buscador.jsx
-                ├── CamposLogin.jsx
-                ├── CamposRegister.jsx
-                ├── CartItem.jsx
-                ├── CategoriaProducto.jsx
-                ├── FilaProducto.jsx
-                ├── ProductCard.jsx
             └── 📁organisms
+                └── 📁admin
+                    ├── FormularioProducto.jsx
+                    ├── ListaAdmin.jsx
+                    ├── TablaProductos.jsx
+                    ├── VentanaConfirmacion.jsx
+                └── 📁carrito
+                    ├── ListaCarrito.jsx
+                └── 📁catalogo
+                    ├── CategoriasCatalogo.jsx
+                    ├── ProductosLista.jsx
+                └── 📁formularios
+                    ├── FormularioContacto.jsx
+                    ├── LoginForm.jsx
+                    ├── RegisterForm.jsx
                 └── 📁home
                     ├── BannerNosotros.jsx
                     ├── EventosDestacados.jsx
                     ├── ProductosDestacados.jsx
-                ├── CategoriasCatalogo.jsx
                 ├── Footer.jsx
-                ├── FormularioContacto.jsx
-                ├── FormularioProducto.jsx
                 ├── Header.jsx
-                ├── ListaAdmin.jsx
-                ├── ListaCarrito.jsx
-                ├── LoginForm.jsx
-                ├── ProductosLista.jsx
-                ├── RegisterForm.jsx
-                ├── TablaProductos.jsx
-                ├── VentanaConfirmacion.jsx
             └── 📁templates
                 ├── AdminTemplate.jsx
                 ├── CarritoTemplate.jsx
@@ -213,6 +221,8 @@ El sistema creado brinda al usuario la posibilidad de ver el catálogo con preci
                 ├── Carrito.jsx
             └── 📁Catalogo
                 ├── Catalogo.jsx
+            └── 📁DetalleProducto
+                ├── DetalleProducto.jsx
             └── 📁Home
                 ├── Home.jsx
             └── 📁Login
@@ -301,7 +311,7 @@ Asegúrate de tener instalado **Node.js** (versión 18 o superior recomendada):
 |14-10-2026|Bayron | Creación del apartado de administración, en donde se modifican, eliminan o agregan productos con parámetros dinámicos. |
 |15-10-2026|José   |       |
 |15-10-2026|Luis   |       |
-|15-10-2026|Bayron | Correcciones de errores en el apartado de administración, corrección de lógica y errores menores. |
+|15-10-2026|Bayron | Correcciones de errores en el apartado de administración, corrección de lógica y errores menores. Creación del apartado de "Detalle de producto" (al clickear el producto en catálogo), correcciones menores de niveles de stock. |
 |16-10-2026|José   |       |
 |16-10-2026|Luis   |       |
 |16-10-2026|Bayron |       |

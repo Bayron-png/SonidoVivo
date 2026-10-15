@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import Buscador from "../molecules/Buscador";
-import FilaProducto from "../molecules/FilaProducto";
+import Buscador from "../../molecules/admin-productos/Buscador";
+import FilaProducto from "../../molecules/admin-productos/FilaProducto";
 import VentanaConfirmacion from "./VentanaConfirmacion";
-import ButtonAction from "../atoms/botones/ButtonAction";
+import ButtonAction from "../../atoms/botones/ButtonAction";
 
 const TablaProductos = ({
   productos = [],

@@ -1,19 +1,19 @@
-import NombreInput from "../atoms/form/NombreInput";
-import ApellidoInput from "../atoms/form/ApellidoInput";
-import RutInput from "../atoms/form/RutInput";
-import GmailInput from "../atoms/form/GmailInput";
-import TelefonoInput from "../atoms/form/TelefonoInput";
-import PasswordInput from "../atoms/form/PasswordInput";
-import ConfirmPasswordInput from "../atoms/form/ConfirmPasswordInput"
-import BotonEnviar from "../atoms/botones/BotonEnviar";
+import NombreInput from "../../atoms/form/NombreInput";
+import ApellidoInput from "../../atoms/form/ApellidoInput";
+import RutInput from "../../atoms/form/RutInput";
+import GmailInput from "../../atoms/form/GmailInput";
+import TelefonoInput from "../../atoms/form/TelefonoInput";
+import PasswordInput from "../../atoms/form/PasswordInput";
+import ConfirmPasswordInput from "../../atoms/form/ConfirmPasswordInput"
+import BotonEnviar from "../../atoms/botones/BotonEnviar";
 
 import { Link } from "react-router-dom";
-import { validarNombre } from "../../utils/validaciones/validacionNombre";
-import { validarApellido } from "../../utils/validaciones/validacionApellido";
-import { validarCorreo } from "../../utils/validaciones/validacionCorreo";
-import { validarPassword } from "../../utils/validaciones/validacionPassword";
-import { validarRut } from "../../utils/validaciones/validacionRut";
-import { validarTelefono } from "../../utils/validaciones/validacionTelefono";
+import { validarNombre } from "../../../utils/validaciones/validacionNombre";
+import { validarApellido } from "../../../utils/validaciones/validacionApellido";
+import { validarCorreo } from "../../../utils/validaciones/validacionCorreo";
+import { validarPassword } from "../../../utils/validaciones/validacionPassword";
+import { validarRut } from "../../../utils/validaciones/validacionRut";
+import { validarTelefono } from "../../../utils/validaciones/validacionTelefono";
 
 const CamposRegister = ({
   nombre, apellido, rut, gmail, telefono,

@@ -1,5 +1,5 @@
-import CategoriaProducto from "../molecules/CategoriaProducto";
-import categoriasData from "../../data/categoriasData";
+import CategoriaProducto from "../../molecules/catalogo/CategoriaProducto";
+import categoriasData from "../../../data/categoriasData";
 
 const CategoriasCatalogo = ({ categorias = categoriasData }) => {
   return (

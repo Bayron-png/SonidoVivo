@@ -1,15 +1,30 @@
-
-import BotonAgregarAlCarrito from "../atoms/botones/BotonAgregarAlCarrito";
+import { useNavigate } from "react-router-dom";
+import BotonAgregarAlCarrito from "../../atoms/botones/BotonAgregarAlCarrito";
 
 const ProductCard = ({ producto, variante = "completa" }) => {
+  const navigate = useNavigate();
   const disponible = producto.stock > 0;
   const esCompacta = variante === "compacta";
+
+  const irAlDetalle = () => {
+    navigate(`/catalogo/${producto.categoriaSlug}/${producto.id}`);
+  };
 
   return (
     <article
       className={`card h-100 shadow-sm ${
         esCompacta ? "home-producto-card" : ""
       }`}
+      role="link"
+      tabIndex="0"
+      onClick={irAlDetalle}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          irAlDetalle();
+        }
+      }}
+      style={{ cursor: "pointer" }}
     >
       {producto.imagen && (
         <div className="text-center p-3 bg-light border-bottom">
@@ -60,15 +75,15 @@ const ProductCard = ({ producto, variante = "completa" }) => {
               disponible ? "text-success" : "text-danger"
             }`}
           >
-            {disponible
-              ? `Stock: ${producto.stock}`
-              : "Sin stock"}
+            {disponible ? `Stock: ${producto.stock}` : "Sin stock"}
           </p>
 
-          <BotonAgregarAlCarrito
-            productoId={producto.id}
-            disponible={disponible}
-          />
+          <div onClick={(e) => e.stopPropagation()}>
+            <BotonAgregarAlCarrito
+              productoId={producto.id}
+              disponible={disponible}
+            />
+          </div>
         </div>
       </section>
     </article>

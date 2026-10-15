@@ -1,7 +1,7 @@
 import Header from "../organisms/Header";
 import Footer from "../organisms/Footer";
 import BotonVolver from "../atoms/botones/BotonVolver";
-import LoginForm from "../organisms/LoginForm";
+import LoginForm from "../organisms/formularios/LoginForm";
 
 const LoginTemplate = ({onLoginSubmit}) => {
   return (

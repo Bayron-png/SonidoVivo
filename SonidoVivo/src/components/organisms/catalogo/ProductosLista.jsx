@@ -1,6 +1,6 @@
-import ProductCard from "../molecules/ProductCard";
-import MensajeSinProductos from "../atoms/productos/MensajeSinProductos";
-import { useProductos } from "../../context/ProductoContext";
+import ProductCard from "../../molecules/catalogo/ProductCard";
+import MensajeSinProductos from "../../atoms/productos/MensajeSinProductos";
+import { useProductos } from "../../../context/ProductoContext";
 
 const ProductosLista = ({ productos: productosFiltrados }) => {
   const { productos: productosContext } = useProductos();

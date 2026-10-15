@@ -1,7 +1,7 @@
 import Header from "../organisms/Header";
 import Footer from "../organisms/Footer";
 import BotonVolver from "../atoms/botones/BotonVolver";
-import RegisterForm from "../organisms/RegisterForm"
+import RegisterForm from "../organisms/formularios/RegisterForm"
 
 const RegisterTemplate = ({ onRegisterSubmit }) => {
     return (
