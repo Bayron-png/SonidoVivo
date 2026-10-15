@@ -1,5 +1,5 @@
-import BotonEliminarItem from "../atoms/carrito/BotonEliminarItem";
-import ControlesCantidad from "../atoms/carrito/ControlesCantidad";
+import BotonEliminarItem from "../../atoms/carrito/BotonEliminarItem";
+import ControlesCantidad from "../../atoms/carrito/ControlesCantidad";
 
 const CartItem = ({ item }) => {
   const subtotal = item.precio * item.cantidad;

@@ -1,6 +1,6 @@
 import React from "react";
-import InsigniaStock from "../atoms/producto-form/InsigniaStock";
-import ButtonAction from "../atoms/botones/ButtonAction";
+import InsigniaStock from "../../atoms/producto-form/InsigniaStock";
+import ButtonAction from "../../atoms/botones/ButtonAction";
 
 const FilaProducto = ({ producto, onEditar, onEliminar }) => {
   return (

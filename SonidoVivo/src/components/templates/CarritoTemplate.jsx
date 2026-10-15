@@ -1,6 +1,6 @@
 import Header from "../organisms/Header";
 import Footer from "../organisms/Footer";
-import ListaCarrito from "../organisms/ListaCarrito";
+import ListaCarrito from "../organisms/carrito/ListaCarrito";
 import BotonVolver from "../atoms/botones/BotonVolver";
 import TituloRedondeado from "../atoms/TituloRedondeado";
 

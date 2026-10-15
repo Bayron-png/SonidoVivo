@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useProductos } from "../../../context/ProductoContext";
-import ProductCard from "../../molecules/ProductCard";
+import ProductCard from "../../molecules/catalogo/ProductCard";
 
 const ProductosDestacados = () => {
   const { productosTodos } = useProductos();

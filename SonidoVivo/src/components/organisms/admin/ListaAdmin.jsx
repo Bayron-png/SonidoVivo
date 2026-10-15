@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { useProductos } from "../../context/ProductoContext";
+import { useProductos } from "../../../context/ProductoContext";
 import TablaProductos from "./TablaProductos";
-import FormularioProducto from "../organisms/FormularioProducto";
-import categoriasData from "../../data/categoriasData";
+import FormularioProducto from "./FormularioProducto";
+import categoriasData from "../../../data/categoriasData";
 
 const estadoInicialFormulario = {
   nombre: "",

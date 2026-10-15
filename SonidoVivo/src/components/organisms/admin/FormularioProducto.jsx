@@ -1,8 +1,8 @@
 import React from "react";
-import InputGroup from "../atoms/producto-form/InputGroup";
-import TextAreaGroup from "../atoms/producto-form/TextAreaGroup";
-import ButtonAction from "../atoms/botones/ButtonAction";
-import categoriasData from "../../data/categoriasData";
+import InputGroup from "../../atoms/producto-form/InputGroup";
+import TextAreaGroup from "../../atoms/producto-form/TextAreaGroup";
+import ButtonAction from "../../atoms/botones/ButtonAction";
+import categoriasData from "../../../data/categoriasData";
 
 const FormularioProducto = ({
   formData,

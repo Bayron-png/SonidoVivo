@@ -1,8 +1,8 @@
-import BotonEnviar from "../atoms/botones/BotonEnviar";
+import BotonEnviar from "../../atoms/botones/BotonEnviar";
 
 import { Link } from 'react-router-dom';
-import GmailLoginInput from "../atoms/form/GmailLoginInput";
-import PasswordLoginInput from "../atoms/form/PasswordLoginInput";
+import GmailLoginInput from "../../atoms/form/GmailLoginInput";
+import PasswordLoginInput from "../../atoms/form/PasswordLoginInput";
 
 const CamposLogin = ({
   gmail,

@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Container, Row, Col, Form } from "react-bootstrap";
-import CamposLogin from "../molecules/CamposLogin";
-import TituloRedondeado from "../atoms/TituloRedondeado";
-import { validarCorreoLogin } from "../../utils/validaciones/validacionCorreoLogin";
+import CamposLogin from "../../molecules/formularios/CamposLogin";
+import TituloRedondeado from "../../atoms/TituloRedondeado";
+import { validarCorreoLogin } from "../../../utils/validaciones/validacionCorreoLogin";
 import { useNavigate } from "react-router-dom";
 
 // usuarios ficticios para la simulacion de login

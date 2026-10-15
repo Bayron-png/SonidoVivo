@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import BotonAgregarAlCarrito from "../atoms/botones/BotonAgregarAlCarrito";
+import BotonAgregarAlCarrito from "../../atoms/botones/BotonAgregarAlCarrito";
 
 const ProductCard = ({ producto, variante = "completa" }) => {
   const navigate = useNavigate();

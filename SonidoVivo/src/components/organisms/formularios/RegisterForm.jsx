@@ -1,15 +1,15 @@
 import { useState } from "react";
 import { Container, Row, Col, Form } from "react-bootstrap";
-import CamposRegister from "../molecules/CamposRegister";
-import TituloRedondeado from "../atoms/TituloRedondeado";
+import CamposRegister from "../../molecules/formularios/CamposRegister";
+import TituloRedondeado from "../../atoms/TituloRedondeado";
 import { useNavigate } from "react-router-dom";
-import { validarNombre } from "../../utils/validaciones/validacionNombre";
-import { validarApellido } from "../../utils/validaciones/validacionApellido";
-import { validarRut } from "../../utils/validaciones/validacionRut";
-import { validarCorreo } from "../../utils/validaciones/validacionCorreo";
-import { validarTelefono } from "../../utils/validaciones/validacionTelefono";
-import { validarPassword } from "../../utils/validaciones/validacionPassword";
-import { validarConfirmPassword } from "../../utils/validaciones/validacionConfirmPassword";
+import { validarNombre } from "../../../utils/validaciones/validacionNombre";
+import { validarApellido } from "../../../utils/validaciones/validacionApellido";
+import { validarRut } from "../../../utils/validaciones/validacionRut";
+import { validarCorreo } from "../../../utils/validaciones/validacionCorreo";
+import { validarTelefono } from "../../../utils/validaciones/validacionTelefono";
+import { validarPassword } from "../../../utils/validaciones/validacionPassword";
+import { validarConfirmPassword } from "../../../utils/validaciones/validacionConfirmPassword";
 
 const RegisterForm = ({ onSubmit }) => {
     const [nombre, setNombre] = useState("");

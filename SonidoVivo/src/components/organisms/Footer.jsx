@@ -3,7 +3,7 @@ import TextoFooter from "../atoms/footer/TextoFooter";
 import IdentidadFooter from "../molecules/footer/IdentidadFooter";
 import InformacionContacto from "../molecules/footer/InformacionContacto";
 import EnlacesFooter from "../molecules/footer/EnlacesFooter";
-import FormularioContacto from "./FormularioContacto";
+import FormularioContacto from "./formularios/FormularioContacto";
 import "../../index.css";
 
 const Footer = () => {

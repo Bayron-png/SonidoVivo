@@ -1,7 +1,7 @@
 // src/components/molecules/VentanaConfirmacion.jsx
 import React from "react";
-import ButtonAction from "../atoms/botones/ButtonAction";
-import BotonCerrar from "../atoms/botones/BotonCerrar";
+import ButtonAction from "../../atoms/botones/ButtonAction";
+import BotonCerrar from "../../atoms/botones/BotonCerrar";
 
 const VentanaConfirmacion = ({
   mostrar,

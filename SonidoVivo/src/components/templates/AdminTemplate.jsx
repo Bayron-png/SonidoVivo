@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../organisms/Header";
 import Footer from "../organisms/Footer";
-import ListaAdmin from "../organisms/ListaAdmin";
+import ListaAdmin from "../organisms/admin/ListaAdmin";
 import BotonVolver from "../atoms/botones/BotonVolver";
 import TituloRedondeado from "../atoms/TituloRedondeado";
 
