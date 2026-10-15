@@ -37,6 +37,12 @@ El sistema creado brinda al usuario la posibilidad de ver el catálogo con preci
             ├── microfono.png
             ├── pedal-efectos.png
             ├── teclado-piano.png
+        └── 📁eventos
+            ├── fauna-primavera.jpg
+            ├── festival-vina.jpg
+            ├── lollapalooza-chile.jpg
+        └── 📁home
+            ├── concierto-home.jpg
         └── 📁productos
             └── 📁accesorios
                 ├── ac001.png
@@ -110,8 +116,13 @@ El sistema creado brinda al usuario la posibilidad de ver el catálogo con preci
             └── 📁atoms
                 └── 📁botones
                     ├── BotonAgregarAlCarrito.jsx
+                    ├── BotonCerrar.jsx
                     ├── BotonEnviar.jsx
                     ├── BotonVolver.jsx
+                    ├── ButtonAction.jsx
+                └── 📁buscador
+                    ├── CampoInput.jsx
+                    ├── IconoInput.jsx
                 └── 📁carrito
                     ├── BotonEliminarItem.jsx
                     ├── BotonProcederPago.jsx
@@ -129,14 +140,20 @@ El sistema creado brinda al usuario la posibilidad de ver el catálogo con preci
                     ├── ApellidoInput.jsx
                     ├── ConfirmPasswordInput.jsx
                     ├── GmailInput.jsx
+                    ├── GmailLoginInput.jsx
                     ├── NombreInput.jsx
                     ├── PasswordInput.jsx
+                    ├── PasswordLoginInput.jsx
                     ├── RutInput.jsx
                     ├── TelefonoInput.jsx
                 └── 📁header
                     ├── BotonCarrito.jsx
                     ├── LogoHeader.jsx
                     ├── TextoHeader.jsx
+                └── 📁producto-form
+                    ├── InputGroup.jsx
+                    ├── InsigniaStock.jsx
+                    ├── TextAreaGroup.jsx
                 └── 📁productos
                     ├── MensajeSinProductos.jsx
                 ├── TituloRedondeado.jsx
@@ -145,21 +162,34 @@ El sistema creado brinda al usuario la posibilidad de ver el catálogo con preci
                     ├── EnlacesFooter.jsx
                     ├── IdentidadFooter.jsx
                     ├── InformacionContacto.jsx
+                └── 📁home
+                    ├── TarjetaEvento.jsx
+                ├── Buscador.jsx
                 ├── CamposLogin.jsx
                 ├── CamposRegister.jsx
                 ├── CartItem.jsx
                 ├── CategoriaProducto.jsx
+                ├── FilaProducto.jsx
                 ├── ProductCard.jsx
             └── 📁organisms
+                └── 📁home
+                    ├── BannerNosotros.jsx
+                    ├── EventosDestacados.jsx
+                    ├── ProductosDestacados.jsx
                 ├── CategoriasCatalogo.jsx
                 ├── Footer.jsx
                 ├── FormularioContacto.jsx
+                ├── FormularioProducto.jsx
                 ├── Header.jsx
+                ├── ListaAdmin.jsx
                 ├── ListaCarrito.jsx
                 ├── LoginForm.jsx
                 ├── ProductosLista.jsx
                 ├── RegisterForm.jsx
+                ├── TablaProductos.jsx
+                ├── VentanaConfirmacion.jsx
             └── 📁templates
+                ├── AdminTemplate.jsx
                 ├── CarritoTemplate.jsx
                 ├── CatalogoTemplate.jsx
                 ├── HomeTemplate.jsx
@@ -168,13 +198,17 @@ El sistema creado brinda al usuario la posibilidad de ver el catálogo con preci
                 ├── RegisterTemplate.jsx
         └── 📁context
             ├── CarritoContext.jsx
+            ├── ProductoContext.jsx
         └── 📁data
             ├── categoriasData.js
+            ├── eventosData.js
             ├── productosData.js
         └── 📁hooks
             ├── ScrollToTop.jsx
             ├── useProductosPorCategoria.jsx
         └── 📁pages
+            └── 📁AdminCatalogo
+                ├── AdminCatalogo.jsx
             └── 📁Carrito
                 ├── Carrito.jsx
             └── 📁Catalogo
@@ -187,6 +221,19 @@ El sistema creado brinda al usuario la posibilidad de ver el catálogo con preci
                 ├── PaginaProductos.jsx
             └── 📁Register
                 ├── Register.jsx
+        └── 📁services
+            ├── productService.jsx
+        └── 📁utils
+            └── 📁validaciones
+                ├── validacionApellido.js
+                ├── validacionConfirmPassword.js
+                ├── validacionCorreo.js
+                ├── validacionCorreoLogin.js
+                ├── validacionesGenerales.js
+                ├── validacionNombre.js
+                ├── validacionPassword.js
+                ├── validacionRut.js
+                ├── validacionTelefono.js
         ├── App.jsx
         ├── index.css
         ├── main.jsx
@@ -208,8 +255,8 @@ Asegúrate de tener instalado **Node.js** (versión 18 o superior recomendada):
 
 1. **Clonar el repositorio o descargar el proyecto:**
 ```bash
-   git clone https://github.com/Bayron-png/Sonido-Vivo
-   cd Sonido-Vivo
+   git clone https://github.com/Bayron-png/SonidoVivo
+   cd SonidoVivo
 ```
 
 2. Instalar las dependencias
