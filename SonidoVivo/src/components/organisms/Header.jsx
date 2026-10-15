@@ -43,6 +43,10 @@ const Header = () => {
           className="w-100 justify-content-lg-end"
         >
           <Nav className="gap-3 my-3 my-lg-0 align-items-center ms-lg-auto">
+            <Nav.Link as={NavLink} to="/admin" className="text-white p-0" title="Administrar productos del catálogo">
+              <span className="me-2">Administrar Productos</span>
+              <span className="text-white-50">|</span>
+            </Nav.Link>
             <Nav.Link as={NavLink} to="/" className="text-white p-0" title="Ir al menú principal">
               Inicio
             </Nav.Link>
