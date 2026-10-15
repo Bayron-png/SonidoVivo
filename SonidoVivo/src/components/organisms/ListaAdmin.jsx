@@ -5,11 +5,12 @@ import FormularioProducto from "../organisms/FormularioProducto";
 
 const estadoInicialFormulario = {
   nombre: "",
+  modelo: "",
   categoria: "",
   precio: "",
   stock: "",
   imagen: "",
-  descripcion: ""
+  descripcion: "",
 };
 
 const ListaAdmin = () => {
@@ -17,7 +18,7 @@ const ListaAdmin = () => {
     productos = [],
     agregarProducto,
     editarProducto,
-    eliminarProducto
+    eliminarProducto,
   } = useProductos();
 
   const [modalFormulario, setModalFormulario] = useState(false);
@@ -42,11 +43,12 @@ const ListaAdmin = () => {
     setIdProductoEdicion(producto.id);
     setFormData({
       nombre: producto.nombre || producto.name || "",
+      modelo: producto.modelo || "",
       categoria: producto.categoria || producto.category || "",
       precio: producto.precio || producto.price || 0,
       stock: producto.stock || 0,
       imagen: producto.imagen || "",
-      descripcion: producto.descripcion || ""
+      descripcion: producto.descripcion || "",
     });
     setModalFormulario(true);
   };
@@ -56,7 +58,7 @@ const ListaAdmin = () => {
     const productoData = {
       ...formData,
       precio: Number(formData.precio),
-      stock: Number(formData.stock)
+      stock: Number(formData.stock),
     };
 
     if (esEdicion) {

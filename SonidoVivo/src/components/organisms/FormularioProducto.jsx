@@ -8,7 +8,7 @@ const FormularioProducto = ({
   onChange,
   onSubmit,
   onCancel,
-  esEdicion = false
+  esEdicion = false,
 }) => {
   return (
     <form onSubmit={onSubmit}>
@@ -20,6 +20,17 @@ const FormularioProducto = ({
         value={formData.nombre}
         onChange={onChange}
         placeholder="Ej: Teclado Mecánico RGB"
+        required
+      />
+
+      {/* Modelo */}
+      <InputGroup
+        label="Modelo"
+        id="modelo"
+        name="modelo"
+        value={formData.modelo}
+        onChange={onChange}
+        placeholder="Ej: Stratocaster Player"
         required
       />
 
