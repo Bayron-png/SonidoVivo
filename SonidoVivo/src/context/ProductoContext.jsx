@@ -42,15 +42,22 @@ export const ProductProvider = ({ children }) => {
   // Filtrado de productos por nombre o categoría
   const productosFiltrados = productos.filter((p) => {
     const termino = busqueda.toLowerCase();
-    const nombreMatches = p.nombre?.toLowerCase().includes(termino) || p.name?.toLowerCase().includes(termino);
-    const categoriaMatches = p.categoria?.toLowerCase().includes(termino) || p.category?.toLowerCase().includes(termino);
+    const nombreMatches =
+      p.nombre?.toLowerCase().includes(termino) ||
+      p.name?.toLowerCase().includes(termino);
+    const categoriaMatches =
+      p.categoria?.toLowerCase().includes(termino) ||
+      p.category?.toLowerCase().includes(termino);
     return nombreMatches || categoriaMatches;
   });
 
   return (
     <ProductContext.Provider
       value={{
+        // productos respeta la búsqueda actual para el catálogo
         productos: productosFiltrados,
+        // productosTodos permite buscar un producto directamente por ID
+        productosTodos: productos,
         totalProductos: productos.length,
         busqueda,
         setBusqueda,
