@@ -1,26 +1,32 @@
-
+import { useNavigate } from "react-router-dom";
 import BotonAgregarAlCarrito from "../atoms/botones/BotonAgregarAlCarrito";
 
 const ProductCard = ({ producto, variante = "completa" }) => {
+  const navigate = useNavigate();
+
   const disponible = producto.stock > 0;
   const esCompacta = variante === "compacta";
+
+  const irAlDetalle = () => {
+    navigate(
+      `/catalogo/${producto.categoriaSlug}/${producto.id}`
+    );
+  };
 
   return (
     <article
       className={`card h-100 shadow-sm ${
         esCompacta ? "home-producto-card" : ""
       }`}
+      role="button"
+      onClick={irAlDetalle}
     >
       {producto.imagen && (
         <div className="text-center p-3 bg-light border-bottom">
           <img
             src={producto.imagen}
             alt={producto.nombre}
-            className="card-img-top"
-            style={{
-              height: esCompacta ? "175px" : "160px",
-              objectFit: "contain"
-            }}
+            className="card-img-top img-fluid object-fit-contain"
             loading="lazy"
           />
         </div>
@@ -65,10 +71,12 @@ const ProductCard = ({ producto, variante = "completa" }) => {
               : "Sin stock"}
           </p>
 
-          <BotonAgregarAlCarrito
-            productoId={producto.id}
-            disponible={disponible}
-          />
+          <div onClick={(e) => e.stopPropagation()}>
+            <BotonAgregarAlCarrito
+              productoId={producto.id}
+              disponible={disponible}
+            />
+          </div>
         </div>
       </section>
     </article>

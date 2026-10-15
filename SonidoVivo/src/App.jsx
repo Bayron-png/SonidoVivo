@@ -8,8 +8,8 @@ import Catalogo from "./pages/Catalogo/Catalogo";
 import ScrollToTop from "./hooks/ScrollToTop";
 import Carrito from "./pages/Carrito/Carrito";
 import AdminCatalogo from "./pages/AdminCatalogo/AdminCatalogo";
-import DetalleProducto from "./pages/DetalleProducto/DetalleProducto";
 import PaginaProductos from "./pages/PaginaProductos/PaginaProductos";
+import DetalleProducto from "./pages/DetalleProducto/DetalleProducto";
 
 
 function App() {

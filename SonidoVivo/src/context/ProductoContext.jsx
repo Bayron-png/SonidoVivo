@@ -15,6 +15,7 @@ export const ProductProvider = ({ children }) => {
       precio: Number(nuevoProducto.precio),
       stock: Number(nuevoProducto.stock),
     };
+
     setProductos((prev) => [productoConId, ...prev]);
   };
 
@@ -42,8 +43,15 @@ export const ProductProvider = ({ children }) => {
   // Filtrado de productos por nombre o categoría
   const productosFiltrados = productos.filter((p) => {
     const termino = busqueda.toLowerCase();
-    const nombreMatches = p.nombre?.toLowerCase().includes(termino) || p.name?.toLowerCase().includes(termino);
-    const categoriaMatches = p.categoria?.toLowerCase().includes(termino) || p.category?.toLowerCase().includes(termino);
+
+    const nombreMatches =
+      p.nombre?.toLowerCase().includes(termino) ||
+      p.name?.toLowerCase().includes(termino);
+
+    const categoriaMatches =
+      p.categoria?.toLowerCase().includes(termino) ||
+      p.category?.toLowerCase().includes(termino);
+
     return nombreMatches || categoriaMatches;
   });
 
@@ -51,6 +59,7 @@ export const ProductProvider = ({ children }) => {
     <ProductContext.Provider
       value={{
         productos: productosFiltrados,
+        productosTodos: productos,
         totalProductos: productos.length,
         busqueda,
         setBusqueda,
@@ -65,4 +74,5 @@ export const ProductProvider = ({ children }) => {
 };
 
 export const useProductos = () => useContext(ProductContext);
+
 export default ProductProvider;
