@@ -1,42 +1,51 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+import ScrollToTop from "./hooks/ScrollToTop";
 import ProductProvider from "./context/ProductoContext";
-import { CarritoProvider } from "./context/CarritoContext";
+import CarritoProvider from "./context/CarritoContext";
+import MovimientoProvider from "./context/MovimientosContext";
 
 import Home from "./pages/Home/Home";
+import Nosotros from "./pages/Nosotros/Nosotros";
+
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
+
 import Catalogo from "./pages/Catalogo/Catalogo";
-import PaginaProductos from "./pages/PaginaProductos/PaginaProductos";
 import DetalleProducto from "./pages/DetalleProducto/DetalleProducto";
-import ScrollToTop from "./hooks/ScrollToTop";
+import PaginaProductos from "./pages/PaginaProductos/PaginaProductos";
 import Carrito from "./pages/Carrito/Carrito";
+
 import AdminCatalogo from "./pages/AdminCatalogo/AdminCatalogo";
-import Nosotros from "./pages/Nosotros/Nosotros";
+import Movimientos from "./pages/Movimientos/Movimientos";
+
 
 function App() {
   return (
     <ProductProvider>
       <CarritoProvider>
-        <BrowserRouter>
-          <ScrollToTop />
+        <MovimientoProvider>
+          <BrowserRouter>
+            <ScrollToTop />
 
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/carrito" element={<Carrito />} />
-            <Route path="/admin" element={<AdminCatalogo />} />
-            <Route path="/nosotros" element={<Nosotros />} />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/carrito" element={<Carrito />} />
+              <Route path="/admin" element={<AdminCatalogo />} />
+              <Route path="/nosotros" element={<Nosotros />} />
+              <Route path="/movimientos" element={<Movimientos />} />
 
-            <Route path="/catalogo" element={<Catalogo />} />
-            <Route path="/catalogo/:slug" element={<PaginaProductos />} />
-            <Route
-              path="/catalogo/:categoriaSlug/:productoId"
-              element={<DetalleProducto />}
-            />
-          </Routes>
-        </BrowserRouter>
+              <Route path="/catalogo" element={<Catalogo />} />
+              <Route path="/catalogo/:slug" element={<PaginaProductos />} />
+              <Route
+                path="/catalogo/:categoriaSlug/:productoId"
+                element={<DetalleProducto />}
+              />
+            </Routes>
+          </BrowserRouter>
+        </MovimientoProvider>
       </CarritoProvider>
     </ProductProvider>
   );

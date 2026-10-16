@@ -1,28 +1,46 @@
-// src/components/atoms/botones/BotonProcederPago.jsx
 import { useCart } from "../../../context/CarritoContext";
+import { useMovimientos } from "../../../context/MovimientosContext";
 
 const BotonProcederPago = ({ onPagoCompletado }) => {
-  const { vaciarCarrito } = useCart();
+  const {
+    carrito,
+    subtotal,
+    costoEnvio,
+    total,
+    tipoEnvio,
+    vaciarCarrito,
+  } = useCart();
+
+  const { agregarMovimiento } = useMovimientos();
 
   const handlePago = () => {
-    // 1. Limpiar el carrito
+    // 1. Registrar el pedido antes de vaciar el carrito
+    agregarMovimiento({
+      productos: carrito,
+      subtotal,
+      costoEnvio,
+      total,
+      tipoEnvio,
+    });
+
+    // 2. Vaciar el carrito
     vaciarCarrito();
 
-    // 2. Notificar que la compra se completó
+    // 3. Mostrar mensaje de pedido completado
     if (onPagoCompletado) {
       onPagoCompletado();
     }
 
-    // 3. Scroll hacia la parte superior de la página
+    // 4. Volver al comienzo de la página
     window.scrollTo({
       top: 0,
-      behavior: "smooth", // 'smooth' para un desplazamiento fluido
+      behavior: "smooth",
     });
   };
 
   return (
     <div>
-      <button 
+      <button
         type="button"
         onClick={handlePago}
         className="btn btn-success w-100 mt-3 fw-bold py-2"
