@@ -5,16 +5,17 @@ import { useProductos } from "../../../context/ProductoContext";
 const ProductosLista = ({ productos: productosFiltrados }) => {
   const { productos: productosContext } = useProductos();
 
-  const productosAMostrar = productosFiltrados
+  const productosAMostrar = Array.isArray(productosFiltrados)
     ? productosFiltrados.map(
-        (p) => productosContext.find((item) => item.id === p.id) || p
+        (producto) =>
+          productosContext.find((item) => item.id === producto.id) || producto
       )
     : productosContext;
 
   if (!productosAMostrar || productosAMostrar.length === 0) {
     return (
       <MensajeSinProductos
-        mensaje="No hay productos registrados en esta categoría."
+        mensaje="No se encontraron productos con la búsqueda y los filtros seleccionados."
       />
     );
   }
