@@ -16,8 +16,10 @@ import DetalleProducto from "./pages/DetalleProducto/DetalleProducto";
 import PaginaProductos from "./pages/PaginaProductos/PaginaProductos";
 import Carrito from "./pages/Carrito/Carrito";
 
+import AdminDashboard from "./pages/AdminDashboard/AdminDashboard";
 import AdminCatalogo from "./pages/AdminCatalogo/AdminCatalogo";
 import Movimientos from "./pages/Movimientos/Movimientos";
+
 
 
 function App() {
@@ -34,6 +36,7 @@ function App() {
               <Route path="/register" element={<Register />} />
               <Route path="/carrito" element={<Carrito />} />
               <Route path="/admin" element={<AdminCatalogo />} />
+              <Route path="/admin/dashboard" element={<AdminDashboard />} />
               <Route path="/nosotros" element={<Nosotros />} />
               <Route path="/movimientos" element={<Movimientos />} />
 

@@ -472,3 +472,28 @@ body {
     padding-bottom: 1rem;
   }
 }
+
+/* Dashboard administrativo */
+
+.admin-dashboard .card {
+  border-left: 4px solid var(--color-principal);
+  border-radius: 10px;
+}
+
+.dashboard-valor {
+  color: var(--color-principal);
+}
+
+.dashboard-boton {
+  background-color: var(--color-principal);
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+}
+
+.dashboard-boton:hover,
+.dashboard-boton:focus-visible {
+  background-color: var(--color-principal-degradado);
+  color: #ffffff;
+}
