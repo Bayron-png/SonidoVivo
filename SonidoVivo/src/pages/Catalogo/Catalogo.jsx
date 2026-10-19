@@ -1,10 +1,11 @@
 import CatalogoTemplate from "../../components/templates/CatalogoTemplate";
+import { useProductos } from "../../context/ProductoContext";
 
 function Catalogo() {
+  const { productosTodos } = useProductos();
+
   return (
-    <div className="contenedor-cataloogo">
-      <CatalogoTemplate />
-    </div>
+    <CatalogoTemplate productos={productosTodos} />
   );
 }
 
