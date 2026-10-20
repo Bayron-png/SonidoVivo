@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Buscador from "../../molecules/admin-productos/Buscador";
+import Buscador from "../../molecules/admin-productos/BarraBusqueda";
 import FilaProducto from "../../molecules/admin-productos/FilaProducto";
 import VentanaConfirmacion from "./VentanaConfirmacion";
 import ButtonAction from "../../atoms/botones/ButtonAction";

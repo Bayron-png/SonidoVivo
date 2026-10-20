@@ -1,6 +1,6 @@
 import FiltrosCatalogo from "./FiltrosCatalogo";
 import ProductosLista from "./ProductosLista";
-import Buscador from "../../molecules/admin-productos/Buscador";
+import Buscador from "../../molecules/admin-productos/BarraBusqueda";
 import ButtonAction from "../../atoms/botones/ButtonAction"; // <-- 1. Importas tu átomo
 import { useCatalogo } from "../../../hooks/useCatalogo";
 

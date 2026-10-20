@@ -2,7 +2,7 @@ import Header from "../organisms/Header";
 import Footer from "../organisms/Footer";
 import BotonVolver from "../atoms/botones/BotonVolver";
 import TituloRedondeado from "../atoms/TituloRedondeado";
-import ContenidoNosotros from "../organisms/ContenidoNosotros";
+import ContenidoNosotros from "../organisms/nosotros/ContenidoNosotros";
 
 function NosotrosTemplate() {
   return (

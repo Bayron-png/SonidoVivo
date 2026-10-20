@@ -1,12 +1,10 @@
 import React from "react";
-import IconoInput from "../../atoms/buscador/IconoInput";
-import CampoInput from "../../atoms/buscador/CampoInput";
+import CampoInput from "../../atoms/barra-busqueda/CampoInput";
 import ButtonAction from "../../atoms/botones/ButtonAction";
 
-const Buscador = ({ busqueda, setBusqueda }) => {
+const BarraBusqueda = ({ busqueda, setBusqueda }) => {
   return (
     <div className="input-group mb-3">
-      <IconoInput icono="🔍" />
       <CampoInput
         value={busqueda}
         onChange={(e) => setBusqueda(e.target.value)}
@@ -24,4 +22,4 @@ const Buscador = ({ busqueda, setBusqueda }) => {
   );
 };
 
-export default Buscador;
+export default BarraBusqueda;

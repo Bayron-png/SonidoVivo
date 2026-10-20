@@ -37,9 +37,7 @@ function ResumenDashboard() {
 
   return (
     <>
-      <section
-        className="mb-5"
-        aria-labelledby="resumen-tienda"
+      <section className="mb-5" aria-labelledby="resumen-tienda"
       >
         <h3 id="resumen-tienda" className="h4 mb-4">
           Resumen de la tienda
@@ -47,9 +45,7 @@ function ResumenDashboard() {
 
         <div className="row g-4">
           {indicadores.map((indicador) => (
-            <div
-              className="col-12 col-sm-6 col-lg-3"
-              key={indicador.titulo}
+            <div className="col-12 col-sm-6 col-lg-3" key={indicador.titulo}
             >
               <TarjetaResumen
                 titulo={indicador.titulo}
@@ -70,17 +66,11 @@ function ResumenDashboard() {
           aria-label="Accesos rápidos del administrador"
           className="d-flex flex-wrap gap-3"
         >
-          <Link
-            to="/admin"
-            className="btn dashboard-boton"
-          >
+          <Link to="/admin/gestion-productos" className="btn dashboard-boton">
             Gestionar productos
           </Link>
 
-          <Link
-            to="/movimientos"
-            className="btn dashboard-boton"
-          >
+          <Link to="/admin/movimientos" className="btn dashboard-boton">
             Ver movimientos
           </Link>
         </nav>

@@ -11,7 +11,7 @@ const MovimientosTemplate = ({ movimientos }) => {
       <Header />
 
       <main className="flex-grow-1 container pt-5 mb-4">
-        <BotonVolver label="← Volver" ruta="/catalogo" />
+        <BotonVolver label="← Volver a administración" ruta="/admin" />
 
         <TituloRedondeado texto="Movimientos" />
 

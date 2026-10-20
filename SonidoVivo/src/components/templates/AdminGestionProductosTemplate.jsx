@@ -5,15 +5,15 @@ import ListaAdmin from "../organisms/admin/ListaAdmin";
 import BotonVolver from "../atoms/botones/BotonVolver";
 import TituloRedondeado from "../atoms/TituloRedondeado";
 
-const AdminTemplate = () => {
+const AdminGestionProductosTemplate = () => {
   return (
     <div className="d-flex flex-column min-vh-100">
       <Header />
 
       {/* Contenido principal del administrador */}
       <main className="flex-grow-1 container pt-5 mb-4">
-        <BotonVolver label="← Volver al menú" ruta="/" />
-        <TituloRedondeado texto="Administrador" />
+        <BotonVolver label="← Volver a administración" ruta="/admin" />
+        <TituloRedondeado texto="Gestionar Productos" />
         
         {/* Organismo que administra la lista, formulario y ventana */}
         <ListaAdmin />
@@ -24,4 +24,4 @@ const AdminTemplate = () => {
   );
 };
 
-export default AdminTemplate;
+export default AdminGestionProductosTemplate;

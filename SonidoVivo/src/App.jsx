@@ -17,7 +17,7 @@ import PaginaProductos from "./pages/PaginaProductos/PaginaProductos";
 import Carrito from "./pages/Carrito/Carrito";
 
 import AdminDashboard from "./pages/AdminDashboard/AdminDashboard";
-import AdminCatalogo from "./pages/AdminCatalogo/AdminCatalogo";
+import AdminGestionProductos from "./pages/AdminGestionProductos/AdminGestionProductos";
 import Movimientos from "./pages/Movimientos/Movimientos";
 
 
@@ -35,10 +35,10 @@ function App() {
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
               <Route path="/carrito" element={<Carrito />} />
-              <Route path="/admin" element={<AdminCatalogo />} />
-              <Route path="/admin/dashboard" element={<AdminDashboard />} />
               <Route path="/nosotros" element={<Nosotros />} />
-              <Route path="/movimientos" element={<Movimientos />} />
+              <Route path="/admin" element={<AdminDashboard />} />
+              <Route path="/admin/gestion-productos" element={<AdminGestionProductos />} />
+              <Route path="/admin/movimientos" element={<Movimientos />} />
 
               <Route path="/catalogo" element={<Catalogo />} />
               <Route path="/catalogo/:slug" element={<PaginaProductos />} />
