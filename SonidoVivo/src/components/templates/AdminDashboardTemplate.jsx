@@ -3,6 +3,7 @@ import Footer from "../organisms/Footer";
 import BotonVolver from "../atoms/botones/BotonVolver";
 import TituloRedondeado from "../atoms/TituloRedondeado";
 import ResumenDashboard from "../organisms/admin/ResumenDashboard";
+import Descripcion from "../atoms/Descripcion";
 
 function AdminDashboardTemplate() {
   return (
@@ -14,9 +15,7 @@ function AdminDashboardTemplate() {
 
         <TituloRedondeado texto="Administración" />
 
-        <p className="text-muted">
-          Gestiona los productos y consulta los movimientos de Sonido Vivo.
-        </p>
+        <Descripcion texto = "Gestiona los productos y consulta los movimientos de Sonido Vivo."/>
 
         <ResumenDashboard />
       </main>
