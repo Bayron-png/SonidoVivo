@@ -1,27 +1,20 @@
-import Header from "../organisms/Header";
-import Footer from "../organisms/Footer";
-import BotonVolver from "../atoms/botones/BotonVolver";
 import TituloRedondeado from "../atoms/TituloRedondeado";
-import ResumenDashboard from "../organisms/admin/ResumenDashboard";
 import Descripcion from "../atoms/Descripcion";
+import ResumenDashboard from "../organisms/admin/ResumenDashboard";
 
 function AdminDashboardTemplate() {
   return (
-    <div className="d-flex flex-column min-vh-100">
-      <Header />
-
-      <main className="container flex-grow-1 pt-5 mb-4">
-        <BotonVolver label="← Volver al menú" ruta="/" />
-
+    <section aria-label="Resumen administrativo">
+      <header className="mb-4">
         <TituloRedondeado texto="Administración" />
 
-        <Descripcion texto = "Gestiona los productos y consulta los movimientos de Sonido Vivo."/>
+        <Descripcion
+          texto="Gestiona los productos y consulta los movimientos de Sonido Vivo."
+        />
+      </header>
 
-        <ResumenDashboard />
-      </main>
-
-      <Footer />
-    </div>
+      <ResumenDashboard />
+    </section>
   );
 }
 
