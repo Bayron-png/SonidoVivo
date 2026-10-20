@@ -3,7 +3,7 @@ import Footer from "../organisms/Footer";
 import BotonVolver from "../atoms/botones/BotonVolver";
 import LoginForm from "../organisms/formularios/LoginForm";
 
-const LoginTemplate = ({onLoginSubmit}) => {
+const LoginTemplate = () => {
   return (
     <div className="d-flex flex-column min-vh-100">
       <Header />
@@ -11,7 +11,7 @@ const LoginTemplate = ({onLoginSubmit}) => {
       {/* Contenido dinámico que cambia según la pantalla */}
       <main className="flex-grow-1 container pt-5 mb-4">
         <BotonVolver label="← Volver al menú principal" ruta="/" />
-        <LoginForm onSubmit={onLoginSubmit}/>
+        <LoginForm />
       </main>
 
       <Footer />
