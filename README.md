@@ -320,7 +320,7 @@ Asegúrate de tener instalado **Node.js** (versión 18 o superior recomendada):
 |17-10-2026|Bayron |       |
 |18-10-2026|José   |       |
 |18-10-2026|Luis   |       |
-|18-10-2026|Bayron |       |
+|18-10-2026|Bayron | Orden de los archivos y correcciones de errores de redirección en header y menús de administración. Corrección de rutas de páginas y cambio en la página de catálogo, añadiendo filtros y barra de búsqueda sin cambiar la estética anterior. |
 |19-10-2026|José   |       |
 |19-10-2026|Luis   |       |
 |19-10-2026|Bayron |       |
