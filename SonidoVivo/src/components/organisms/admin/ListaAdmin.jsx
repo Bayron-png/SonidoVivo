@@ -15,6 +15,9 @@ const estadoInicialFormulario = {
   descripcion: ""
 };
 
+// Componente padre: es el dueño de los datos del formulario. Decide cuándo
+// se muestra, con qué datos, y qué pasa al guardar. FormularioProducto solo
+// los muestra y valida.
 const ListaAdmin = () => {
   const {
     productos = [],
@@ -25,8 +28,9 @@ const ListaAdmin = () => {
 
   const [modalFormulario, setModalFormulario] = useState(false);
   const [esEdicion, setEsEdicion] = useState(false);
-  const [idProductoEdicion, setIdProductoEdicion] = useState(null);
+  const [idProductoEdicion, setIdProductoEdicion] = useState(null); 
   const [formData, setFormData] = useState(estadoInicialFormulario);
+  const [datosOriginales, setDatosOriginales] = useState(null); 
 
   // Modal de confirmación
   const [mostrarConfirmacion, setMostrarConfirmacion] = useState(false);
@@ -60,6 +64,7 @@ const ListaAdmin = () => {
     setEsEdicion(false);
     setIdProductoEdicion(null);
     setFormData(estadoInicialFormulario);
+    setDatosOriginales(null);
     setModalFormulario(true);
 
     irAlFormulario();
@@ -70,19 +75,21 @@ const ListaAdmin = () => {
     setEsEdicion(true);
     setIdProductoEdicion(producto.id);
 
-    setFormData({
-      nombre: producto.nombre || producto.name || "",
-      modelo: producto.modelo || "",
-      categoria: producto.categoria || producto.category || "",
-      categoriaSlug: producto.categoriaSlug || "",
-      precio: producto.precio || producto.price || 0,
-      stock: producto.stock || 0,
-      imagen: producto.imagen || "",
-      descripcion: producto.descripcion || ""
-    });
+  const datos = {
+    nombre: producto.nombre || producto.name || "",
+    modelo: producto.modelo || "",
+    categoria: producto.categoria || producto.category || "",
+    categoriaSlug: producto.categoriaSlug || "",
+    precio: producto.precio || producto.price || 0,
+    stock: producto.stock || 0,
+    imagen: producto.imagen || "",
+    descripcion: producto.descripcion || ""
+  };
+
+    setFormData(datos);
+    setDatosOriginales(datos);
 
     setModalFormulario(true);
-
     irAlFormulario();
   };
 
@@ -132,6 +139,18 @@ const ListaAdmin = () => {
     setMensajeConfirmacion("");
   };
 
+  const camposEditables = [
+  "nombre", "modelo", "categoriaSlug",
+  "precio", "stock", "imagen", "descripcion"
+  ];
+
+  const hayCambios =
+    !datosOriginales ||
+    camposEditables.some(
+      (campo) =>
+        String(formData[campo] ?? "") !== String(datosOriginales[campo] ?? "")
+  );
+
   return (
     <div className="mt-4">
 
@@ -144,15 +163,18 @@ const ListaAdmin = () => {
       />
 
       {/* Formulario */}
+      {modalFormulario && (
       <FormularioProducto
         mostrar={modalFormulario}
-        onCerrar={() => setModalFormulario(false)}
+        onCancel={() => setModalFormulario(false)}
         formData={formData}
         onChange={handleChangeForm}
         onSubmit={handleSubmitForm}
         esEdicion={esEdicion}
+        sinCambios={esEdicion && !hayCambios}
       />
-
+      )}
+      
       {/* Modal de confirmación */}
       {mostrarConfirmacion && (
         <>
