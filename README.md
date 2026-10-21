@@ -328,12 +328,7 @@ Asegúrate de tener instalado **Node.js** (versión 18 o superior recomendada):
 |20-10-2026|Luis   |       |
 |20-10-2026|Bayron |       |
 |21-10-2026|José   |       |
-|21-10-2026|Luis   |Se agregaron validaciones al formulario de producto del perfil administrador:
-- Valida nombre, modelo, categoría, precio, stock e imagen
-- Muestra errores al interactuar con el campo o al intentar enviar
-- Deshabilita "Guardar cambios" en edición si no hay modificaciones
-- Reinicia el estado del formulario al abrirlo
-- Agrega prop disabled a ButtonAction|
+|21-10-2026|Luis   |Se agregaron validaciones al formulario de producto del perfil administrador: Valida nombre, modelo, categoría, precio, stock e imagen. Muestra errores al interactuar con el campo o al intentar enviar. Deshabilita "Guardar cambios" en edición si no hay modificaciones. Reinicia el estado del formulario al abrirlo. Agrega prop disabled a ButtonAction|
 |21-10-2026|Bayron |       |
 |22-10-2026|José   |       |
 |22-10-2026|Luis   |       |
