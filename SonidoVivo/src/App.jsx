@@ -5,6 +5,9 @@ import {
   Navigate
 } from "react-router-dom";
 
+import AuthProvider from "./context/AuthContext";
+import RutaProtegida from "./routes/RutaProtegida";
+
 import ScrollToTop from "./hooks/ScrollToTop";
 import ProductProvider from "./context/ProductoContext";
 import CarritoProvider from "./context/CarritoContext";
@@ -34,52 +37,56 @@ function App() {
       <CarritoProvider>
         <MovimientoProvider>
           <BrowserRouter>
-            <ScrollToTop />
+            <AuthProvider>
+              <ScrollToTop />
 
-            <Routes>
-              {/* Rutas públicas */}
-              <Route path="/" element={<Home />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/register" element={<Register />} />
-              <Route path="/carrito" element={<Carrito />} />
-              <Route path="/nosotros" element={<Nosotros />} />
+              <Routes>
+                {/* Rutas públicas */}
+                <Route path="/" element={<Home />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Register />} />
+                <Route path="/carrito" element={<Carrito />} />
+                <Route path="/nosotros" element={<Nosotros />} />
 
-              <Route path="/catalogo" element={<Catalogo />} />
-              <Route
-                path="/catalogo/:slug"
-                element={<PaginaProductos />}
-              />
-              <Route
-                path="/catalogo/:categoriaSlug/:productoId"
-                element={<DetalleProducto />}
-              />
-
-              {/* Rutas administrativas */}
-              <Route path="/admin" element={<AdminLayout />}>
-                <Route index element={<AdminDashboard />} />
-
+                <Route path="/catalogo" element={<Catalogo />} />
                 <Route
-                  path="gestion-productos"
-                  element={<AdminGestionProductos />}
+                  path="/catalogo/:slug"
+                  element={<PaginaProductos />}
+                />
+                <Route
+                  path="/catalogo/:categoriaSlug/:productoId"
+                  element={<DetalleProducto />}
+                />
+
+                {/* Rutas administrativas */}
+                <Route element={<RutaProtegida rolPermitido="administrador" />}>
+                  <Route path="/admin" element={<AdminLayout />}>
+                    <Route index element={<AdminDashboard />} />
+
+                    <Route
+                      path="gestion-productos"
+                      element={<AdminGestionProductos />}
+                    />
+
+                    <Route
+                      path="movimientos"
+                      element={<Movimientos />}
+                    />
+                  </Route>
+                </Route>
+
+                {/* Compatibilidad con rutas anteriores */}
+                <Route
+                  path="/admin/dashboard"
+                  element={<Navigate to="/admin" replace />}
                 />
 
                 <Route
-                  path="movimientos"
-                  element={<Movimientos />}
+                  path="/movimientos"
+                  element={<Navigate to="/admin/movimientos" replace />}
                 />
-              </Route>
-
-              {/* Compatibilidad con rutas anteriores */}
-              <Route
-                path="/admin/dashboard"
-                element={<Navigate to="/admin" replace />}
-              />
-
-              <Route
-                path="/movimientos"
-                element={<Navigate to="/admin/movimientos" replace />}
-              />
-            </Routes>
+              </Routes>
+            </AuthProvider>
           </BrowserRouter>
         </MovimientoProvider>
       </CarritoProvider>
