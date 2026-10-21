@@ -497,3 +497,24 @@ body {
   background-color: var(--color-principal-degradado);
   color: #ffffff;
 }
+
+/* Header administrativo */
+
+.admin-header {
+  background: linear-gradient(
+    90deg,
+    var(--color-principal),
+    var(--color-principal-degradado)
+  );
+}
+
+.admin-header-correo {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Footer administrativo */
+
+.admin-footer {
+  background-color: #f8f9fa;
+  border-top: 1px solid #e5e7eb;
+}
