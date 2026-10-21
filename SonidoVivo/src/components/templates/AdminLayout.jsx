@@ -1,12 +1,12 @@
 import { Outlet } from "react-router-dom";
-import Header from "../organisms/Header";
-import Footer from "../organisms/Footer";
+
+import HeaderAdmin from "../organisms/admin/HeaderAdmin";
 import MenuAdmin from "../organisms/admin/MenuAdmin";
 
 function AdminLayout() {
   return (
     <div className="d-flex flex-column min-vh-100">
-      <Header />
+      <HeaderAdmin />
 
       <div className="container flex-grow-1 py-4">
         <MenuAdmin />
@@ -16,7 +16,13 @@ function AdminLayout() {
         </main>
       </div>
 
-      <Footer />
+      <footer className="admin-footer py-3">
+        <div className="container text-center">
+          <p className="text-muted small mb-0">
+            SonidoVivo — Sistema de administración
+          </p>
+        </div>
+      </footer>
     </div>
   );
 }
