@@ -27,6 +27,7 @@ import Carrito from "./pages/Carrito/Carrito";
 import AdminDashboard from "./pages/AdminDashboard/AdminDashboard";
 import AdminGestionProductos from "./pages/AdminGestionProductos/AdminGestionProductos";
 import Movimientos from "./pages/Movimientos/Movimientos";
+import ItemsCriticos from "./pages/ItemsCriticos/ItemsCriticos";
 
 // Estructura compartida de administración
 import AdminLayout from "./components/templates/AdminLayout";
@@ -71,6 +72,11 @@ function App() {
                     <Route
                       path="movimientos"
                       element={<Movimientos />}
+                    />
+
+                    <Route
+                      path="items-criticos"
+                      element={<ItemsCriticos />}
                     />
                   </Route>
                 </Route>
