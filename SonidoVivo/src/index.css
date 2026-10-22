@@ -114,6 +114,17 @@ body {
   border-color: var(--color-principal) !important;
 }
 
+.contenedor-tarjeta-producto {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.contenedor-tarjeta-producto:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
 .contenedor-loginform {
   margin-top: 3rem;
   margin-bottom: 4rem;
@@ -242,7 +253,6 @@ body {
   object-fit: cover;
 }
 
-
 /* Home - Banner Nosotros */
 
 .home-banner {
@@ -251,11 +261,7 @@ body {
   color: var(--color-titulo);
 
   background:
-    linear-gradient(
-      90deg,
-      rgba(8, 6, 13, 0.95),
-      rgba(39, 42, 179, 0.5)
-    ),
+    linear-gradient(90deg, rgba(8, 6, 13, 0.95), rgba(39, 42, 179, 0.5)),
     url("/home/concierto-home.jpg");
 
   background-size: cover;
@@ -285,7 +291,9 @@ body {
   border-radius: 30px;
   padding: 0.8rem 2rem;
   font-weight: 600;
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .home-banner .home-banner-boton:hover,
@@ -306,7 +314,6 @@ body {
     margin-inline: auto;
   }
 }
-
 
 /* Home - Eventos Musicales */
 
@@ -348,8 +355,6 @@ body {
     min-height: 0;
   }
 }
-
-
 
 /* Home - Productos Destacados */
 

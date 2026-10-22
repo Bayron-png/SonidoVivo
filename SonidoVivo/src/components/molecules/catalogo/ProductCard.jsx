@@ -12,7 +12,7 @@ const ProductCard = ({ producto, variante = "completa" }) => {
 
   return (
     <article
-      className={`card h-100 shadow-sm ${
+      className={`contenedor-tarjeta-producto card h-100 shadow-sm ${
         esCompacta ? "home-producto-card" : ""
       }`}
       role="link"
