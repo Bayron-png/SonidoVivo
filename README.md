@@ -332,7 +332,13 @@ Asegúrate de tener instalado **Node.js** (versión 18 o superior recomendada):
 |21-10-2026|Bayron |       |
 |22-10-2026|José   |       |
 |22-10-2026|Luis   |       |
-|22-10-2026|Bayron |       |
+|22-10-2026|Bayron | Añadido de pruebas unitarias y configuración del entorno de pruebas. |
 |23-10-2026|José   |       |
 |23-10-2026|Luis   |       |
 |23-10-2026|Bayron |       |
+|24-10-2026|José   |       |
+|24-10-2026|Luis   |       |
+|24-10-2026|Bayron |       |
+|25-10-2026|José   |       |
+|25-10-2026|Luis   |       |
+|25-10-2026|Bayron |       |
