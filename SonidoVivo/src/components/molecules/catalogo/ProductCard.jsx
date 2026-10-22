@@ -34,7 +34,7 @@ const ProductCard = ({ producto, variante = "completa" }) => {
             className="card-img-top"
             style={{
               height: esCompacta ? "175px" : "160px",
-              objectFit: "contain"
+              objectFit: "contain",
             }}
             loading="lazy"
           />
@@ -43,13 +43,9 @@ const ProductCard = ({ producto, variante = "completa" }) => {
 
       <section className="card-body d-flex flex-column">
         <header className="mb-2">
-          <p className="text-muted small mb-1">
-            {producto.categoria}
-          </p>
+          <p className="text-muted small mb-1">{producto.categoria}</p>
 
-          <h3 className="card-title h6 fw-bold text-dark">
-            {producto.nombre}
-          </h3>
+          <h3 className="card-title h6 fw-bold text-dark">{producto.nombre}</h3>
         </header>
 
         {!esCompacta && (
@@ -59,9 +55,7 @@ const ProductCard = ({ producto, variante = "completa" }) => {
               <strong> Modelo:</strong> {producto.modelo}
             </p>
 
-            <p className="card-text small text-muted">
-              {producto.descripcion}
-            </p>
+            <p className="card-text small text-muted">{producto.descripcion}</p>
           </div>
         )}
 
