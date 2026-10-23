@@ -114,15 +114,16 @@ El sistema creado brinda al usuario la posibilidad de ver el catálogo con preci
             ├── vite.svg
         └── 📁components
             └── 📁atoms
+                └── 📁barra-busqueda
+                    ├── CampoInput.jsx
                 └── 📁botones
                     ├── BotonAgregarAlCarrito.jsx
+                    ├── BotonAgregarAlCarrito.test.jsx
                     ├── BotonCerrar.jsx
                     ├── BotonEnviar.jsx
+                    ├── BotonFiltro.jsx
                     ├── BotonVolver.jsx
                     ├── ButtonAction.jsx
-                └── 📁buscador
-                    ├── CampoInput.jsx
-                    ├── IconoInput.jsx
                 └── 📁carrito
                     ├── BotonEliminarItem.jsx
                     ├── BotonProcederPago.jsx
@@ -150,16 +151,27 @@ El sistema creado brinda al usuario la posibilidad de ver el catálogo con preci
                     ├── BotonCarrito.jsx
                     ├── LogoHeader.jsx
                     ├── TextoHeader.jsx
+                └── 📁movimientos
+                    ├── MensajeSinMovimientos.jsx
+                    ├── MovimientoFecha.jsx
+                    ├── MovimientoTipoEnvio.jsx
+                    ├── MovimientoTotal.jsx
                 └── 📁producto-form
                     ├── InputGroup.jsx
                     ├── InsigniaStock.jsx
                     ├── TextAreaGroup.jsx
                 └── 📁productos
                     ├── MensajeSinProductos.jsx
+                ├── Descripcion.jsx
+                ├── Descripcion.test.jsx
                 ├── TituloRedondeado.jsx
+                ├── TituloSeccion.jsx
             └── 📁molecules
+                └── 📁admin
+                    ├── TarjetaResumen.jsx
                 └── 📁admin-productos
-                    ├── Buscador.jsx
+                    ├── BarraBusqueda.jsx
+                    ├── BarraBusqueda.test.jsx
                     ├── FilaProducto.jsx
                 └── 📁carrito
                     ├── CartItem.jsx
@@ -175,17 +187,29 @@ El sistema creado brinda al usuario la posibilidad de ver el catálogo con preci
                     ├── CamposRegister.jsx
                 └── 📁home
                     ├── TarjetaEvento.jsx
+                └── 📁movimientos
+                    ├── MovimientoProducto.jsx
+                    ├── ResumenMovimiento.jsx
             └── 📁organisms
                 └── 📁admin
                     ├── FormularioProducto.jsx
+                    ├── HeaderAdmin.jsx
                     ├── ListaAdmin.jsx
+                    ├── MenuAdmin.jsx
+                    ├── ResumenDashboard.jsx
+                    ├── TablaItemsCriticos.jsx
                     ├── TablaProductos.jsx
                     ├── VentanaConfirmacion.jsx
                 └── 📁carrito
                     ├── ListaCarrito.jsx
                 └── 📁catalogo
                     ├── CategoriasCatalogo.jsx
+                    ├── ContenidoCatalogo.jsx
+                    ├── FiltrosCatalogo.jsx
                     ├── ProductosLista.jsx
+                    ├── ProductosLista.test.jsx
+                └── 📁detalle-producto
+                    ├── DetalleProductoContenido.jsx
                 └── 📁formularios
                     ├── FormularioContacto.jsx
                     ├── LoginForm.jsx
@@ -194,18 +218,31 @@ El sistema creado brinda al usuario la posibilidad de ver el catálogo con preci
                     ├── BannerNosotros.jsx
                     ├── EventosDestacados.jsx
                     ├── ProductosDestacados.jsx
+                └── 📁movimientos
+                    ├── ListaMovimientos.jsx
+                    ├── TarjetaMovimiento.jsx
+                └── 📁nosotros
+                    ├── ContenidoNosotros.jsx
                 ├── Footer.jsx
                 ├── Header.jsx
             └── 📁templates
-                ├── AdminTemplate.jsx
+                ├── AdminDashboardTemplate.jsx
+                ├── AdminGestionProductosTemplate.jsx
+                ├── AdminLayout.jsx
                 ├── CarritoTemplate.jsx
                 ├── CatalogoTemplate.jsx
+                ├── DetalleProductoTemplate.jsx
                 ├── HomeTemplate.jsx
+                ├── ItemsCriticosTemplate.jsx
                 ├── LoginTemplate.jsx
+                ├── MovimientosTemplate.jsx
+                ├── NosotrosTemplate.jsx
                 ├── ProductosTemplate.jsx
                 ├── RegisterTemplate.jsx
         └── 📁context
+            ├── AuthContext.jsx
             ├── CarritoContext.jsx
+            ├── MovimientosContext.jsx
             ├── ProductoContext.jsx
         └── 📁data
             ├── categoriasData.js
@@ -213,10 +250,13 @@ El sistema creado brinda al usuario la posibilidad de ver el catálogo con preci
             ├── productosData.js
         └── 📁hooks
             ├── ScrollToTop.jsx
+            ├── useCatalogo.jsx
             ├── useProductosPorCategoria.jsx
         └── 📁pages
-            └── 📁AdminCatalogo
-                ├── AdminCatalogo.jsx
+            └── 📁AdminDashboard
+                ├── AdminDashboard.jsx
+            └── 📁AdminGestionProductos
+                ├── AdminGestionProductos.jsx
             └── 📁Carrito
                 ├── Carrito.jsx
             └── 📁Catalogo
@@ -225,14 +265,23 @@ El sistema creado brinda al usuario la posibilidad de ver el catálogo con preci
                 ├── DetalleProducto.jsx
             └── 📁Home
                 ├── Home.jsx
+            └── 📁ItemsCriticos
+                ├── ItemsCriticos.jsx
             └── 📁Login
                 ├── Login.jsx
+            └── 📁Movimientos
+                ├── Movimientos.jsx
+            └── 📁Nosotros
+                ├── Nosotros.jsx
             └── 📁PaginaProductos
                 ├── PaginaProductos.jsx
             └── 📁Register
                 ├── Register.jsx
+        └── 📁routes
+            ├── RutaProtegida.jsx
         └── 📁services
             ├── productService.jsx
+            ├── productService.test.jsx
         └── 📁utils
             └── 📁validaciones
                 ├── validacionApellido.js
@@ -240,6 +289,7 @@ El sistema creado brinda al usuario la posibilidad de ver el catálogo con preci
                 ├── validacionCorreo.js
                 ├── validacionCorreoLogin.js
                 ├── validacionesGenerales.js
+                ├── validacionFormProducto.js
                 ├── validacionNombre.js
                 ├── validacionPassword.js
                 ├── validacionRut.js
@@ -247,6 +297,7 @@ El sistema creado brinda al usuario la posibilidad de ver el catálogo con preci
         ├── App.jsx
         ├── index.css
         ├── main.jsx
+        ├── setupTests.js
     ├── .gitignore
     ├── .oxlintrc.json
     ├── index.html
