@@ -18,9 +18,9 @@
 
 ## Contexto del Caso
 Sonido Vivo es una tienda de instrumentos musicales que actualmente es atendida solo por su dueño y dos vendedores.
-Ofrecen un amplio catálogo de instrumentos y accesorios, pero últimamente reciben muchos pedidos por Whatsapp e Instagram.
+Se ofrece un amplio catálogo de instrumentos y accesorios, pero últimamente se reciben muchos pedidos por WhatsApp e Instagram, saturando al personal.
 
-El sistema creado brinda al usuario la posibilidad de ver el catálogo con precios y disponibilidad sin tener que consultar al Whatsapp o Instagram, y a su vez pudiendo recibir pedidos de forma online con seguimiento y actualización de stock.
+El sistema brinda al cliente la posibilidad de ver el catálogo con precios, stock y disponibilidad sin tener que consultar al WhatsApp o Instagram, y a su vez pudiendo recibir pedidos online con seguimiento y actualización de stock.
 
 ## Estructura del Proyecto
 ```
@@ -306,8 +306,8 @@ El sistema creado brinda al usuario la posibilidad de ver el catálogo con preci
     └── vite.config.js
 ```
 
-## Como ejecutar el Proyecto
-### Prerequisitos
+## Cómo ejecutar el Proyecto
+### Prerrequisitos
 
 Asegúrate de tener instalado **Node.js** (versión 18 o superior recomendada):
 - [Descargar Node.js](https://nodejs.org/)
@@ -325,7 +325,7 @@ Asegúrate de tener instalado **Node.js** (versión 18 o superior recomendada):
    npm install
 ```
 
-3. Iniciar el servidor de Desarrollo
+3. Iniciar el servidor de desarrollo
 ```bash
    npm run dev
 ```
@@ -333,9 +333,37 @@ Asegúrate de tener instalado **Node.js** (versión 18 o superior recomendada):
 4. Abrir en el navegador:
 - Haz click en la URL que aparece en el terminal (por defecto generalmente es http://localhost:5173)
 
+## Ejecución de las pruebas unitarias
+### Prerrequisitos
+- [Descargar Node.js](https://nodejs.org/)
+- Haber instalado las dependencias (```npm install```)
+
+### Pasos para ejecutar las pruebas
+
+1. Abrir una terminal en la carpeta raíz del proyecto, donde se encuentra el archivo package.json.
+
+2. Ejecutar todas las pruebas unitarias:
+```bash
+   npm run test:run
+```
+
+3. **Revisar los resultados en la terminal**. Vitest indicará qué pruebas pasaron y cuáles fallaron, junto con los errores correspondientes.
+
+4. **Ejecutar las pruebas de un archivo específico:**. Si se desea revisar un archivo individual. Por ejemplo:
+```bash
+   npm run test:run -- src/components/organisms/catalogo/ProductosLista.test.jsx
+```
+
+### Interpretación de los resultados
+
+- **Passed:** la prueba se ejecutó y cumplió las condiciones esperadas.
+- **Failed:** la prueba no cumplió una de las condiciones esperadas o se produjo un error durante su ejecución.
+
+
 ## Material Complementario
 - [Drive SonidoVivo](https://drive.google.com/drive/folders/12_GrU2BjxDYlcv_tYToIAlKlEODdBjeE?usp=drive_link)
 - [Tablero de Trello](https://trello.com/b/huyWCOKN)
+
 ## Bitácora (Registro)
 |Fecha     |Nombre | Acción|
 |----------|-------|-------|
