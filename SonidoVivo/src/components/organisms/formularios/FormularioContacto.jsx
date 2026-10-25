@@ -1,17 +1,9 @@
 
 import { useState } from "react";
 import CampoFormulario from "../../atoms/footer/CampoFormulario";
-import { validarLongitudMinimaConEspacios, validarObligatorio } from "../../../utils/validaciones/validacionesGenerales";
 import { validarNombre } from "../../../utils/validaciones/validacionNombre";
 import { validarCorreo } from "../../../utils/validaciones/validacionCorreo";
-
-
-const validarMensaje = (mensaje) => {
-  const errorObligatorio = validarObligatorio(mensaje);
-  if (errorObligatorio) return errorObligatorio;
-
-  return validarLongitudMinimaConEspacios(mensaje.trim(), 10);
-};
+import { validarMensaje } from "../../../utils/validaciones/validacionFormContacto";
 
 const FormularioContacto = () => {
   const [formulario, setFormulario] = useState({
@@ -41,7 +33,7 @@ const FormularioContacto = () => {
     const hayErrores =
       validarNombre(formulario.nombre) ||
       validarCorreo(formulario.correo) ||
-      validarMensaje(formulario.mensaje);
+      validarMensaje(formulario.mensaje)
 
     if (hayErrores){
       setMostrarErrores(true);
