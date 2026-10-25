@@ -55,27 +55,6 @@ function ResumenDashboard() {
           ))}
         </div>
       </section>
-
-      <section aria-labelledby="accesos-admin">
-        <h3 id="accesos-admin" className="h4 mb-3">
-          Accesos administrativos
-        </h3>
-
-        <nav
-          aria-label="Accesos rápidos del administrador"
-          className="d-flex flex-wrap gap-3"
-        >
-          <Link to="/admin/gestion-productos" className="btn dashboard-boton">
-            Gestionar productos
-          </Link>
-
-          <Link to="/admin/movimientos" className="btn dashboard-boton">
-            Ver movimientos
-          </Link>
-        </nav>
-
-        <Descripcion texto="La gestión de usuarios y los reportes estarán disponibles en próximas etapas del proyecto." />
-      </section>
     </>
   );
 }
