@@ -1,8 +1,8 @@
-import React, {useState} from "react";
+import { useState } from "react";
 import InputGroup from "../../atoms/producto-form/InputGroup";
 import TextAreaGroup from "../../atoms/producto-form/TextAreaGroup";
 import ButtonAction from "../../atoms/botones/ButtonAction";
-import categoriasData from "../../../data/categoriasData";
+import { useCategorias } from "../../../context/CategoriaContext";
 import {
   validarNombreProducto,
   validarModelo,
@@ -12,32 +12,21 @@ import {
   validarImagen,
 } from "../../../utils/validaciones/validacionFormProducto";
 
-// Este componente no guarda los datos del formulario. Los recibe del padre:
-//  formData  -> objeto con todos los valores {nombre, modelo, precio, ...}
-//  onChange  -> funcion del padre que actualiza formData
-//  onSubmit  -> funcion del padre que guarda/crea el producto
-//  onCancel  -> opcional: si lo pasan, aparece el botón Cancelar
-//  esEdicion -> cambia el texto del boton (Crear o Guardar)
-//  sinCambios  -> el padre lo pone en true cuando se está editando y no se
-//                 modificó ningún dato; bloquea el guardado
-
 const FormularioProducto = ({
   formData,
   onChange,
   onSubmit,
   onCancel,
   esEdicion = false,
-  sinCambios = false
-  }) => {
-
-  // ¿El usuario ya apretó "Enviar"? Si sí, todos los campos muestran su error.
+  sinCambios = false,
+}) => {
   const [intentoEnvio, setIntentoEnvio] = useState(false);
 
-  // Error de la categoría: se calcula aquí porque el <select> no usa el
-  // átomo InputGroup, así que nadie más lo calcula por él.
+  // Obtener las categorías compartidas desde el contexto
+  const { categorias } = useCategorias();
+
   const errorCategoria = validarCategoria(formData.categoriaSlug);
 
-  // Si CUALQUIER validación devuelve texto, hay errores.
   const hayErrores =
     validarNombreProducto(formData.nombre) ||
     validarModelo(formData.modelo) ||
@@ -47,16 +36,18 @@ const FormularioProducto = ({
     validarImagen(formData.imagen);
 
   const handleSubmit = (e) => {
-    e.preventDefault();       // evita que la página se recargue
-    if (sinCambios) return;   // edición sin modificaciones: no hay nada que guardar    
-    setIntentoEnvio(true);    // desde ahora todos muestran sus errores
-    if (hayErrores) return;   // si algo está mal, no envía
-    onSubmit(e);              // si todo está bien, llama al onSubmit del padre
+    e.preventDefault();
+
+    if (sinCambios) return;
+
+    setIntentoEnvio(true);
+
+    if (hayErrores) return;
+
+    onSubmit(e);
   };
 
   return (
-    // noValidate desactiva los mensajes nativos del navegador (por los
-    // `required`) para que se vean los mensajes propios de validación.
     <form id="formulario-producto" onSubmit={handleSubmit} noValidate>
       {/* Nombre */}
       <InputGroup
@@ -85,7 +76,6 @@ const FormularioProducto = ({
       />
 
       {/* Categoría y Precio */}
-      {/* Fila de 2 columnas (grid de Bootstrap): Categoria | Precio */}
       <div className="row">
         <div className="col-md-6">
           <div className="mb-3">
@@ -96,16 +86,16 @@ const FormularioProducto = ({
             <select
               id="categoriaSlug"
               name="categoriaSlug"
-              className={`form-select ${intentoEnvio && errorCategoria ? "is-invalid" : ""}`}
+              className={`form-select ${
+                intentoEnvio && errorCategoria ? "is-invalid" : ""
+              }`}
               value={formData.categoriaSlug}
               onChange={onChange}
               required
             >
               <option value="">Selecciona una categoría</option>
-              {/* Genera una <option> por cada categoria del archivo de datos.
-                  'key' ayuda a React a identificar cada elemento de la lista*/}
 
-              {categoriasData.map((categoria) => (
+              {categorias.map((categoria) => (
                 <option key={categoria.id} value={categoria.slug}>
                   {categoria.titulo}
                 </option>
@@ -115,7 +105,6 @@ const FormularioProducto = ({
             {intentoEnvio && errorCategoria && (
               <div className="invalid-feedback">{errorCategoria}</div>
             )}
-
           </div>
         </div>
 
@@ -136,7 +125,7 @@ const FormularioProducto = ({
         </div>
       </div>
 
-      {/* Stock e Imagen URL */}
+      {/* Stock e imagen */}
       <div className="row">
         <div className="col-md-6">
           <InputGroup

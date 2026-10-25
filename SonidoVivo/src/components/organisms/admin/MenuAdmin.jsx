@@ -8,6 +8,7 @@ function MenuAdmin() {
   const enlaces = [
     { ruta: "/admin", texto: "Dashboard", exacta: true },
     { ruta: "/admin/gestion-productos", texto: "Productos" },
+    { ruta: "/admin/gestion-categorias", texto: "Categorias" },
     { ruta: "/admin/items-criticos", texto: "Ítems críticos" },
     { ruta: "/admin/movimientos", texto: "Movimientos" }
   ];

@@ -1,4 +1,5 @@
-import categoriasData from "../../../data/categoriasData";
+
+import { useCategorias } from "../../../context/CategoriaContext";
 
 const FiltrosCatalogo = ({
   categoriaSeleccionada = "",
@@ -6,6 +7,8 @@ const FiltrosCatalogo = ({
   disponibilidad = "todos",
   onDisponibilidadChange
 }) => {
+  const { categorias } = useCategorias();
+
   return (
     <aside className="border rounded p-3">
       <h5>Filtrar por</h5>
@@ -15,6 +18,7 @@ const FiltrosCatalogo = ({
       <label htmlFor="filtro-categoria" className="form-label fw-semibold">
         Categoría
       </label>
+
       <select
         id="filtro-categoria"
         className="form-select mb-3"
@@ -22,7 +26,8 @@ const FiltrosCatalogo = ({
         onChange={(e) => onCategoriaChange(e.target.value)}
       >
         <option value="">Todas las categorías</option>
-        {categoriasData.map((categoria) => (
+
+        {categorias.map((categoria) => (
           <option key={categoria.id} value={categoria.slug}>
             {categoria.titulo}
           </option>
@@ -32,6 +37,7 @@ const FiltrosCatalogo = ({
       <label htmlFor="filtro-disponibilidad" className="form-label fw-semibold">
         Disponibilidad
       </label>
+
       <select
         id="filtro-disponibilidad"
         className="form-select"

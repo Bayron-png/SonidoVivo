@@ -1,9 +1,4 @@
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-  Navigate
-} from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import AuthProvider from "./context/AuthContext";
 import RutaProtegida from "./routes/RutaProtegida";
@@ -12,6 +7,7 @@ import ScrollToTop from "./hooks/ScrollToTop";
 import ProductProvider from "./context/ProductoContext";
 import CarritoProvider from "./context/CarritoContext";
 import MovimientoProvider from "./context/MovimientosContext";
+import CategoriasProvider from "./context/CategoriaContext";
 
 // Páginas públicas
 import Home from "./pages/Home/Home";
@@ -26,6 +22,7 @@ import Carrito from "./pages/Carrito/Carrito";
 // Páginas administrativas
 import AdminDashboard from "./pages/AdminDashboard/AdminDashboard";
 import AdminGestionProductos from "./pages/AdminGestionProductos/AdminGestionProductos";
+import AdminCategorias from "./pages/AdminCategorias/AdminCategorias";
 import Movimientos from "./pages/Movimientos/Movimientos";
 import ItemsCriticos from "./pages/ItemsCriticos/ItemsCriticos";
 
@@ -35,67 +32,71 @@ import AdminLayout from "./components/templates/AdminLayout";
 function App() {
   return (
     <ProductProvider>
-      <CarritoProvider>
-        <MovimientoProvider>
-          <BrowserRouter>
-            <AuthProvider>
-              <ScrollToTop />
+      <CategoriasProvider>
+        <CarritoProvider>
+          <MovimientoProvider>
+            <BrowserRouter>
+              <AuthProvider>
+                <ScrollToTop />
 
-              <Routes>
-                {/* Rutas públicas */}
-                <Route path="/" element={<Home />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/register" element={<Register />} />
-                <Route path="/carrito" element={<Carrito />} />
-                <Route path="/nosotros" element={<Nosotros />} />
+                <Routes>
+                  {/* Rutas públicas */}
+                  <Route path="/" element={<Home />} />
+                  <Route path="/login" element={<Login />} />
+                  <Route path="/register" element={<Register />} />
+                  <Route path="/carrito" element={<Carrito />} />
+                  <Route path="/nosotros" element={<Nosotros />} />
 
-                <Route path="/catalogo" element={<Catalogo />} />
-                <Route
-                  path="/catalogo/:slug"
-                  element={<PaginaProductos />}
-                />
-                <Route
-                  path="/catalogo/:categoriaSlug/:productoId"
-                  element={<DetalleProducto />}
-                />
+                  <Route path="/catalogo" element={<Catalogo />} />
+                  <Route path="/catalogo/:slug" element={<PaginaProductos />} />
+                  <Route
+                    path="/catalogo/:categoriaSlug/:productoId"
+                    element={<DetalleProducto />}
+                  />
 
-                {/* Rutas administrativas */}
-                <Route element={<RutaProtegida rolPermitido="administrador" />}>
-                  <Route path="/admin" element={<AdminLayout />}>
-                    <Route index element={<AdminDashboard />} />
+                  {/* Rutas administrativas */}
 
-                    <Route
-                      path="gestion-productos"
-                      element={<AdminGestionProductos />}
-                    />
+                  <Route
+                    element={<RutaProtegida rolPermitido="administrador" />}
+                  >
+                    <Route path="/admin" element={<AdminLayout />}>
+                      <Route index element={<AdminDashboard />} />
 
-                    <Route
-                      path="movimientos"
-                      element={<Movimientos />}
-                    />
+                      <Route
+                        path="gestion-productos"
+                        element={<AdminGestionProductos />}
+                      />
 
-                    <Route
-                      path="items-criticos"
-                      element={<ItemsCriticos />}
-                    />
+                      <Route
+                        path="gestion-categorias"
+                        element={<AdminCategorias />}
+                      />
+
+                      <Route path="movimientos" element={<Movimientos />} />
+
+                      <Route
+                        path="items-criticos"
+                        element={<ItemsCriticos />}
+                      />
+                    </Route>
                   </Route>
-                </Route>
 
-                {/* Compatibilidad con rutas anteriores */}
-                <Route
-                  path="/admin/dashboard"
-                  element={<Navigate to="/admin" replace />}
-                />
+                  {/* Compatibilidad con rutas anteriores */}
+                  <Route
+                    path="/admin/dashboard"
+                    element={<Navigate to="/admin" replace />}
+                  />
 
-                <Route
-                  path="/movimientos"
-                  element={<Navigate to="/admin/movimientos" replace />}
-                />
-              </Routes>
-            </AuthProvider>
-          </BrowserRouter>
-        </MovimientoProvider>
-      </CarritoProvider>
+                  <Route
+                    path="/movimientos"
+                    element={<Navigate to="/admin/movimientos" replace />}
+                  />
+                </Routes>
+              </AuthProvider>
+            </BrowserRouter>
+          </MovimientoProvider>
+        </CarritoProvider>
+      </CategoriasProvider>
     </ProductProvider>
   );
 }
