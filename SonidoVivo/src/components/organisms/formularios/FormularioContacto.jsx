@@ -1,6 +1,17 @@
 
 import { useState } from "react";
 import CampoFormulario from "../../atoms/footer/CampoFormulario";
+import { validarLongitudMinimaConEspacios, validarObligatorio } from "../../../utils/validaciones/validacionesGenerales";
+import { validarNombre } from "../../../utils/validaciones/validacionNombre";
+import { validarCorreo } from "../../../utils/validaciones/validacionCorreo";
+
+
+const validarMensaje = (mensaje) => {
+  const errorObligatorio = validarObligatorio(mensaje);
+  if (errorObligatorio) return errorObligatorio;
+
+  return validarLongitudMinimaConEspacios(mensaje.trim(), 10);
+};
 
 const FormularioContacto = () => {
   const [formulario, setFormulario] = useState({
@@ -11,7 +22,9 @@ const FormularioContacto = () => {
 
   const [estadoEnvio, setEstadoEnvio] = useState("");
 
-  const manejarCambio = (evento) => {
+  const [mostrarErrores, setMostrarErrores] = useState(false);
+
+  const handleValueChange = (evento) => {
     const { name, value } = evento.target;
 
     setFormulario((anterior) => ({
@@ -25,20 +38,14 @@ const FormularioContacto = () => {
   const manejarEnvio = (evento) => {
     evento.preventDefault();
 
-    // Validación adicional de espacios en blanco.
-    if (
-      !formulario.nombre.trim() ||
-      !formulario.correo.trim() ||
-      !formulario.mensaje.trim()
-    ) {
-      setEstadoEnvio("Completa todos los campos.");
-      return;
-    }
+    const hayErrores =
+      validarNombre(formulario.nombre) ||
+      validarCorreo(formulario.correo) ||
+      validarMensaje(formulario.mensaje);
 
-    if (formulario.mensaje.trim().length < 10) {
-      setEstadoEnvio(
-        "El mensaje debe contener al menos 10 caracteres."
-      );
+    if (hayErrores){
+      setMostrarErrores(true);
+      setEstadoEnvio("Revisa los campos marcados antes de enviar.");
       return;
     }
 
@@ -54,17 +61,21 @@ const FormularioContacto = () => {
         Envíanos un mensaje
       </h2>
 
-      <form onSubmit={manejarEnvio}>
+       {/* noValidate: evita los globos de error del navegador para que
+          se vean los mensajes de nuestras validaciones */}
+      <form onSubmit={manejarEnvio} noValidate>
         <CampoFormulario
           id="footer-nombre"
           label="Nombre"
           name="nombre"
           type="text"
           value={formulario.nombre}
-          onChange={manejarCambio}
+          onChange={handleValueChange}
           placeholder="Tu nombre"
           maxLength={80}
           required
+          validar={validarNombre}
+          mostrarErrores={mostrarErrores}
         />
 
         <CampoFormulario
@@ -73,10 +84,12 @@ const FormularioContacto = () => {
           name="correo"
           type="email"
           value={formulario.correo}
-          onChange={manejarCambio}
+          onChange={handleValueChange}
           placeholder="correo@ejemplo.com"
           maxLength={254}
           required
+          validar={validarCorreo}
+          mostrarErrores={mostrarErrores}
         />
 
         <CampoFormulario
@@ -84,12 +97,14 @@ const FormularioContacto = () => {
           label="Mensaje"
           name="mensaje"
           value={formulario.mensaje}
-          onChange={manejarCambio}
+          onChange={handleValueChange}
           placeholder="Escribe tu mensaje..."
           minLength={10}
           maxLength={1000}
           multiline
           required
+          validar={validarMensaje}
+          mostrarErrores={mostrarErrores}
         />
 
         <button
