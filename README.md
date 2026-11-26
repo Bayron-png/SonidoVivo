@@ -24,7 +24,7 @@ El sistema brinda al cliente la posibilidad de ver el catálogo con precios, sto
 
 ## Estructura del Proyecto
 ```
-└── 📁SonidoVivo
+└── 📁SonidoVivo (raíz del repositorio)
     └── 📁public
         └── 📁categorias-catalogo
             ├── accesorios.png
