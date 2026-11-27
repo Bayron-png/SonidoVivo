@@ -3,13 +3,30 @@ import { defineConfig } from 'vitest/config'
 
 export default defineConfig({
   plugins: [react()],
+
+  server: {
+    host: '0.0.0.0',
+    port: 5173,
+
+    proxy: {
+      '/api/v1': {
+        target: 'http://172.31.45.184:3000',
+        changeOrigin: true
+      }
+    }
+  },
+
   test: {
     environment: 'jsdom',
     globals: true,
     setupFiles: './src/setupTests.js',
     coverage: {
       provider: 'v8',
-      include: ['src/utils/**', 'src/components/**', 'src/services/**'],
+      include: [
+        'src/utils/**',
+        'src/components/**',
+        'src/services/**'
+      ],
     },
   },
 })

@@ -5,7 +5,7 @@ import { useProductos } from "./ProductoContext";
 const CartContext = createContext();
 
 const CarritoProvider = ({ children }) => {
-  const { productosTodos, ajustarStock } = useProductos();
+  const { productosTodos } = useProductos();
 
   const [carrito, setCarrito] = useState([]);
   const [tipoEnvio, setTipoEnvio] = useState("retiro");
@@ -13,20 +13,24 @@ const CarritoProvider = ({ children }) => {
   const COSTO_ENVIO_DOMICILIO = 3500;
 
   const agregarAlCarrito = (productoId) => {
-    const productoActual = productosTodos.find(
+    const producto = productosTodos.find(
       (p) => p.id === productoId
     );
 
-    if (!productoActual || productoActual.stock <= 0) return;
-
-    ajustarStock(productoId, -1);
+    if (!producto) return;
 
     setCarrito((prev) => {
-      const existe = prev.find(
+      const existente = prev.find(
         (item) => item.id === productoId
       );
 
-      if (existe) {
+      const cantidadActual = existente?.cantidad ?? 0;
+
+      if (cantidadActual >= producto.stock) {
+        return prev;
+      }
+
+      if (existente) {
         return prev.map((item) =>
           item.id === productoId
             ? { ...item, cantidad: item.cantidad + 1 }
@@ -34,45 +38,41 @@ const CarritoProvider = ({ children }) => {
         );
       }
 
-      return [...prev, { ...productoActual, cantidad: 1 }];
+      return [...prev, { ...producto, cantidad: 1 }];
     });
   };
 
   const disminuirCantidad = (productoId) => {
-    const itemCarrito = carrito.find(
-      (item) => item.id === productoId
-    );
-
-    if (!itemCarrito) return;
-
-    ajustarStock(productoId, 1);
-
-    if (itemCarrito.cantidad === 1) {
-      setCarrito((prev) =>
-        prev.filter((item) => item.id !== productoId)
-      );
-    } else {
-      setCarrito((prev) =>
-        prev.map((item) =>
+    setCarrito((prev) =>
+      prev
+        .map((item) =>
           item.id === productoId
             ? { ...item, cantidad: item.cantidad - 1 }
             : item
         )
-      );
-    }
+        .filter((item) => item.cantidad > 0)
+    );
   };
 
   const eliminarDelCarrito = (productoId) => {
-    const itemCarrito = carrito.find(
-      (item) => item.id === productoId
-    );
-
-    if (!itemCarrito) return;
-
-    ajustarStock(productoId, itemCarrito.cantidad);
-
     setCarrito((prev) =>
       prev.filter((item) => item.id !== productoId)
+    );
+  };
+
+  const obtenerStockDisponible = (productoId) => {
+    const producto = productosTodos.find(
+      (p) => p.id === productoId
+    );
+
+    if (!producto) return 0;
+
+    const cantidadEnCarrito =
+      carrito.find((item) => item.id === productoId)?.cantidad ?? 0;
+
+    return Math.max(
+      0,
+      producto.stock - cantidadEnCarrito
     );
   };
 
@@ -100,6 +100,7 @@ const CarritoProvider = ({ children }) => {
         agregarAlCarrito,
         disminuirCantidad,
         eliminarDelCarrito,
+        obtenerStockDisponible,
         vaciarCarrito,
         subtotal,
         costoEnvio,
