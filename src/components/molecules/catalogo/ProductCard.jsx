@@ -1,9 +1,12 @@
 import { useNavigate } from "react-router-dom";
 import BotonAgregarAlCarrito from "../../atoms/botones/BotonAgregarAlCarrito";
+import { useCart } from "../../../context/CarritoContext";
 
 const ProductCard = ({ producto, variante = "completa" }) => {
   const navigate = useNavigate();
-  const disponible = producto.stock > 0;
+  const { obtenerStockDisponible } = useCart();
+  const stockDisponible = obtenerStockDisponible(producto.id);
+  const disponible = stockDisponible > 0;
   const esCompacta = variante === "compacta";
 
   const irAlDetalle = () => {
@@ -12,9 +15,8 @@ const ProductCard = ({ producto, variante = "completa" }) => {
 
   return (
     <article
-      className={`contenedor-tarjeta-producto card h-100 shadow-sm ${
-        esCompacta ? "home-producto-card" : ""
-      }`}
+      className={`contenedor-tarjeta-producto card h-100 shadow-sm ${esCompacta ? "home-producto-card" : ""
+        }`}
       role="link"
       tabIndex="0"
       onClick={irAlDetalle}
@@ -65,11 +67,10 @@ const ProductCard = ({ producto, variante = "completa" }) => {
           </p>
 
           <p
-            className={`small mb-2 ${
-              disponible ? "text-success" : "text-danger"
-            }`}
+            className={`small mb-2 ${disponible ? "text-success" : "text-danger"
+              }`}
           >
-            {disponible ? `Stock: ${producto.stock}` : "Sin stock"}
+            {disponible ? `Stock disponible: ${stockDisponible}` : "Sin stock"}
           </p>
 
           <div onClick={(e) => e.stopPropagation()}>

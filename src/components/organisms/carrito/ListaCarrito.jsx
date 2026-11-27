@@ -1,5 +1,5 @@
-import { useState } from "react";
 import { useCart } from "../../../context/CarritoContext";
+
 import CartItem from "../../molecules/carrito/CartItem";
 import TotalCarrito from "../../atoms/carrito/TotalCarrito";
 import OpcionesEnvio from "../../atoms/carrito/OpcionesEnvio";
@@ -7,18 +7,22 @@ import BotonProcederPago from "../../atoms/carrito/BotonProcederPago";
 import MensajeSinProductos from "../../atoms/productos/MensajeSinProductos";
 import MensajePedidoExitoso from "../../atoms/carrito/MensajePedidoExitoso";
 
-const ListaCarrito = () => {
+const ListaCarrito = ({
+  confirmando,
+  errorPedido,
+  pedidoCreado,
+  onConfirmarPedido
+}) => {
   const { carrito } = useCart();
-  const [comprado, setComprado] = useState(false);
 
-  // Si se completó el pago
-  if (comprado) {
-    return <MensajePedidoExitoso onVolver={() => setComprado(false)} />;
+  if (pedidoCreado) {
+    return <MensajePedidoExitoso />;
   }
 
-  // Si el carrito está vacío
   if (carrito.length === 0) {
-    return <MensajeSinProductos mensaje="Tu carrito está vacío." />;
+    return (
+      <MensajeSinProductos mensaje="Tu carrito está vacío." />
+    );
   }
 
   return (
@@ -26,11 +30,21 @@ const ListaCarrito = () => {
       {carrito.map((item) => (
         <CartItem key={item.id} item={item} />
       ))}
-      
+
       <OpcionesEnvio />
+
       <TotalCarrito />
 
-      <BotonProcederPago onPagoCompletado={() => setComprado(true)} />
+      {errorPedido && (
+        <p className="alert alert-danger mt-3" role="alert">
+          {errorPedido}
+        </p>
+      )}
+
+      <BotonProcederPago
+        onClick={onConfirmarPedido}
+        cargando={confirmando}
+      />
     </div>
   );
 };

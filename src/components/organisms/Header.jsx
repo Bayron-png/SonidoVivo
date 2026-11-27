@@ -3,8 +3,10 @@ import LogoHeader from "../atoms/header/LogoHeader";
 import TextoHeader from "../atoms/header/TextoHeader";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import { BotonCarrito } from "../atoms/header/BotonCarrito";
+import { useAuth } from "../../context/AuthContext";
 
 const Header = () => {
+  const { usuario } = useAuth();
   return (
     <Navbar
       expand="lg"
@@ -60,6 +62,17 @@ const Header = () => {
             </Nav.Link>
             <Nav.Link as={NavLink} to="/carrito" className="text-white p-0">
               <BotonCarrito />
+
+            {usuario?.rol === "cliente" && (
+  <Nav.Link
+    as={NavLink}
+    to="/mis-pedidos"
+    className="text-white p-0"
+  >
+    Mis pedidos
+  </Nav.Link>
+)}
+
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

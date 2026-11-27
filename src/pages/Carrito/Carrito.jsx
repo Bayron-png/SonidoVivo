@@ -1,11 +1,10 @@
 import CarritoTemplate from "../../components/templates/CarritoTemplate";
+import { useConfirmarPedido } from "../../hooks/useConfirmarPedido";
 
-export const Carrito = () => {
-  return (
-    <div>
-      <CarritoTemplate/>
-    </div>
-  );
-};
+function Carrito() {
+  const estadoPedido = useConfirmarPedido();
+
+  return <CarritoTemplate {...estadoPedido} />;
+}
 
 export default Carrito;

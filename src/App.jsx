@@ -29,6 +29,9 @@ import ItemsCriticos from "./pages/ItemsCriticos/ItemsCriticos";
 // Estructura compartida de administración
 import AdminLayout from "./components/templates/AdminLayout";
 
+// Páginas de Cliente
+import MisPedidos from "./pages/MisPedidos/MisPedidos";
+
 function App() {
   return (
     <ProductProvider>
@@ -91,6 +94,11 @@ function App() {
                     path="/movimientos"
                     element={<Navigate to="/admin/movimientos" replace />}
                   />
+
+                  <Route element={<RutaProtegida rolPermitido="cliente" />}>
+                    <Route path="/mis-pedidos" element={<MisPedidos />} />
+                  </Route>
+
                 </Routes>
               </AuthProvider>
             </BrowserRouter>

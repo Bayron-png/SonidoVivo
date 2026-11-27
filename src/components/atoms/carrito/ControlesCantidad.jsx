@@ -1,17 +1,8 @@
 import { useCart } from "../../../context/CarritoContext";
-import { useProductos } from "../../../context/ProductoContext";
 
 const ControlesCantidad = ({ item }) => {
-  const { agregarAlCarrito, disminuirCantidad } = useCart();
-  const { productosTodos } = useProductos();
-
-  // Buscar el producto en el catálogo compartido
-  const productoCatalogo = productosTodos.find(
-    (p) => p.id === item.id
-  );
-
-  const tieneStockDisponible =
-    productoCatalogo && productoCatalogo.stock > 0;
+  const {agregarAlCarrito, disminuirCantidad, obtenerStockDisponible} = useCart();
+  const tieneStockDisponible = obtenerStockDisponible(item.id) > 0;
 
   return (
     <div className="d-flex align-items-center gap-2 border rounded px-2 py-1 bg-light">

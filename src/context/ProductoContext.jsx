@@ -1,11 +1,46 @@
-import { createContext, useContext, useState } from "react";
-import productosData from "../data/productosData";
+import { createContext, useContext, useEffect, useState } from "react";
+import api from "../services/api";
 
 const ProductContext = createContext();
 
 export const ProductProvider = ({ children }) => {
-  const [productos, setProductos] = useState(productosData);
+  const [productos, setProductos] = useState([]);
+  const [cargando, setCargando] = useState(true);
+  const [error, setError] = useState("");
   const [busqueda, setBusqueda] = useState("");
+
+  const cargarProductos = async () => {
+    setCargando(true);
+    setError("");
+
+    try {
+      const { data } = await api.get("/catalogo");
+
+      if (!Array.isArray(data)) {
+        throw new Error("La API no devolvió una lista de productos");
+      }
+
+      const productosNormalizados = data.map((producto) => ({
+        ...producto,
+        categoriaSlug: producto.categoria_slug,
+      }));
+
+      setProductos(productosNormalizados);
+    } catch (error) {
+      setError(
+        error.response?.data?.error ||
+        error.message ||
+        "No se pudo cargar el catálogo"
+      );
+    } finally {
+      setCargando(false);
+    }
+  };
+
+  useEffect(() => {
+    cargarProductos();
+  }, []);
+
 
   // Agregar un nuevo producto al catálogo
   const agregarProducto = (nuevoProducto) => {
@@ -24,11 +59,11 @@ export const ProductProvider = ({ children }) => {
       prev.map((p) =>
         p.id === id
           ? {
-              ...p,
-              ...productoActualizado,
-              precio: Number(productoActualizado.precio),
-              stock: Number(productoActualizado.stock),
-            }
+            ...p,
+            ...productoActualizado,
+            precio: Number(productoActualizado.precio),
+            stock: Number(productoActualizado.stock),
+          }
           : p,
       ),
     );
@@ -45,9 +80,9 @@ export const ProductProvider = ({ children }) => {
       prev.map((p) =>
         p.id === id
           ? {
-              ...p,
-              stock: Math.max(0, Number(p.stock) + cambio),
-            }
+            ...p,
+            stock: Math.max(0, Number(p.stock) + cambio),
+          }
           : p,
       ),
     );
@@ -77,6 +112,9 @@ export const ProductProvider = ({ children }) => {
         editarProducto,
         eliminarProducto,
         ajustarStock,
+        cargando,
+        error,
+        cargarProductos,
       }}
     >
       {children}

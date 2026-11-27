@@ -1,14 +1,17 @@
 import { useParams } from "react-router-dom";
 import { useProductos } from "../../../context/ProductoContext";
+import { useCart } from "../../../context/CarritoContext";
 import BotonAgregarAlCarrito from "../../atoms/botones/BotonAgregarAlCarrito";
+
 
 const DetalleProductoContenido = () => {
   const { categoriaSlug, productoId } = useParams();
   const { productosTodos } = useProductos();
+  const { obtenerStockDisponible } = useCart();
 
-  const producto = productosTodos.find((p) => p.id === productoId);
-
-
+  const producto = productosTodos.find(
+    (p) => p.id === productoId
+  );
   if (!producto) {
     return (
       <div className="alert alert-warning text-center" role="alert">
@@ -20,7 +23,8 @@ const DetalleProductoContenido = () => {
     );
   }
 
-  const disponible = producto.stock > 0;
+  const stockDisponible = obtenerStockDisponible(producto.id);
+  const disponible = stockDisponible > 0;
 
   return (
     <>
@@ -64,11 +68,10 @@ const DetalleProductoContenido = () => {
                 </span>
 
                 <span
-                  className={`badge fs-6 ${
-                    disponible ? "text-bg-success" : "text-bg-danger"
-                  }`}
+                  className={`badge fs-6 ${disponible ? "text-bg-success" : "text-bg-danger"
+                    }`}
                 >
-                  {disponible ? `Stock: ${producto.stock}` : "Sin stock"}
+                  {disponible ? `Stock disponible: ${stockDisponible}` : "Sin stock"}
                 </span>
               </div>
 

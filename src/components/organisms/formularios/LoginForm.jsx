@@ -11,32 +11,44 @@ const LoginForm = () => {
   const [gmail, setGmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorCredenciales, setErrorCredenciales] = useState(false);
+  const [cargando, setCargando] = useState(false);
+  const [errorServidor, setErrorServidor] = useState("");
 
   const navigate = useNavigate();
   const { iniciarSesion } = useAuth();
 
-  const formularioEnviado = (e) => {
+  const formularioEnviado = async (e) => {
     e.preventDefault();
+
+    if (cargando) return;
 
     const errorCorreo = validarCorreoLogin(gmail);
 
-    if (errorCorreo) {
-      return;
-    }
+    if (errorCorreo) return;
 
-    const usuario = iniciarSesion(gmail, password);
-
-    if (!usuario) {
-      setErrorCredenciales(true);
-      return;
-    }
-
+    setCargando(true);
     setErrorCredenciales(false);
+    setErrorServidor("");
 
-    if (usuario.rol === "administrador") {
-      navigate("/admin", { replace: true });
-    } else {
-      navigate("/", { replace: true });
+    try {
+      const usuario = await iniciarSesion(gmail, password);
+
+      if (usuario.rol === "administrador") {
+        navigate("/admin", { replace: true });
+      } else {
+        navigate("/", { replace: true });
+      }
+    } catch (error) {
+      if (error.response?.status === 401) {
+        setErrorCredenciales(true);
+      } else {
+        setErrorServidor(
+          error.response?.data?.error ||
+          "No se pudo conectar con el servidor."
+        );
+      }
+    } finally {
+      setCargando(false);
     }
   };
 
@@ -61,6 +73,9 @@ const LoginForm = () => {
                 validarCorreoLogin={validarCorreoLogin}
                 errorCredenciales={errorCredenciales}
               />
+              {cargando && (<p role="status">Iniciando sesión...</p>)}
+              {errorServidor && (<p role="alert" className="text-danger">{errorServidor}</p>
+              )}
             </Form>
           </Col>
         </Row>
