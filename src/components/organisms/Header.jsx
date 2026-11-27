@@ -1,12 +1,21 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { useAuth } from "../../context/AuthContext";
 import LogoHeader from "../atoms/header/LogoHeader";
 import TextoHeader from "../atoms/header/TextoHeader";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import { BotonCarrito } from "../atoms/header/BotonCarrito";
-import { useAuth } from "../../context/AuthContext";
 
 const Header = () => {
-  const { usuario } = useAuth();
+
+  const { usuario, cerrarSesion } = useAuth();
+  const navigate = useNavigate();
+
+  const handleCerrarSesion = () => {
+    cerrarSesion();
+    navigate("/", { replace: true });
+  };
+
+
   return (
     <Navbar
       expand="lg"
@@ -57,21 +66,43 @@ const Header = () => {
             <Nav.Link as={NavLink} to="#contacto" className="text-white p-0" title="Contactarse con nosotros">
               Contacto
             </Nav.Link>
-            <Nav.Link as={NavLink} to="/login" className="text-white p-0" title="Iniciar Sesión">
-              Iniciar Sesión
-            </Nav.Link>
+            {usuario ? (
+              <>
+                <span className="text-white small">
+                  {usuario.nombre || usuario.correo}
+                  {" "}
+                  ({usuario.rol})
+                </span>
+
+                <button
+                  type="button"
+                  className="btn btn-outline-light btn-sm"
+                  onClick={handleCerrarSesion}
+                >
+                  Cerrar sesión
+                </button>
+              </>
+            ) : (
+              <Nav.Link
+                as={NavLink}
+                to="/login"
+                className="text-white p-0"
+              >
+                Iniciar sesión
+              </Nav.Link>
+            )}
             <Nav.Link as={NavLink} to="/carrito" className="text-white p-0">
               <BotonCarrito />
 
-            {usuario?.rol === "cliente" && (
-  <Nav.Link
-    as={NavLink}
-    to="/mis-pedidos"
-    className="text-white p-0"
-  >
-    Mis pedidos
-  </Nav.Link>
-)}
+              {usuario?.rol === "cliente" && (
+                <Nav.Link
+                  as={NavLink}
+                  to="/mis-pedidos"
+                  className="text-white p-0"
+                >
+                  Mis pedidos
+                </Nav.Link>
+              )}
 
             </Nav.Link>
           </Nav>
