@@ -325,13 +325,20 @@ Asegúrate de tener instalado **Node.js** (versión 18 o superior recomendada):
    npm install
 ```
 
-3. Iniciar el servidor de desarrollo
+3. Configurar la URL del backend en `.env` (ver la sección siguiente).
+
+4. Iniciar el servidor de desarrollo
 ```bash
    npm run dev
 ```
 
-4. Abrir en el navegador:
+5. Abrir en el navegador:
 - Haz click en la URL que aparece en el terminal (por defecto generalmente es http://localhost:5173)
+
+### Configurar la conexión con el backend y la base de datos
+
+El frontend se conecta al backend mediante la API. En la raíz del proyecto se debe crear un `.env` con la variable `BACKEND_URL=http://IP-EJEMPLO:3000`, indicando la IP y puerto del servidor backend.
+
 
 ## Ejecución de las pruebas unitarias
 ### Prerrequisitos

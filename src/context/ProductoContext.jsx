@@ -27,10 +27,16 @@ export const ProductProvider = ({ children }) => {
 
       setProductos(productosNormalizados);
     } catch (error) {
-      setError(
-        error.response?.data?.error ||
-        error.message ||
-        "No se pudo cargar el catálogo"
+      const esTimeout =
+        error?.code === "ECONNABORTED" ||
+        error?.code === "ETIMEDOUT" ||
+        /timeout of \d+ms exceeded/i.test(error?.message ?? "");
+
+      setError(esTimeout
+        ? "Error: no se pudieron cargar los productos"
+        : error.response?.data?.error ||
+          error.message ||
+          "No se pudo cargar el catálogo"
       );
     } finally {
       setCargando(false);

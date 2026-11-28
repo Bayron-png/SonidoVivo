@@ -1,21 +1,7 @@
 import { isIPv4 } from 'node:net'
-import { networkInterfaces } from 'node:os'
 import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vitest/config'
-
-function obtenerIpv4() {
-  const address = Object.values(networkInterfaces())
-    .flatMap((interfaces) => interfaces ?? [])
-    .find(({ family, internal }) => !internal && (family === 'IPv4' || family === 4))
-
-  if (!address) {
-    throw new Error('No se pudo detectar una dirección IPv4 para conectar con el backend.')
-  }
-
-  return address.address
-}
-
-const backendTarget = `http://${obtenerIpv4()}:3000`
+import { loadEnv } from 'vite'
 
 function enlaceConsola(url) {
   return `\u001B]8;;${url}\u001B\\${url}\u001B]8;;\u001B\\`
@@ -86,36 +72,41 @@ function apiDocsUrlPlugin() {
   }
 }
 
-export default defineConfig({
-  plugins: [react(), apiDocsUrlPlugin()],
+export default defineConfig(({ mode }) => {
+  const env = loadEnv(mode, process.cwd(), '')
+  const backendTarget = env.BACKEND_URL || 'http://localhost:3000'
 
-  server: {
-    host: '0.0.0.0',
-    port: 5173,
+  return {
+    plugins: [react(), apiDocsUrlPlugin()],
 
-    proxy: {
-      '/api-docs': {
-        target: backendTarget,
-        changeOrigin: true
-      },
-      '/api/v1': {
-        target: backendTarget,
-        changeOrigin: true
+    server: {
+      host: '0.0.0.0',
+      port: 5173,
+
+      proxy: {
+        '/api-docs': {
+          target: backendTarget,
+          changeOrigin: true
+        },
+        '/api/v1': {
+          target: backendTarget,
+          changeOrigin: true
+        }
       }
-    }
-  },
-
-  test: {
-    environment: 'jsdom',
-    globals: true,
-    setupFiles: './src/setupTests.js',
-    coverage: {
-      provider: 'v8',
-      include: [
-        'src/utils/**',
-        'src/components/**',
-        'src/services/**'
-      ],
     },
-  },
+
+    test: {
+      environment: 'jsdom',
+      globals: true,
+      setupFiles: './src/setupTests.js',
+      coverage: {
+        provider: 'v8',
+        include: [
+          'src/utils/**',
+          'src/components/**',
+          'src/services/**'
+        ],
+      },
+    },
+  }
 })
