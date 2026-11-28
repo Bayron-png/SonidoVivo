@@ -136,7 +136,7 @@ const FormularioUsuario = ({
                             >
                                 <option value="1">Administrador</option>
                                 <option value="2">Cliente</option>
-                                <option value="5">Vendedor</option>
+                                <option value="3">Vendedor</option>
                             </select>
                         </div>
                     </div>
