@@ -1,7 +1,7 @@
 const MensajeSinMovimientos = () => {
   return (
     <div className="alert alert-info">
-      No hay movimientos registrados.
+      No hay pedidos registrados.
     </div>
   );
 };

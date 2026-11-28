@@ -1,12 +1,22 @@
-import { useMovimientos } from "../../context/MovimientosContext";
 import MovimientosTemplate from "../../components/templates/MovimientosTemplate";
+import { usePedidosAdmin } from "../../hooks/admin/usePedidosAdmin";
 
 const Movimientos = () => {
-  const { movimientos } = useMovimientos();
+  const {
+    pedidos,
+    cargando,
+    error,
+    cargarPedidos,
+    actualizarEstadoPedido
+  } = usePedidosAdmin();
 
   return (
     <MovimientosTemplate
-      movimientos={movimientos}
+      movimientos={pedidos}
+      cargando={cargando}
+      error={error}
+      cargarPedidos={cargarPedidos}
+      actualizarEstadoPedido={actualizarEstadoPedido}
     />
   );
 };

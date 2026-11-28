@@ -2,7 +2,7 @@ import TituloRedondeado from "../atoms/TituloRedondeado";
 import Descripcion from "../atoms/Descripcion";
 import ResumenDashboard from "../organisms/admin/ResumenDashboard";
 
-function AdminDashboardTemplate() {
+function AdminDashboardTemplate({ pedidos, cargandoPedidos, errorPedidos, cargarPedidos }) {
   return (
     <section aria-label="Resumen administrativo">
       <header className="mb-4">
@@ -13,7 +13,12 @@ function AdminDashboardTemplate() {
         />
       </header>
 
-      <ResumenDashboard />
+      <ResumenDashboard
+        pedidos={pedidos}
+        cargandoPedidos={cargandoPedidos}
+        errorPedidos={errorPedidos}
+        cargarPedidos={cargarPedidos}
+      />
     </section>
   );
 }

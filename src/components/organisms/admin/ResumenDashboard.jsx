@@ -1,13 +1,16 @@
 import { Link } from "react-router-dom";
 import { useProductos } from "../../../context/ProductoContext";
-import { useMovimientos } from "../../../context/MovimientosContext";
 import categoriasData from "../../../data/categoriasData";
 import TarjetaResumen from "../../molecules/admin/TarjetaResumen";
 import Descripcion from "../../atoms/Descripcion";
 
-function ResumenDashboard() {
+function ResumenDashboard({
+  pedidos,
+  cargandoPedidos,
+  errorPedidos,
+  cargarPedidos
+}) {
   const { productosTodos } = useProductos();
-  const { movimientos } = useMovimientos();
 
   const productosCriticos = productosTodos.filter(
     (producto) => Number(producto.stock) <= 5,
@@ -20,9 +23,9 @@ function ResumenDashboard() {
       descripcion: "Productos registrados en el catálogo",
     },
     {
-      titulo: "Solicitudes",
-      valor: movimientos.length,
-      descripcion: "Compras registradas durante esta sesión",
+      titulo: "Pedidos",
+      valor: cargandoPedidos ? "…" : errorPedidos ? "—" : pedidos.length,
+      descripcion: "Pedidos registrados en la base de datos",
     },
     {
       titulo: "Stock crítico",
@@ -54,6 +57,71 @@ function ResumenDashboard() {
             </div>
           ))}
         </div>
+      </section>
+
+      <section aria-labelledby="pedidos-recientes">
+        <h3 id="pedidos-recientes" className="h4 mb-4">
+          Pedidos recientes
+        </h3>
+
+        {cargandoPedidos && (
+          <p role="status" aria-live="polite">
+            Cargando pedidos...
+          </p>
+        )}
+
+        {errorPedidos && (
+          <div className="alert alert-danger" role="alert">
+            <p className="mb-2">{errorPedidos}</p>
+            <button
+              type="button"
+              className="btn btn-outline-danger btn-sm"
+              onClick={cargarPedidos}
+            >
+              Reintentar
+            </button>
+          </div>
+        )}
+
+        {!cargandoPedidos && !errorPedidos && pedidos.length === 0 && (
+          <p className="alert alert-info" role="status">
+            No hay pedidos registrados.
+          </p>
+        )}
+
+        {!cargandoPedidos && !errorPedidos && pedidos.length > 0 && (
+          <div className="table-responsive">
+            <table className="table table-striped align-middle">
+              <thead>
+                <tr>
+                  <th scope="col">Pedido</th>
+                  <th scope="col">Cliente</th>
+                  <th scope="col">Estado</th>
+                  <th scope="col">Tipo de envío</th>
+                  <th scope="col">Total</th>
+                  <th scope="col">Fecha</th>
+                </tr>
+              </thead>
+              <tbody>
+                {pedidos.slice(0, 5).map((pedido) => (
+                  <tr key={pedido.id}>
+                    <th scope="row">#{pedido.id}</th>
+                    <td>
+                      <span className="d-block">{pedido.cliente_nombre}</span>
+                      <small className="text-muted">{pedido.cliente_correo}</small>
+                    </td>
+                    <td>{pedido.estado}</td>
+                    <td>{pedido.tipo_envio}</td>
+                    <td>${Number(pedido.total).toLocaleString("es-CL")}</td>
+                    <td>
+                      {new Date(pedido.creado_en).toLocaleString("es-CL")}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
       </section>
     </>
   );
