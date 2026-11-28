@@ -1,10 +1,10 @@
 {
-  "name": "sonidovivo",
+  "name": "SonidoVivo",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --logLevel warn",
     "build": "vite build",
     "test": "vitest",
     "test:run": "vitest run",
