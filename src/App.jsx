@@ -25,6 +25,7 @@ import AdminGestionProductos from "./pages/AdminGestionProductos/AdminGestionPro
 import AdminCategorias from "./pages/AdminCategorias/AdminCategorias";
 import Movimientos from "./pages/Movimientos/Movimientos";
 import ItemsCriticos from "./pages/ItemsCriticos/ItemsCriticos";
+import AdminGestionUsuarios from "./pages/AdminGestionUsuarios/AdminGestionUsuarios";
 
 // Estructura compartida de administración
 import AdminLayout from "./components/templates/AdminLayout";
@@ -63,6 +64,7 @@ function App() {
                     element={<RutaProtegida rolPermitido="administrador" />}
                   >
                     <Route path="/admin" element={<AdminLayout />}>
+
                       <Route index element={<AdminDashboard />} />
 
                       <Route
@@ -81,6 +83,12 @@ function App() {
                         path="items-criticos"
                         element={<ItemsCriticos />}
                       />
+
+                      <Route
+                        path="gestion-usuarios"
+                        element={<AdminGestionUsuarios />}
+                      />
+                      
                     </Route>
                   </Route>
 
