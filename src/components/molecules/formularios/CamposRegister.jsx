@@ -1,47 +1,54 @@
 import NombreInput from "../../atoms/form/NombreInput";
 import ApellidoInput from "../../atoms/form/ApellidoInput";
-import RutInput from "../../atoms/form/RutInput";
 import GmailInput from "../../atoms/form/GmailInput";
-import TelefonoInput from "../../atoms/form/TelefonoInput";
 import PasswordInput from "../../atoms/form/PasswordInput";
 import ConfirmPasswordInput from "../../atoms/form/ConfirmPasswordInput"
 import BotonEnviar from "../../atoms/botones/BotonEnviar";
+import { Col, Row } from "react-bootstrap";
 
 import { Link } from "react-router-dom";
 import { validarNombre } from "../../../utils/validaciones/validacionNombre";
 import { validarApellido } from "../../../utils/validaciones/validacionApellido";
 import { validarCorreo } from "../../../utils/validaciones/validacionCorreo";
 import { validarPassword } from "../../../utils/validaciones/validacionPassword";
-import { validarRut } from "../../../utils/validaciones/validacionRut";
-import { validarTelefono } from "../../../utils/validaciones/validacionTelefono";
 
 const CamposRegister = ({
-  nombre, apellido, rut, gmail, telefono,
+  nombre, apellido, gmail,
   password, confirmPassword,
-  onNombreChange, onApellidoChange, onRutChange,
-  onGmailChange, onTelefonoChange,
+  onNombreChange, onApellidoChange,
+  onGmailChange,
   onPasswordChange, onConfirmPasswordChange }) => (
 
-  <>
-    <NombreInput value={nombre} onChange={onNombreChange} validar={validarNombre}/>
-    <ApellidoInput value={apellido} onChange={onApellidoChange} validar={validarApellido}/>
-    <RutInput value={rut} onChange={onRutChange} validar={validarRut}/>
-    <GmailInput value={gmail} onChange={onGmailChange} validar={validarCorreo}/>
-    <TelefonoInput value={telefono} onChange={onTelefonoChange} validar={validarTelefono}/>
-    <PasswordInput value={password} onChange={onPasswordChange} validar={validarPassword}/>
-    <ConfirmPasswordInput value={confirmPassword} onChange={onConfirmPasswordChange} passwordToMatch={password}/>
+  <Row className="g-3">
+    <Col xs={12} sm={6} md={4}>
+      <NombreInput value={nombre} onChange={onNombreChange} validar={validarNombre}/>
+    </Col>
+    <Col xs={12} sm={6} md={4}>
+      <ApellidoInput value={apellido} onChange={onApellidoChange} validar={validarApellido}/>
+    </Col>
+    <Col xs={12} sm={6} md={4}>
+      <GmailInput value={gmail} onChange={onGmailChange} validar={validarCorreo}/>
+    </Col>
+    <Col xs={12} sm={6} md={4}>
+      <PasswordInput value={password} onChange={onPasswordChange} validar={validarPassword}/>
+    </Col>
+    <Col xs={12} sm={6} md={4}>
+      <ConfirmPasswordInput value={confirmPassword} onChange={onConfirmPasswordChange} passwordToMatch={password}/>
+    </Col>
 
-    <div className="contenedor-redireccion-login">
-      <BotonEnviar label="Registrarse" />
+    <Col xs={12}>
+      <div className="contenedor-redireccion-login">
+        <BotonEnviar label="Registrarse" />
 
-      <span className="label-iniciarsesion">
-        ¿Ya tienes una cuenta?{" "}
-        <Link to="/login" className="label-login">
-          Inicia sesion
-        </Link>
-      </span>
-    </div>
-  </>
+        <span className="label-iniciarsesion">
+          ¿Ya tienes una cuenta?{" "}
+          <Link to="/login" className="label-login">
+            Inicia sesion
+          </Link>
+        </span>
+      </div>
+    </Col>
+  </Row>
 
 );
 
