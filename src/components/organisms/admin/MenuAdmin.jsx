@@ -10,7 +10,8 @@ function MenuAdmin() {
     { ruta: "/admin/gestion-productos", texto: "Productos" },
     { ruta: "/admin/gestion-categorias", texto: "Categorias" },
     { ruta: "/admin/items-criticos", texto: "Ítems críticos" },
-    { ruta: "/admin/movimientos", texto: "Movimientos" }
+    { ruta: "/admin/movimientos", texto: "Movimientos" },
+    { ruta: "/admin/gestion-usuarios", texto: "Usuarios" },
   ];
 
   const handleCerrarSesion = () => {
