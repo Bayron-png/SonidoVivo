@@ -12,7 +12,7 @@ const InformacionContacto = () => {
           <li>
             <strong>Ubicación:</strong>
             <p className="mb-0">
-              Santiago, Chile
+              Viña del Mar, Chile
             </p>
           </li>
 
