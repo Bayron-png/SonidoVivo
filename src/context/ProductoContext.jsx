@@ -75,23 +75,52 @@ export const ProductProvider = ({ children }) => {
     );
   };
 
-  // Eliminar un producto del catálogo
+  // Persistir el ajuste en el backend antes de actualizar el estado local.
   const eliminarProducto = (id) => {
     setProductos((prev) => prev.filter((p) => p.id !== id));
   };
 
   // Eliminar un producto del catálogo
-  const ajustarStock = (id, cambio) => {
+  const ajustarStock = async (id, cambio) => {
+    const producto = productos.find(
+      (item) => String(item.id) === String(id),
+    );
+
+    if (!producto) {
+      throw new Error("Producto no encontrado");
+    }
+
+    if (!Number.isSafeInteger(cambio) || cambio === 0) {
+      throw new Error("El ajuste de stock debe ser un entero distinto de cero");
+    }
+
+    const stockActualizado = Number(producto.stock) + cambio;
+
+    if (
+      !Number.isSafeInteger(stockActualizado) ||
+      stockActualizado < 0 ||
+      stockActualizado > 2147483647
+    ) {
+      throw new Error("El stock debe estar entre 0 y 2147483647");
+    }
+
+    await api.patch(
+      `/catalogo/${encodeURIComponent(id)}/stock`,
+      { stock: stockActualizado },
+    );
+
     setProductos((prev) =>
       prev.map((p) =>
-        p.id === id
+        String(p.id) === String(id)
           ? {
             ...p,
-            stock: Math.max(0, Number(p.stock) + cambio),
+            stock: stockActualizado,
           }
           : p,
       ),
     );
+
+    return stockActualizado;
   };
 
   // Filtrado de productos por nombre o categoría

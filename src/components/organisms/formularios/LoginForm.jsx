@@ -35,6 +35,8 @@ const LoginForm = () => {
 
       if (usuario.rol === "administrador") {
         navigate("/admin", { replace: true });
+      } else if (usuario.rol === "vendedor") {
+        navigate("/vendedor", { replace: true });
       } else {
         navigate("/", { replace: true });
       }

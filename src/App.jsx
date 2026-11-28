@@ -26,6 +26,7 @@ import AdminCategorias from "./pages/AdminCategorias/AdminCategorias";
 import Movimientos from "./pages/Movimientos/Movimientos";
 import ItemsCriticos from "./pages/ItemsCriticos/ItemsCriticos";
 import AdminGestionUsuarios from "./pages/AdminGestionUsuarios/AdminGestionUsuarios";
+import VendedorDashboard from "./pages/VendedorDashboard/VendedorDashboard";
 
 // Estructura compartida de administración
 import AdminLayout from "./components/templates/AdminLayout";
@@ -105,6 +106,10 @@ function App() {
 
                   <Route element={<RutaProtegida rolPermitido="cliente" />}>
                     <Route path="/mis-pedidos" element={<MisPedidos />} />
+                  </Route>
+
+                  <Route element={<RutaProtegida rolPermitido="vendedor" />}>
+                    <Route path="/vendedor" element={<VendedorDashboard />} />
                   </Route>
 
                 </Routes>
