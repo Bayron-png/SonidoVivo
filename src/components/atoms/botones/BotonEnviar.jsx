@@ -1,7 +1,7 @@
 import ButtonAction from "./ButtonAction";
 
-const BotonEnviar = ({ label = "Enviar" }) => (
-  <ButtonAction type="submit" variant="outline-primary">
+const BotonEnviar = ({ label = "Enviar", disabled = false }) => (
+  <ButtonAction type="submit" variant="outline-primary" disabled={disabled}>
     {label}
   </ButtonAction>
 );

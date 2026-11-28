@@ -17,7 +17,8 @@ const CamposRegister = ({
   password, confirmPassword,
   onNombreChange, onApellidoChange,
   onGmailChange,
-  onPasswordChange, onConfirmPasswordChange }) => (
+  onPasswordChange, onConfirmPasswordChange,
+  enviando }) => (
 
   <Row className="g-3">
     <Col xs={12} sm={6} md={4}>
@@ -38,7 +39,10 @@ const CamposRegister = ({
 
     <Col xs={12}>
       <div className="contenedor-redireccion-login">
-        <BotonEnviar label="Registrarse" />
+        <BotonEnviar
+          label={enviando ? "Registrando..." : "Registrarse"}
+          disabled={enviando}
+        />
 
         <span className="label-iniciarsesion">
           ¿Ya tienes una cuenta?{" "}

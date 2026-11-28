@@ -15,11 +15,14 @@ const RegisterForm = ({ onSubmit }) => {
     const [gmail, setGmail] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
+    const [enviando, setEnviando] = useState(false);
+    const [errorRegistro, setErrorRegistro] = useState("");
 
     const navigate = useNavigate();
 
-    const formularioEnviado = (e) => {
+    const formularioEnviado = async (e) => {
         e.preventDefault();
+        if (enviando) return;
 
         console.log("1. Se envió el formulario");
         const errores = [
@@ -35,13 +38,28 @@ const RegisterForm = ({ onSubmit }) => {
             return;
         }
             console.log("3. Todos los campos son válidos");
-        onSubmit({
-            nombre, apellido,
-            gmail,
-            password, confirmPassword
-        });
-        console.log("4. Ejecutando redirección");
-        navigate("/");
+
+        setEnviando(true);
+        setErrorRegistro("");
+
+        try {
+            await onSubmit({
+                nombre,
+                apellido,
+                gmail,
+                password,
+                confirmPassword
+            });
+            console.log("4. Ejecutando redirección");
+            navigate("/");
+        } catch (error) {
+            setErrorRegistro(
+                error.response?.data?.error ||
+                "No se pudo completar el registro. Intenta nuevamente."
+            );
+        } finally {
+            setEnviando(false);
+        }
     };
 
     
@@ -70,7 +88,14 @@ const RegisterForm = ({ onSubmit }) => {
                                 onGmailChange={(e) => setGmail(e.target.value)}
                                 onPasswordChange={(e) => setPassword(e.target.value)}
                                 onConfirmPasswordChange={(e) => setConfirmPassword(e.target.value)}
+                                enviando={enviando}
                             />
+                            {enviando && <p role="status">Registrando usuario...</p>}
+                            {errorRegistro && (
+                                <p role="alert" className="text-danger">
+                                    {errorRegistro}
+                                </p>
+                            )}
                         </Form>
                     </Col>
                 </Row>
